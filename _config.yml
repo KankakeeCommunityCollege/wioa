@@ -1,15 +1,27 @@
 title: "Kankakee Community College"
-site_name: KCC Startup Template
+site_name: Workforce Services
 public-url: "https://www.kcc.edu"
 theme: "kcc-gem-theme"
 google-tag_key: Google Tag Manager key goes here
 nav_links:
-  - link_text: Home
-    link_href: ''
+  - link_text: About
+    link_href: 'about'
     button: false
-  - link_text: Landing Page
-    link_href: 'landing-page'
+  - link_text: Workshops & Events
+    link_href: 'workshops-and-events'
     button: false
+  - link_text: Career Training
+    link_href: 'career-training'
+    button: false
+  - link_text: Resources
+    link_href: 'resources'
+    button: false
+  - link_text: Contact
+    link_href: '#contact'
+    button: false
+  - link_text: Get Started
+    link_href: '#'
+    button: true
 collections:
   posts:
     output: false
