@@ -20,7 +20,7 @@ nav_links:
     link_href: '#contact'
     button: false
   - link_text: Get Started
-    link_href: '#'
+    link_href: 'service-eligibility-questionnaire'
     button: true
 collections:
   posts:
