@@ -1,0 +1,28 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col margins__col--top section__heading-underline">
+        <h3 class="typography__section--heading margins__heading--btm">{{ page.student_testimonials }}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <ol class="testimonials__list">
+          {% assign sorted_testimonials = site.testimonials | sort: 'order' %}
+          {% for testimony in sorted_testimonials limit:4 %}
+            <li class="testimonials__list--item">
+              <div class="testimonials__content d-flex align-items-center">
+                <div class="testimonials__image testimonials__image--default" style="background-image: url('{{ page.baseurl }}{{ testimony.portrait }}')">
+                </div>
+              <div class="testimonials__heading-div">
+                <h3 class="typography__stories--quote">{{ testimony.quote }}</h3>
+                <h3 class="testimonials__heading--overline testimonials__name--color notranslate">&nbsp;-&nbsp;{{ testimony.name }}</h3>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

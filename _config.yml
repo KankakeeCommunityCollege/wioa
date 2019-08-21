@@ -28,6 +28,8 @@ collections:
     _hide_content: true
   contacts:
     output: false
+  testimonials:
+    output: false
 defaults:
 - scope:
     path: ''
