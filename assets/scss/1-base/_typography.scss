@@ -1,2 +1,35 @@
 // Typography styles (site specific)
 // ===============================
+
+
+.typography__testimonials--quote {
+  color: $primary-blue;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+@media screen and (min-width: 488px) {
+  .typography__testimonials--quote {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .typography__testimonials--quote {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .typography__testimonials--quote {
+    font-size: 1.4rem;
+  }
+}
+
+.typography__testimonials--name {
+  font-family: $font-family-headings;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
