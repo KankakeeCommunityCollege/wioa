@@ -4,6 +4,7 @@
   YOU NEED TO PUT THE GOOGLE TAG KEY IN THE _config.yml FILE FOR THE <script> TO SHOW UP HERE!
   ============================================================================================ -->{% endif %}
 {% if site.google-tag_key != "Google Tag Manager key goes here" and site.google-tag_key != nil %}
+{% if jekyll.environment == "publish" %}
 <script>
   (function(w, d, s, l, i) {
     w[l] = w[l] || [];
@@ -20,5 +21,6 @@
     f.parentNode.insertBefore(j, f);
   })(window, document, 'script', 'dataLayer', '{{ site.google-tag_key }}');
 </script>
+{% endif %}
 {% endif %}
 <!-- End Google Tag Manager -->
