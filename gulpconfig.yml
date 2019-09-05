@@ -73,6 +73,7 @@ watch: # 'Watch' for changes in all the following:
   sass: "assets/scss/**/*.scss"
   cmsScss: "assets/scss/**/*.scss"
   pages:
+    - "**/*.{md,html,yml,xml}"
     - "*.{md,html,yml,xml}" # watch the project root.
     - "{_data,_includes,_layouts,_pages,_posts,_alerts,_contacts}/**/*.{md,html,yml,xml}" # watch standard jekyll dirs.
     # !exlclusions:
