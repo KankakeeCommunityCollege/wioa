@@ -3,6 +3,7 @@ site_name: Workforce Services
 public-url: "https://www.kcc.edu"
 theme: "kcc-gem-theme"
 google-tag_key: Google Tag Manager key goes here
+translate: true
 nav_links:
   - link_text: About
     link_href: 'about'
@@ -88,3 +89,5 @@ _options: # The CloudCannon options key
     hidden: true
   baseurl: # We don't want users changing these!!
     hidden: true
+  translate:
+    hidden: true # Prevent CloudCannon Users from randomly turning translate on in their site.
