@@ -119,8 +119,8 @@ cards:
     <div class="row">
       {% for location in page.wioa_locations %}
       <div class="col-sm-6 col-md-4 mb-3">
-        <h5 class="typography__contacts--name">{{ location.name }}</h5>
-        <p>
+        <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
+        <p class="notranslate">
           {{ location.address }}<br>
           <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br>
           {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br>{% endif %}
