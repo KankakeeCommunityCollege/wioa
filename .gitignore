@@ -50,3 +50,6 @@ yarn-error.log
 # Ye Olde Gulp tasks from an API long, long ago, in a galaxy far, far away:
 old-gulp-tasks/
 old.gulpfile.js
+
+# Jekyll 4's chaching dir
+.jekyll-cache/
