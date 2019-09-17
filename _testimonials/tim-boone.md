@@ -1,7 +1,7 @@
 ---
 name: Tim Boone
 order: 1
-portrait: uploads/lminzghor.jpg
+portrait: uploads/tboone.jpg
 quote: >-
   After almost 16 years on the same job and at my age, I was really nervous when
   the plant announced they were closing, but the Trade Program helped me regain
