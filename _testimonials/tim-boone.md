@@ -1,8 +1,11 @@
 ---
-name: Logan Minzghor
-order: 3
+name: Tim Boone
+order: 1
 portrait: uploads/lminzghor.jpg
-quote: "Jennifer was an absolutely amazing teacher. Without her, I’d have failed."
+quote: >-
+  After almost 16 years on the same job and at my age, I was really nervous when
+  the plant announced they were closing, but the Trade Program helped me regain
+  my confidence and find a new career path.
 ---
 
 Dating back to the 1950s, the bakery lines on South Kedzie Avenue in Chicago hummed along and produced millions of Oreo cookies. Workers for this Nabisco site, like Timothy Boone, worked at the south side location for a long time, too.
