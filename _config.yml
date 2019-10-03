@@ -23,6 +23,9 @@ nav_links:
   - link_text: Get Started
     link_href: 'service-eligibility-questionnaire'
     button: true
+sub-nav_links:
+  - link_text: One-Stop
+    link_href: 'resources/one-stop'
 collections:
   posts:
     output: false
