@@ -2,7 +2,7 @@ title: "Kankakee Community College"
 site_name: Workforce Services
 public-url: "https://www.kcc.edu"
 theme: "kcc-gem-theme"
-google-tag_key: Google Tag Manager key goes here
+google-tag_key: 'GTM-T2CJ2CJ'
 translate: true
 nav_links:
   - link_text: About
