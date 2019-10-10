@@ -1,12 +1,6 @@
+#!/bin/bash/
 
-echo "Creating local Gemfile from Gemfile.txt" && echo ""
-
-sleep 1
-
-# Create local Gemfile from Gemfile.txt
-cp Gemfile.txt Gemfile
-
-echo "" && echo "Running npm install" && echo ""
+echo "" && cowsay "Running npm install" && echo ""
 
 sleep .5
 
@@ -17,7 +11,7 @@ sleep 1
 # NPM install
 npm install
 
-echo "" && echo "Running bundle install" && echo ""
+echo "" && cowsay "Running bundle install" && echo ""
 
 sleep 1
 
@@ -55,3 +49,5 @@ git init
 sleep 1
 
 echo "" && echo "======== DONE ========" && echo "" && echo "Installation Complete!" && echo "" && echo "======================"
+
+echo "" && cowsay "That means finished!"  && echo ""
