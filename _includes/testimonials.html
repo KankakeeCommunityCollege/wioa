@@ -6,22 +6,17 @@
       </div>
     </div>
     <div class="row">
-      <div class="col">
-        <ol class="testimonials__list">
+      <div class="col d-flex flex-column">
           {% assign sorted_testimonials = site.testimonials | sort: 'order' %}
-          {% for testimony in sorted_testimonials limit:4 %}
-            <li class="testimonials__list--item">
-              <div class="testimonials__content d-flex align-items-center">
-                <div class="testimonials__image testimonials__image--default" style="background-image: url('{{ page.baseurl }}{{ testimony.portrait }}')">
-                </div>
-              <div class="testimonials__heading-div">
-                <h3 class="typography__testimonials--quote">{{ testimony.quote }}</h3>
-                <h3 class="testimonials__heading--overline testimonials__name--color typography__testimonials--name notranslate">&nbsp;-&nbsp;{{ testimony.name }}</h3>
-              </div>
+          {% for testimony in sorted_testimonials limit: 1 %}
+          <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ testimony.portrait }}" class="testimonials__img--round" alt="Tim Boone">
+            <div class="testimonials__max-width ml-3">
+              <h3 class="typography__testimonials--quote">{{ testimony.quote }}</h3>
+              <h3 class="testimonials__heading--overline testimonials__name--color typography__testimonials--name notranslate">&nbsp;-&nbsp;{{ testimony.name }}</h3>
             </div>
-          </li>
-          {% endfor %}
-        </ol>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>

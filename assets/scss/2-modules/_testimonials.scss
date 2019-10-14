@@ -169,3 +169,20 @@
   content: "";
   display: table;
 }
+
+.testimonials__max-width {
+  max-width: 330px;
+}
+
+.testimonials__img--round {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+@media screen and (min-width: 450px) {
+  .testimonials__img--round {
+    height: 80px;
+    width: 80px;
+  }
+}
