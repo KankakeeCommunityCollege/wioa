@@ -11,20 +11,20 @@ wioa_locations:
     TTY: 800-526-0844
     fax: 815-935-9610
     email: wiaoffice@kcc.edu
-    hours: 'Monday through Friday: 8 a.m. - 5 p.m.'
+    hours: 'Monday&nbsp;-&nbsp;Friday: 8 a.m. - 5 p.m.'
   - name: Grundy Workforce Services
     address: '1715 N. Division St.<br>Morris, IL 60450'
     phone: 815-942-0566
     fax: 815-942-1547
     email: grundyworkforce@jjc.edu
-    hours: 'Monday through Friday: 8 a.m. - 4:30 p.m.Thursday: 8 a.m. - 7:30 p.m.'
+    hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;4:30&nbsp;p.m. Thursday:&nbsp;8&nbsp;a.m.&nbsp;-&nbsp;7:30&nbsp;p.m.'
   - name: Livingston Workforce Services
     address: 'Livingston County Office<br>211 E. Madison St.<br>Pontiac, IL 61764'
     phone: 815-842-6535
     fax: 815-842-1379
     website: 'http://www.livingstonworkforceservices.weebly.com/'
     contact_person: Allyson SaxtonCoordinatorasaxton@kcc.edu
-    hours: 'Monday through Friday: 8 a.m. - 5 p.m.'
+    hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;5&nbsp;p.m.'
   - name: Grundy Livingston Kankakee Workforce Board
     address: '187 S. Schuyler Ave., Suite 560<br>Kankakee, IL 60901'
     phone: 815-935-0074
@@ -65,7 +65,7 @@ cards:
 ---
 
 <main class="position__offset-fixed-nav">
-  <div class="container">
+  <div class="container background__color--tan">
     <div class="row">
       <div class="col hero-slider__slider">
       {% for slide in page.slides %}
@@ -87,9 +87,68 @@ cards:
       {% endfor %}
       </div>
     </div>
+    <div class="row">
+      <div class="col text-center">
+        <h2 class="typography__call-to-action editable">Services</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-center action-cards__col--margin-btm">
+        <div class="action-cards__svg--wrapper">
+          <a href="{{ page.baseurl }}workshops-and-events" aria-label="link to Workshops and Events page">
+            <img src="{{ page.baseurl }}uploads/events-icon.svg" class="img-fluid w-40 mb-3" alt="calendar icon">
+          </a>
+        </div>
+        <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events"><h4 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h4></a>
+        <div class="row action-cards__text-wrapper">
+          <div class="col d-flex align-items-center position__col--min-height">
+            <h5 class="typography__h5--description editable">
+              Kankakee Workforce Services offers a variety of resources and workshops. Check our calendar for upcoming events.
+            </h5>
+          </div>
+        </div>
+        <a href="{{ page.baseurl }}workshops-and-events" class="btn btn-primary">View Calendar</a>
+      </div>
+      <div class="col-md-4 text-center margins__col--btm">
+        <div class="impact__give">
+          <div class="action-cards__svg--wrapper">
+            <a href="{{ page.baseurl }}service-eligibility-questionnaire" aria-label="link to Eligibility Questionnaire page">
+              <img src="{{ page.baseurl }}uploads/survey-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon">
+            </a>
+          </div>
+          <a href="{{ page.baseurl }}service-eligibility-questionnaire" class="links__no-underline">
+            <h4 class="typography__orange-h4">Eligibility Survey</h4>
+          </a>
+          <div class="row action-cards__text-wrapper">
+            <div class="col d-flex align-items-center position__col--min-height">
+              <h5 class="typography__h5--description editable">
+                Complete our questionnaire so WIOA can offer the most appropriate services for your needs.
+              </h5>
+            </div>
+          </div>
+            <a href="{{ page.baseurl }}service-eligibility-questionnaire" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+      <div class="col-md-4 text-center action-cards__col--margin-btm">
+        <div class="action-cards__svg--wrapper">
+          <a href="{{ page.baseurl }}career-training" aria-label="link to community literacy page">
+            <img src="{{ page.baseurl }}uploads/training-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon">
+          </a>
+        </div>
+        <a href="{{ page.baseurl }}career-training" class="links__no-underline"><h4 class="typography__orange-h4">Career Training</h4></a>
+        <div class="row action-cards__text-wrapper">
+          <div class="col d-flex align-items-center position__col--min-height">
+            <h5 class="typography__h5--description editable">
+              Are you underemployed or unemployed? Have you exhausted your unemployment
+              benefits? You could be eligible for up to $10,000 in career training.
+            </h5>
+          </div>
+        </div>
+        <a href="{{ page.baseurl }}career-training" class="btn btn-primary">Learn More</a>
+      </div>
+    </div>
   </div>
 </main>
-{% include card-section.html %}
 {% include testimonials.html %}
 <section>
   <div class="container">
@@ -100,7 +159,7 @@ cards:
     </div>
     <div class="row">
       {% for location in page.wioa_locations %}
-      <div class="col-sm-6 col-md-4 mb-3">
+      <div class="col-sm-6 col-lg-4 mb-3">
         <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
         <p class="notranslate">
           {{ location.address }}<br>
