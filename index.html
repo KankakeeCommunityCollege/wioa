@@ -17,9 +17,11 @@ wioa_locations:
     phone: 815-942-0566
     fax: 815-942-1547
     email: grundyworkforce@jjc.edu
-    hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;4:30&nbsp;p.m. Thursday:&nbsp;8&nbsp;a.m.&nbsp;-&nbsp;7:30&nbsp;p.m.'
+    hours: >-
+      Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;4:30&nbsp;p.m.
+      Thursday:&nbsp;8&nbsp;a.m.&nbsp;-&nbsp;7:30&nbsp;p.m.
   - name: Livingston Workforce Services
-    address: 'Livingston County Office<br>211 E. Madison St.<br>Pontiac, IL 61764'
+    address: '200 E. Court Street , Suite 506<br>Kankakee, IL 60901'
     phone: 815-842-6535
     fax: 815-842-1379
     website: 'http://www.livingstonworkforceservices.weebly.com/'
@@ -35,21 +37,23 @@ slides:
     alt-text: >-
       You could be eligible for up to $10,000 for career training to help with
       things like transportation, books, & supplies.
-    url: '/service-eligibility-questionnaire/'
+    url: /service-eligibility-questionnaire/
     text:
-student_testimonials: Student Testimonials
+student_testimonials:
 card_section: Services
 cards:
   - name: Workshops&nbsp;&&nbsp;Events
     description: >-
-      Kankakee Workforce Services offers a variety of resources and workshops. Check our calendar for upcoming events.
+      Kankakee Workforce Services offers a variety of resources and workshops.
+      Check our calendar for upcoming events.
     button_text: View Calendar
     link: workshops-and-events
     thumb: uploads/event_available_outline-24px.svg
     thumb_alt_text: Workshops and events thumbnail
   - name: Eligibility Survey
     description: >-
-      Complete our questionnaire so WIOA can offer the most appropriate services for your needs.
+      Complete our questionnaire so WIOA can offer the most appropriate services
+      for your needs.
     button_text: Get Started
     link: service-eligibility-questionnaire
     thumb: uploads/survey-24px.svg
@@ -96,7 +100,7 @@ cards:
       <div class="col-md-4 text-center action-cards__col--margin-btm">
         <div class="action-cards__svg--wrapper">
           <a href="{{ page.baseurl }}workshops-and-events" aria-label="link to Workshops and Events page">
-            <img src="{{ page.baseurl }}uploads/events-icon.svg" class="img-fluid w-40 mb-3" alt="calendar icon">
+            <img src="{{ page.baseurl }}uploads/events-icon.svg" class="img-fluid w-40 mb-3" alt="calendar icon" />
           </a>
         </div>
         <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events"><h4 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h4></a>
@@ -113,7 +117,7 @@ cards:
         <div class="impact__give">
           <div class="action-cards__svg--wrapper">
             <a href="{{ page.baseurl }}service-eligibility-questionnaire" aria-label="link to Eligibility Questionnaire page">
-              <img src="{{ page.baseurl }}uploads/survey-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon">
+              <img src="{{ page.baseurl }}uploads/survey-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon" />
             </a>
           </div>
           <a href="{{ page.baseurl }}service-eligibility-questionnaire" class="links__no-underline">
@@ -132,7 +136,7 @@ cards:
       <div class="col-md-4 text-center action-cards__col--margin-btm">
         <div class="action-cards__svg--wrapper">
           <a href="{{ page.baseurl }}career-training" aria-label="link to community literacy page">
-            <img src="{{ page.baseurl }}uploads/training-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon">
+            <img src="{{ page.baseurl }}uploads/training-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon" />
           </a>
         </div>
         <a href="{{ page.baseurl }}career-training" class="links__no-underline"><h4 class="typography__orange-h4">Career Training</h4></a>
@@ -162,10 +166,10 @@ cards:
       <div class="col-sm-6 col-lg-4 mb-3">
         <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
         <p class="notranslate">
-          {{ location.address }}<br>
-          <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br>
-          {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br>{% endif %}
-          {% if location.email %}<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br>{% endif %}
+          {{ location.address }}<br />
+          <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
+          {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
+          {% if location.email %}<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
           {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
         </p>
       </div>
@@ -178,7 +182,7 @@ cards:
   <div class="container mt-3">
     <div class="row">
       <div class="col text-center">
-        <img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{ page.baseurl }}uploads/kankakee_workforce_services.png" class="img-fluid" alt="Kankakee Workforce Services - An Illinois workNet® Center. A proud partner of the AmericanJobCenter® network.">
+        <img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{ page.baseurl }}uploads/kankakee_workforce_services.png" class="img-fluid" alt="Kankakee Workforce Services - An Illinois workNet® Center. A proud partner of the AmericanJobCenter® network." />
         <p class="text-left">​All Programs are Equal Opportunity Employer Programs, and auxiliary aids and services are available upon request to individuals with disabilities.</p>
         <p class="text-left">Local Equal Opportunity Officer: Laura Siemsen, <a href="tel:+18159350074">815-935-0074</a>.</p>
       </div>
