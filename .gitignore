@@ -1,5 +1,7 @@
 ### Ignore the Gemfile to keep it out of cloudcannon ###
 # Gemfile
+## Avoid windows/linux/mac issues by keeping lockfile out of project:
+Gemfile.lock
 
 ### General Apple things to ignore ###
 .DS_Store
