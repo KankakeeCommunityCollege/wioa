@@ -34,8 +34,10 @@ _site
 .sass-cache
 .jekyll-metadata
 
-# Ignore node modules
+# Nodejs Stuffs
+## Ignore node modules
 node_modules/
+package-lock.json
 
 # Ignore gem lock to avoid mac/windows discrepencies
 Gemfile.lock
