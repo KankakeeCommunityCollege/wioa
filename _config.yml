@@ -3,6 +3,7 @@ url: 'https://wioa.kcc.edu'
 site_name: Workforce Services
 public-url: "https://wioa.kcc.edu"
 theme: "kcc-gem-theme"
+emergency_alert: true
 google-tag_key: 'GTM-T2CJ2CJ'
 translate: true
 # Build
