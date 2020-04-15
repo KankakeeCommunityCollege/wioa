@@ -2,5 +2,6 @@ import test from './test.js';
 //import './babelTest.js';
 
 document.addEventListener('DOMContentLoaded', function() {
-  test();
+  //test();
+  console.info('JS update test')
 });
