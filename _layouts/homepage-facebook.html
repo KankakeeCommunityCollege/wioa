@@ -12,15 +12,22 @@
   {% include styles/main.html %}
   {% include body.html %}
   {% include scripts/google-noscript.html %}
+  {% if site.translate == true %}{% include translate.html %}{% endif %}
   {% include nav-global.html %}
-  {% include nav-local.html %}
+  {% if page.no_local_nav != true %}{% include nav-local.html %}{% endif %}
+  {% include emergency-alerts.html %}
   {{ content }}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
+  {% include scripts/kcc-nav.html %}
   {% include scripts/kcc-theme.html %}
+  {% include scripts/emergency-alerts.html %}
+  {% include scripts/google-api.html %}
   {% if page.sheet_key %}
   {% include scripts/table-cdn.html %}
   {% endif %}
   {% include scripts/custom.html %}
   {% include scripts/facebook-widget.html %}
+  {% if site.translate == true %}<!-- Link to this site's custom google translate stylesheet -->
+  {% include scripts/translate.html %}{% endif %}
 {% include foot.html %}
