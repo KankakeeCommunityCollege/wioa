@@ -2,6 +2,7 @@ title: "Kankakee Community College"
 url: 'https://wioa.kcc.edu'
 site_name: Workforce Services
 public-url: "https://wioa.kcc.edu"
+#BUILD
 theme: "kcc-gem-theme"
 google-tag_key: 'GTM-T2CJ2CJ'
 translate: true
