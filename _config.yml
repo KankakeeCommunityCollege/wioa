@@ -27,6 +27,8 @@ nav_links:
 sub-nav_links:
   - link_text: One-Stop
     link_href: 'resources/one-stop'
+  - link_text: Young Adult Program Services
+    link_href: 'career-training/yaps'
 collections:
   posts:
     output: false
