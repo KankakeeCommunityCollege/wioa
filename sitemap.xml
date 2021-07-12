@@ -1,123 +1,22 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    {%- for page in site.pages -%}
+    {% unless page.url contains '.xml' or page.url contains '.txt' %}
     <url>
-        
-        <loc>https://wioa.kcc.edu/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.021Z</lastmod>
-    
+        <loc>{{ site.public-url }}{{ page.url | uri_escape }}</loc>
+        <lastmod>{% if page.last-mod-time %}{{ page.last-mod-time | date: '%Y-%m-%dT%H:%M:%S.%LZ' }}{% else %}{{ 'today' | date: '%Y-%m-%dT%H:%M:%S.%LZ' }}{% endif %}</lastmod>
     </url>
+    {%- endunless -%}
+    {%- endfor -%}
+    {%- for file in site.static_files -%}
+    {% if file.extname == '.pdf' %}
     <url>
-        
-        <loc>https://wioa.kcc.edu/about/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.020Z</lastmod>
-    
+        <loc>{{ site.public-url }}{{ file.path | uri_escape | replace: '&', '%26' }}</loc>
+        <lastmod>{{ file.modified_time | date: '%Y-%m-%dT%H:%M:%S.%LZ' }}</lastmod>
     </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/career-training/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.021Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/resources/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.022Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/search/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.022Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/service-eligibility-questionnaire/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.021Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/workshops-and-events/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.021Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/career-training/yaps/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.022Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/resources/one-stop/</loc>
-    
-        
-        <lastmod>2021-03-12T02:33:53.022Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/uploads/quarter-1_info-graphic_2019.pdf</loc>
-    
-        
-        <lastmod>2020-03-17T18:56:23.000Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/uploads/quarter-2_info-graphic_2019-copy.pdf</loc>
-    
-        
-        <lastmod>2020-03-17T18:56:23.000Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/uploads/quarter-2_info-graphic_2019.pdf</loc>
-    
-        
-        <lastmod>2020-03-17T18:56:23.000Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/uploads/quarter-2_results_2018.pdf</loc>
-    
-        
-        <lastmod>2020-03-17T18:56:23.000Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/uploads/quarter-3_infographic_2018.pdf</loc>
-    
-        
-        <lastmod>2020-03-17T18:56:23.000Z</lastmod>
-    
-    </url>
-    <url>
-        
-        <loc>https://wioa.kcc.edu/uploads/quarter-4_info-graphic.pdf</loc>
-    
-        
-        <lastmod>2020-03-17T18:56:23.000Z</lastmod>
-    
-    </url>
+    {%- endif -%}
+    {% endfor %}
 </urlset>

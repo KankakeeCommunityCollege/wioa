@@ -1,6 +1,7 @@
-import test from './test.js';
-//import './babelTest.js';
+import '../../scss/main.scss';
 
-document.addEventListener('DOMContentLoaded', function() {
-  test();
+document.addEventListener('DOMContentLoaded', () => {
+  import(/* webpackChunkName: 'test' */ './test').then(({default: test}) => {
+    test();
+  });
 });
