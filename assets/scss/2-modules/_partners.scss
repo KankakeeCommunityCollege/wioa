@@ -1,0 +1,26 @@
+// Style rules for the partners pages
+
+.partners__wrapper {
+  max-height: 275px;
+  overflow-y: hidden;
+}
+
+a.partners__a:hover {
+  text-decoration: none;
+  & .partners__info-wrapper {
+    transform: translateY(-100px);
+  }
+}
+
+.partners__info-wrapper {
+  background-color: $primary-blue;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  transition: transform ease-in-out .75s;
+}
+
+.partners__description {
+  max-width: 275px;
+  margin-left: auto;
+  margin-right: auto;
+}

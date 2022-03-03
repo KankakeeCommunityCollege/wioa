@@ -1,0 +1,55 @@
+---
+layout: sub-nav
+baseurl: ../
+title: Partners
+description: ''
+sub-nav_section: partners
+partners:
+- name: Illinois Department Of Employment Security
+  description: Helps residents create an effective profile on Illinois Job Link to find employment.
+  logo: /partners/uploads/ides_logo.png
+  url: ./ides/ 
+- name: IDHS - Rehabilitation Services
+  description: Helps residents with disabilities prepare for, find, and maintain employment.
+  logo: /partners/uploads/idhs_logo.png
+  url: ./rehabilitation-services/
+- name: IDHS - TANF & SNAP
+  description: Helps residents meet basic nutritional, medical, financial and child support needs.
+  logo: /partners/uploads/idhs_tanf-snap.png
+  url: ./tanf/
+---
+
+<main class="container">
+  <div class="row">
+    <div class="col">
+      <div class="editable">
+        <h3 class="typography__h3">Kankakee Workforce Services Partner Referrals</h3>
+        <p>
+          This page was created for staff members of the partner organizations that contribute to Kankakee Workforce Services.
+        </p>
+      </div>
+      <div class="row my-3">
+        {% for item in page.partners %}
+        <div class="col-md-6 col-lg-4">
+          <div class="partners__wrapper text-center">
+            <a class="partners__a" href="{{ item.url }}">
+              <img
+                src="{{ item.logo }}"
+                class="img-fluid"
+                height="225"
+                width="300"
+                alt="{{ item.name }} logo">
+              <div class="partners__info-wrapper">
+                <div class="text-center">
+                  <h4 class="typography__h6 mb-4 text-white">{{ item.name }}</h4>
+                  <p class="partners__description text-white">{{ item.description }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
