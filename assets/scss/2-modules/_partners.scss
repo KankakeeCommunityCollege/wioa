@@ -9,7 +9,9 @@
   border-radius: 13px;
 }
 
-a.partners__a:hover {
+a.partners__a:hover,
+a.partners__a:focus-within,
+a.partners__a:focus {
   text-decoration: none;
   & .partners__info-wrapper {
     transform: translateY(-100px);
