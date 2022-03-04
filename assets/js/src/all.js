@@ -1,7 +1,7 @@
 import '../../scss/main.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
-  import(/* webpackChunkName: 'test' */ './test').then(({default: test}) => {
-    test();
-  });
+window.addEventListener('load', () => {
+  if (document.getElementById('JobBoard')) {
+    return import('./createJobBoard').then(({default: cb}) => cb())
+  }
 });
