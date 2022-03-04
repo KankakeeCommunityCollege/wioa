@@ -41,8 +41,12 @@ partners:
                 alt="{{ item.name }} logo">
               <div class="partners__info-wrapper">
                 <div class="text-center">
-                  <h4 class="typography__h6 mb-4 text-white">{{ item.name }}</h4>
-                  <p class="partners__description text-white">{{ item.description }}</p>
+                  <div class="partners__h4-wrapper d-flex flex-column justify-content-center mb-2">
+                    <h4 class="typography__h6 text-white mb-0">{{ item.name }}</h4>
+                  </div>
+                  <div class="partners__description-wrapper">
+                    <p class="partners__description text-white">{{ item.description }}</p>
+                  </div>
                 </div>
               </div>
             </a>
