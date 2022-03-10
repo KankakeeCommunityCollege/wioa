@@ -18,9 +18,9 @@ function responseHandler(e) {
     const body = document.createElement('div');
 
     card.classList.add('card');
-    header.classList.add('card-header');
+    header.classList.add('card-header', 'd-flex', 'justify-content-between', 'align-items-center');
     body.classList.add('card-body');
-    header.innerHTML = `<h5 class="typography__h5">${title}<h5>`;
+    header.innerHTML = `<h5 class="typography__h5">${title}<h5> <p class="mb-0 float-right"><strong>${coName}</strong> - ${loc}</p>`;
     a.href = `#jobModal${index}`;
     a.dataset.toggle = 'modal';
     a.type = 'button';
@@ -57,7 +57,6 @@ function createFlyerImages(data) {
     let [
       date,title,loc,,,flyer,desc,,ftPt,,,,,,coName,,
     ] = row;
-    // row[5] is the 6th column which holds the file upload URL for downloading the submitted flyers
     const imageUrl = flyer != '' ? flyer : null;
     // Flyer image is not required in a submissions so we need to check if it exists first
     if (imageUrl != null) { // Do not be afraid of the inequality operator (`!=`) — Stop always using strict inequality (`!==`) — learn the difference, learn what implicit coercion is in JS!

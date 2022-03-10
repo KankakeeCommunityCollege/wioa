@@ -20,6 +20,8 @@ function loopData(data) {
       appUrl,
       email
     ] = row;
+
+    applyHow = applyHow.replace(/(Online|In Person \(with Resume\)|Email Resume|Fax Resume|Call)/g, `<br><span class="pl-3">&bull;</span>&nbsp;$1`);
     return html += `<div class="modal fade" id="jobModal${i}" tabindex="-1" aria-labelledby="jobModalLabel${i}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -40,10 +42,10 @@ function loopData(data) {
             <strong>Shift/schedule:</strong> ${shift}<br>
             <strong>Pay & benefits:</strong> ${pay.replace(/^-\s/gm, '<br><span class="pl-3">&bull;</span> ')}<br>
             <strong>Comments:</strong> ${comments.replace(/^-\s/gm, '<br><span class="pl-3">&bull;</span> ')}<br>
-            <strong>How to apply:</strong> ${applyHow}<br>
-            ${applyHow != '' ? '<strong>Phone:</strong> ' + applyHow : ''}<br>
+            <strong>How to apply:</strong> ${applyHow.replace(/,$/, '')}<br>
+            ${phone != '' ? '<strong>Phone:</strong> ' + phone.replace(/(\d{3})(\d{3})(\d{4})/, `<a href="tel:+1$1$2$3">$1-$2-$3</a>`) : ''}<br>
             ${email != '' ? '<a href="mailto:' + email + '">Email to send resume: ' + email + '</a> ' : ''}<br>
-            ${web != '' ? '<strong>Company website:</strong> ' + web : ''}<br>
+            ${web != '' ? '<strong>Company website:</strong> <a target="_blank" rel="noopener noreferrer" href="' + web + '">' + web + '</a>' : ''}<br>
             ${appUrl != '' ? '<a href="' + appUrl + '" class="btn btn-primary mt-3" target="_blank" rel="noopener noreferrer">Apply</a>' : ''}
           </p>
         </div>
