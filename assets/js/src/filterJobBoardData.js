@@ -9,13 +9,14 @@
 function filterFunction(arr) {
   const now = new Date;
   const posted = new Date(arr[0]);
-
+  // `arr[17]` will be equal to 'Custom expiration date' if the job post has a custom expiration date
   if (arr[17] == 'Custom expiration date') {
-    // Handle custom expire date
+    // `arr[18]` is the custom expiration date in MM-DD-YYYY format
     const expire = new Date(arr[18]);
 
     return now.getTime() > expire.getTime() ? 0 : 1;
   } else {
+    // Job posts with no expiration date default to 30 days
     const expired = new Date(posted.setDate(posted.getDate() + 30));
 
     return now.getTime() > expired.getTime() ? 0 : 1;
@@ -30,7 +31,7 @@ function filterJobBoardData(response) {
   const DATA = response.result.values.slice(1);
   const filteredData = DATA.filter(filterFunction);
 
-  return filteredData
+  return filteredData;
 }
 
 export default filterJobBoardData;

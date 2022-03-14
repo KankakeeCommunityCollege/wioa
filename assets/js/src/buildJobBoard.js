@@ -35,15 +35,15 @@ function createRows(data) {
 }
 
 function createTable(data, createJobModals) {
-  let html = `<div class="col-lg-8 offset-lg-2 mt-3 mb-4">
+  let html = `<div class="col-xl-10 offset-xl-1 mt-3 mb-4">
   <table class="table table-sm table-striped table-hover">
     <thead>
       <tr>
         <th>Job Title:</th>
-        <th>Company</th>
-        <th>Location</th>
-        <th>Date Posted</th>
-        <th>Details</th>
+        <th>Company:</th>
+        <th>Location:</th>
+        <th>Date Posted:</th>
+        <th>Details:</th>
       </tr>
     </thead>
     <tbody>
