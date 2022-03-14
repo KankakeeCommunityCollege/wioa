@@ -9,9 +9,17 @@
 function filterFunction(arr) {
   const now = new Date;
   const posted = new Date(arr[0]);
-  const expired = new Date(posted.setDate(posted.getDate() + 30));
 
-  return now.getTime() > expired.getTime() ? 0 : 1;
+  if (arr[17] == 'Custom expiration date') {
+    // Handle custom expire date
+    const expire = new Date(arr[18]);
+
+    return now.getTime() > expire.getTime() ? 0 : 1;
+  } else {
+    const expired = new Date(posted.setDate(posted.getDate() + 30));
+
+    return now.getTime() > expired.getTime() ? 0 : 1;
+  }
 }
 /**
  * 
