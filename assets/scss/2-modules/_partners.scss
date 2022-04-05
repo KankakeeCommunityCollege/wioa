@@ -14,7 +14,7 @@ a.partners__a:focus-within,
 a.partners__a:focus {
   text-decoration: none;
   & .partners__info-wrapper {
-    transform: translateY(-100px);
+    transform: translateY(-130px);
     opacity: 1;
   }
   & .partners__description-wrapper::before {
@@ -27,7 +27,7 @@ a.partners__a:focus {
   background-color: $primary-blue;
   opacity: .75;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 38px;
   transition: transform ease-in-out .75s, opacity ease-in-out .75s;
 }
 
