@@ -1,5 +1,16 @@
 const MODAL_BUTTON = document.querySelector('button[data-target="#videoModal"]');
 
+function startVideoPlayback(video) {
+  const MODAL_CLOSE_BUTTONS = document.querySelectorAll('button[data-dismiss="modal"]');
+  
+  window.setTimeout(() => {
+    video.play();
+    MODAL_CLOSE_BUTTONS.forEach(btn => {
+      btn.onclick = (e) => video.pause();
+    });
+  }, 1500)
+}
+
 function createVideoElements(src, parent) {
   const video = document.createElement('video');
   const source = document.createElement('source');
@@ -11,10 +22,8 @@ function createVideoElements(src, parent) {
   video.append(source);
   parent.innerHTML = '';
   parent.append(video);
-
-  window.setTimeout(() => {
-    video.play();
-  }, 1000)
+  startVideoPlayback(video);
+  MODAL_BUTTON.removeEventListener('click', loadVideo);
 }
 
 function loadVideo(e) {
@@ -23,7 +32,6 @@ function loadVideo(e) {
   const VIDEO_SOURCE = VIDEO_WRAPPER.dataset.videoSrc;
 
   createVideoElements(VIDEO_SOURCE, VIDEO_WRAPPER);
-  MODAL_BUTTON.removeEventListener('click', loadVideo);
 }
 
 function loadVideoOnModalOpen() {
