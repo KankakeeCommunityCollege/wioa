@@ -35,6 +35,12 @@ partners:
     workforce training to the underemployed and unemployed.
   logo: /partners/uploads/wioa_logo.png
   url: ../partners/workforce-services/
+- name: KCC Continuing Education
+  description: >-
+    Programs include employee development programs
+    and personal enrichment courses for&nbsp;the&nbsp;community.
+  logo: /partners/uploads/kcc-continuinged.jpg
+  url: ../partners/continuinged/
 ---
 
 {% include nav-partners.html %}
@@ -49,7 +55,7 @@ partners:
       </div>
       <div class="row my-3">
         {% for item in page.partners %}
-        <div class="col-md-6 col-lg-4 mb-5">
+        <div class="col-md-6 col-lg-4 mb-5 partners__centered">
           <div class="partners__wrapper text-center">
             <a class="partners__a" href="{{ item.url }}">
               <img
