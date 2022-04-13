@@ -21,6 +21,10 @@ description: ''
       </div>
       <div class="editable">
         <h3 class="typography__h3">Program Overview</h3>
+        <p>View the 
+          <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#videoModal">
+            One Stop video
+          </button></p>
         <p class="mb-1">
           Kankakee Workforce Services provides comprehensive employment assistance through the Workforce Innovation & Opportunity
           Act of 2014 (WIOA). We help:
@@ -45,3 +49,31 @@ description: ''
     </div>
   </div>
 </main>
+
+<!-- Modal -->
+<div class="modal fade" id="videoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">One Stop Video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="videoWrapper" data-video-src="https://cdn.kcc.edu/wioa/one-stop_intro.mp4">
+          <div class="text-center">
+            <img
+              data-src="{{ page.baseurl }}assets/img/loader.min.svg"
+              src="{{ page.baseurl }}assets/img/placeholder_square.jpg"
+              class="img-fluid loader loader--animate"
+              alt="Loading...">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
