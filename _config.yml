@@ -31,23 +31,10 @@ sub-nav_links:
   - link_text: Young Adult Program Services
     link_href: 'career-training/yaps'
 collections:
-  posts:
-    output: false
-    _hide_content: true
   contacts:
     output: false
   testimonials:
     output: false
-defaults:
-- scope:
-    path: ''
-    type: posts
-  values:
-    layout: post
-    title: ''
-    permalink: /:categories/:title/
-    baseurl: ../../../
-    categories: news
 permalink: pretty
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
