@@ -1,7 +1,11 @@
 import '../../scss/main.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
-  import(/* webpackChunkName: 'test' */ './test').then(({default: test}) => {
-    test();
-  });
+window.addEventListener('load', () => {
+  Promise.resolve()
+    .then(() => {
+      if (!document.getElementById('iframeLink'))
+        return;
+  
+      return import('./iframeLink').then(({ default: iframeLink }) => iframeLink());
+    }).catch(err => console.error(`Error loading module: ${err.message}`, err))
 });
