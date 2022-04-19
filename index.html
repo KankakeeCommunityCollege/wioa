@@ -8,7 +8,7 @@ description:
 wioa_locations:
   - name: Kankakee Workforce Services
     address: 'KCC North Extension Center<br>450 N Kinzie Ave<br>Bradley, IL 60915'
-    phone: 815-802-8963
+    phone: 815-802-8960
     fax: 815-935-9610
     email: wiaoffice@kcc.edu
     hours: 'Monday&nbsp;-&nbsp;Friday: 8 a.m. - 5 p.m.'
@@ -17,20 +17,27 @@ wioa_locations:
     phone: 815-942-0566
     fax:
     email: grundyworkforce@jjc.edu
-    hours: >-
-      Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;4:30&nbsp;p.m.
-      Thursday:&nbsp;8&nbsp;a.m.&nbsp;-&nbsp;7:30&nbsp;p.m.
+    hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;4:30&nbsp;p.m.'
+    website: https://www.jjc.edu/community/workforce-development/grundy-workforce-services
   - name: Livingston Workforce Services
     address: '211 East Madison Street Room 222<br>Pontiac, IL 61764'
     phone: 309-268-8280
     fax: 815-842-1379
     hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;5&nbsp;p.m.'
+    website: https://www.livingstonworkforceservices.com/
   - name: Grundy Livingston Kankakee Workforce Board
     address: '200 E. Court St., Suite 506<br>Kankakee, IL 60901'
     phone: 815-935-0074
     fax: 815-936-3766
     email: info@glkwb.com
 slides:
+  - image: /assets/img/kankakee-workforce-services-logo.svg
+    alt-text: >-
+      Kankakee Workforce Services, An Illinois workNet® Center,
+      a proud partner of the AmericanJobCenter® network
+    url: '#'
+    new_tab: false
+    white_background: true
   - image: /uploads/covid-laid-off-web-banner-20_web-optimized.jpg
     alt-text: >-
       Were you temporarily or permanently laid off because of COVID-19? OR Are
@@ -43,36 +50,36 @@ slides:
     alt-text: >-
       You could be eligible for up to $10,000 for career training to help with
       things like transportation, books, & supplies.
-    url: /service-eligibility-questionnaire/
+    url: /training-grant-application/
     new_tab: false
     white_background: true
 student_testimonials:
-card_section: Services
-cards:
-  - name: Workshops&nbsp;&&nbsp;Events
-    description: >-
-      Kankakee Workforce Services offers a variety of resources and workshops.
-      Check our calendar for upcoming events.
-    button_text: View Calendar
-    link: workshops-and-events
-    thumb: uploads/event_available_outline-24px.svg
-    thumb_alt_text: Workshops and events thumbnail
-  - name: Eligibility Survey
-    description: >-
-      Complete our questionnaire so WIOA can offer the most appropriate services
-      for your needs.
-    button_text: Get Started
-    link: service-eligibility-questionnaire
-    thumb: uploads/survey-24px.svg
-    thumb_alt_text:
-  - name: Career Training
-    description: >-
-      Are you underemployed or unemployed? Have you exhausted your unemployment
-      benefits? You could be eligible for up to $10,000 in career training.
-    button_text: Learn More
-    link: career-training
-    thumb: uploads/certificate-24.svg
-    thumb_alt_text:
+#card_section: Services
+#cards:
+#  - name: Workshops&nbsp;&&nbsp;Events
+#    description: >-
+#      Kankakee Workforce Services offers a variety of resources and workshops.
+#      Check our calendar for upcoming events.
+#    button_text: View Calendar
+#    link: workshops-and-events
+#    thumb: uploads/event_available_outline-24px.svg
+#    thumb_alt_text: Workshops and events thumbnail
+#  - name: Eligibility Survey
+#    description: >-
+#      Complete our questionnaire so WIOA can offer the most appropriate services
+#      for your needs.
+#    button_text: Get Started
+#    link: training-grant-application
+#    thumb: uploads/survey-24px.svg
+#    thumb_alt_text:
+#  - name: Career Training
+#    description: >-
+#      Are you underemployed or unemployed? Have you exhausted your unemployment
+#      benefits? You could be eligible for up to $10,000 in career training.
+#      button_text: Learn More
+#    link: career-training
+#    thumb: uploads/certificate-24.svg
+#    thumb_alt_text:
 ---
 
 <!-- FTP test -->
@@ -104,12 +111,12 @@ cards:
       <div class="col-md-4 text-center margins__col--btm">
         <div class="impact__give">
           <div class="action-cards__svg--wrapper">
-            <a href="{{ page.baseurl }}service-eligibility-questionnaire" aria-label="link to Eligibility Questionnaire page">
-              <img src="{{ page.baseurl }}uploads/survey-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon" />
+            <a href="{{ page.baseurl }}training-grant-application" aria-label="link to Eligibility Questionnaire page">
+              <img role="image" src="{{ page.baseurl }}uploads/survey-icon.svg" height="140" width="140" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon" />
             </a>
           </div>
-          <a href="{{ page.baseurl }}service-eligibility-questionnaire" class="links__no-underline">
-            <h4 class="typography__orange-h4">Eligibility Survey</h4>
+          <a href="{{ page.baseurl }}training-grant-application" class="links__no-underline">
+            <h4 class="typography__orange-h4">Training Grant Application</h4>
           </a>
           <div class="row action-cards__text-wrapper">
             <div class="col d-flex align-items-center position__col--min-height">
@@ -119,7 +126,7 @@ cards:
               </h5>
             </div>
           </div>
-            <a href="{{ page.baseurl }}service-eligibility-questionnaire" class="btn btn-primary">Get Started</a>
+            <a href="{{ page.baseurl }}training-grant-application" class="btn btn-primary">Get Started</a>
         </div>
       </div>
       <div class="col-md-4 text-center action-cards__col--margin-btm">
@@ -179,6 +186,9 @@ cards:
           {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
           {% if location.email %}<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
           {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
+          {% if location.website %}
+            <strong>Website:</strong>&nbsp;<a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
+          {% endif %}
         </p>
       </div>
       {% endfor %}
@@ -191,8 +201,14 @@ cards:
     <div class="row">
       <div class="col text-center">
         <img src="{{ page.baseurl }}assets/img/kcc-placeholder.png" data-src="{{ page.baseurl }}uploads/kankakee_workforce_services.png" class="img-fluid" alt="Kankakee Workforce Services - An Illinois workNet® Center. A proud partner of the AmericanJobCenter® network." />
-        <p class="text-left">​All Programs are Equal Opportunity Employer Programs, and auxiliary aids and services are available upon request to individuals with disabilities.</p>
-        <p class="text-left">Local Equal Opportunity Officer: Kristin Bessette, <a href="tel:+18159350074">815-935-0074</a>.</p>
+      </div>
+      <div class="col-12 mt-5">
+        <p>Funding for the WIOA program is provided by the Grundy Livingston Kankakee Workforce Board.
+          All Programs are Equal Opportunity Employer Programs, and auxiliary aids and services are available upon request to individuals with disabilities. All voice telephone numbers may be reached by persons using TTY/TDD equipment by calling TTY (800) 526-0844 or 711.
+        </p>
+        <p>
+          Local Equal Opportunity Officer: Kristin Bessette, <a href="tel:+18159350074">815-935-0074</a>.
+        </p>
       </div>
     </div>
   </div>
