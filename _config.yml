@@ -23,7 +23,7 @@ nav_links:
     link_href: '#contact'
     button: false
   - link_text: Get Started
-    link_href: 'service-eligibility-questionnaire'
+    link_href: 'training-grant-application'
     button: true
 sub-nav_links:
   - link_text: One-Stop
