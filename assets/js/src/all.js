@@ -1,10 +1,19 @@
 import '../../scss/main.scss';
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   if (document.getElementById('JobBoard')) {
-    return import('./createJobBoard').then(({default: cb}) => cb())
+    const { default: cb } = await import('./createJobBoard');
+
+    return cb();
   }
   if (document.querySelector('button[data-target="#videoModal"]')) {
-    return import('./loadVideoOnModalOpen').then(({default: cb}) => cb())
+    const { default: cb } = await import('./loadVideoOnModalOpen');
+
+    return cb();
+  }
+  if (document.getElementById('iframeLink')) {
+    const { default: iframeLink } = await import('./iframeLink');
+
+    return iframeLink();
   }
 });

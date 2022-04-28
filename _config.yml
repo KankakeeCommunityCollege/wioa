@@ -3,6 +3,7 @@ url: 'https://wioa.kcc.edu'
 site_name: Workforce Services
 public-url: "https://wioa.kcc.edu"
 port: 3000
+timezone: America/Chicago
 theme: "kcc-gem-theme"
 google-tag_key: 'GTM-T2CJ2CJ'
 translate: true
@@ -23,7 +24,7 @@ nav_links:
     link_href: '#contact'
     button: false
   - link_text: Get Started
-    link_href: 'service-eligibility-questionnaire'
+    link_href: 'training-grant-application'
     button: true
 sub-nav_links:
   - link_text: One-Stop
@@ -31,23 +32,10 @@ sub-nav_links:
   - link_text: Young Adult Program Services
     link_href: 'career-training/yaps'
 collections:
-  posts:
-    output: false
-    _hide_content: true
   contacts:
     output: false
   testimonials:
     output: false
-defaults:
-- scope:
-    path: ''
-    type: posts
-  values:
-    layout: post
-    title: ''
-    permalink: /:categories/:title/
-    baseurl: ../../../
-    categories: news
 permalink: pretty
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
