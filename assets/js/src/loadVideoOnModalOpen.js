@@ -1,14 +1,15 @@
 const MODAL_BUTTON = document.querySelector('button[data-target="#videoModal"]');
 
-function startVideoPlayback(video) {
+function startVideoPlayback(video, parent) {
   const MODAL_CLOSE_BUTTONS = document.querySelectorAll('button[data-dismiss="modal"]');
-  
+
+  MODAL_CLOSE_BUTTONS.forEach(btn => {
+    btn.onclick = (e) => video.pause();
+  });
+
   window.setTimeout(() => {
     video.play();
-    MODAL_CLOSE_BUTTONS.forEach(btn => {
-      btn.onclick = (e) => video.pause();
-    });
-  }, 1500)
+  }, 1500);
 }
 
 function createVideoSources(video, src) {
@@ -32,7 +33,7 @@ function createVideoElements(src, parent) {
   video.classList.add('video__one-stop-intro');
   parent.innerHTML = '';
   parent.append(video);
-  startVideoPlayback(video);
+  startVideoPlayback(video, parent);
   MODAL_BUTTON.removeEventListener('click', loadVideo);
 }
 

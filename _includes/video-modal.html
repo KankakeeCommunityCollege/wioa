@@ -1,0 +1,47 @@
+<!-- Video modal for {{ page.video_modal.title }} -->
+{%- comment -%}
+<!-- 
+    To use this video modal template:
+    1. Add the following front-matter YAML to your page:
+    ```YAML
+    video_modal:
+      title: Title that appears in modal's header
+      video_sources: 'https://cdn.kcc.edu/my-video.mp4,https://cdn.kcc.edu/my-video.webm' ## Use comma's to separate multiple sources if needed
+    ```
+    2. {% include video-modal.html %} this HTML partial in your page
+    3. Add appropriate button markup to the page to target the modal:
+    ```HTML
+    <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#videoModal">
+      One Stop intro video
+    </button>
+    ```
+  ===========================================================================  -->
+{%- endcomment -%}
+<div class="modal fade" id="videoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="videoModalLabel">{{ page.video_modal.title }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="videoWrapper" data-video-src="{{ page.video_modal.video_sources }}">
+          <div class="text-center">
+            <img
+              data-src="{{ page.baseurl }}assets/img/loader.min.svg"
+              src="{{ page.baseurl }}assets/img/placeholder_square.jpg"
+              class="loader loader--animate"
+              height="75"
+              width="75"
+              alt="Loading...">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

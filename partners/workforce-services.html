@@ -3,6 +3,9 @@ layout: default
 baseurl: ../../
 title: Kankakee Workforce Services
 description: ''
+video_modal:
+  title: American Job Center Video
+  video_sources: https://cdn.kcc.edu/wioa/american-job-center-presentation.mp4,https://cdn.kcc.edu/wioa/american-job-center-presentation.ogv
 ---
 
 {% include nav-partners.html %}
@@ -50,32 +53,4 @@ description: ''
   </div>
 </main>
 
-<!-- Modal -->
-<div class="modal fade" id="videoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="videoModalLabel">American Job Center Video</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div id="videoWrapper" data-video-src="https://cdn.kcc.edu/wioa/american-job-center-presentation.mp4,https://cdn.kcc.edu/wioa/american-job-center-presentation.ogv">
-          <div class="text-center">
-            <img
-              data-src="{{ page.baseurl }}assets/img/loader.min.svg"
-              src="{{ page.baseurl }}assets/img/placeholder_square.jpg"
-              class="img-fluid loader loader--animate"
-              height="75"
-              width="75"
-              alt="Loading...">
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+{% include video-modal.html %}
