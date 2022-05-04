@@ -49,9 +49,48 @@ partners:
     <div class="col">
       <div class="editable">
         <h3 class="typography__h3">Kankakee Workforce Services Partner Referrals</h3>
-        <p>
-          This page was created for staff members of the partner organizations that contribute to Kankakee Workforce Services.
+        <p class="typography--line-height-1">
+          This page was created for staff members of the partner organizations 
+          that contribute to Kankakee Workforce Services. <br>
+          View the 
+        <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#videoModal">
+          One Stop intro video
+        </button> to learn more about WIOA, our partners; the career, training, and youth services we provide; 
+        and how to get started.
         </p>
+      </div>
+      <p>
+        To make a referral, or to learn more about a partner, 
+        select the partner organization from the list below:
+      </p>
+      <!-- Modal -->
+      <div class="modal fade" id="videoModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="videoModalLabel">One Stop Intro Video</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="videoWrapper" data-video-src="https://cdn.kcc.edu/wioa/one-stop_intro.mp4,https://cdn.kcc.edu/wioa/one-stop_intro.webm">
+                <div class="text-center">
+                  <img
+                    data-src="{{ page.baseurl }}assets/img/loader.min.svg"
+                    src="{{ page.baseurl }}assets/img/placeholder_square.jpg"
+                    class="loader loader--animate"
+                    height="75"
+                    width="75"
+                    alt="Loading...">
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="row my-3">
         {% for item in page.partners %}

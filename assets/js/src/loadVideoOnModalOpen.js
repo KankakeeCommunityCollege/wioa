@@ -11,15 +11,25 @@ function startVideoPlayback(video) {
   }, 1500)
 }
 
+function createVideoSources(video, src) {
+  const sourceArray = src.split(',');
+
+  sourceArray.map(src => {
+    const source = document.createElement('source');
+    
+    source.src = src;
+    video.append(source);
+  });
+  return video;
+}
+
 function createVideoElements(src, parent) {
   const video = document.createElement('video');
-  const source = document.createElement('source');
 
+
+  createVideoSources(video, src);
   video.controls = true;
   video.classList.add('video__one-stop-intro');
-  source.src = src;
-  source.type = 'video/mp4';
-  video.append(source);
   parent.innerHTML = '';
   parent.append(video);
   startVideoPlayback(video);
