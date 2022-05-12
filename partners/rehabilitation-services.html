@@ -3,6 +3,9 @@ layout: default
 baseurl: ../../
 title: Illinois Department of Human Services - Vocational Rehabilitation
 description: ''
+video_modal:
+  title: IDHS DRS informational video
+  video_sources: "https://cdn.kcc.edu/wioa/impact.mp4,https://cdn.kcc.edu/wioa/impact.webm"
 ---
 
 {% include nav-partners.html %}
@@ -26,6 +29,11 @@ description: ''
         <p>
           The Division of Rehabilitation Services (DRS) provides services for persons with disabilities in preparing 
           for, finding, and maintaining quality employment that pays a living wage and offers opportunities for advancement.
+        </p>
+        <p>
+          View the <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#videoModal">
+            IDHS DRS informational video
+          </button>
         </p>
         <p>
           DRS staff talk to people about their employment, as well as, education needs and help them find a job or receive skills
@@ -173,3 +181,4 @@ description: ''
     </div>
   </div>
 </main>
+{% include video-modal.html %}
