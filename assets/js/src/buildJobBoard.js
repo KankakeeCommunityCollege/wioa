@@ -7,37 +7,15 @@ const DATA_TABLES_CONFIG = {
 
 function createRows(data) {
   let html = '';
-  /**
-   * 
-   * 
-   * @TODO remove unused variables when done with module dev
-   * 
-   */
+
   data.forEach((row, i) => {
-    let [
-      date,
-      title,
-      loc,
-      applyHow,
-      phone,
-      flyer,
-      desc,
-      req,
-      ftPt,
-      shift,
-      pay,
-      coAddress,
-      comments,
-      web,
-      coName,
-      appUrl,
-      email
-    ] = row;
+    let [date,title,,location,coName,,,,,,,,,,,,,,,,,,,,,] = row;
+
     date = date.replace(/^(\d{4})-(\d{2})-(\d{2}).+$/, `$2/$3/$1`);
-    return html += `<tr>
+    html += `<tr>
   <td>${title}</td>
   <td>${coName}</td>
-  <td>${loc}</td>
+  <td>${location}</td>
   <td>${date}</td>
   <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#jobModal${i}">
       More&nbsp;details...</button>
@@ -47,7 +25,7 @@ function createRows(data) {
   return html;
 }
 
-function createTable(data, createJobModals) {
+function createTable(data) {
   let html = `<div class="col-xl-10 offset-xl-1 mt-3 mb-4">
   <table id="JobsTable" class="table table-sm table-striped table-hover">
     <thead>
@@ -63,35 +41,36 @@ function createTable(data, createJobModals) {
       ${createRows(data)}
     </tbody>
   </table>
-</div>
-${createJobModals(data)}`;
-
+</div>`;
   return html;
 }
 
 function buildJobBoard(data) {
   Promise.resolve()
     .then(() => {
-      return import('./createJobModals').then(({ default: createJobModals }) => {
-        // Async step 1.) create a table that holds all job info:
-        const html = createTable(data, createJobModals);
+      // Async step 1.) create a table that holds all job info:
+      const html = createTable(data);
 
-        PARENT.innerHTML = '';
-        return PARENT.innerHTML = `<div id="JobBoardRow" class="row">${html}</div>`;
-      })
+      PARENT.innerHTML = '';
+      return PARENT.innerHTML = `<div id="JobBoardRow" class="row">${html}</div>`;
     }).then(() => {
       // Async step 2.) build the flyer images into the page for employers who submitted a flier document:
       // Do not run `createFlyerImages.js` prior to "Async step 1.)"
-      return import('./createFlyerImages').then(({default: createJobFlyers}) => createJobFlyers(data))
+      return import('./createFlyerImages').then(({ default: createJobFlyers }) => createJobFlyers(data));
     }).then(() => {
       // Async step 3.) create modals with the full job details.
-      return import('./createJobModals').then(({default: createJobModals}) => createJobModals(data))
+      return import('./createJobModals').then(({ default: createJobModals }) => createJobModals(data, PARENT));
     }).then(() => {
       // Async step 4.) Do not attempt to access `table#JobsTable`, prior to step 1.)
       // Initiate DataTables
       const TABLE = document.getElementById('JobsTable');
 
       return $(TABLE).DataTable(DATA_TABLES_CONFIG);
+    }).then(() => {
+      if (!document.querySelector('div[data-flyer-src]'))
+        return;
+      
+      return import('./lazyLoadFlyers').then(({default: lazyLoadFlyers}) => lazyLoadFlyers())
     })
 }
 

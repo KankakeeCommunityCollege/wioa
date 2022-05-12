@@ -54,13 +54,11 @@ function getImage(url, i, jobInfoArr) {
 
 function createFlyerImages(data) {
   data.forEach((row, i) => {
-    let [
-      date,title,loc,,,flyer,desc,,ftPt,,,,,,coName,,
-    ] = row;
+    let [,title,,location,coName,,,,,,,,flyer,,,,,,,,,,,,,] = row;
     const imageUrl = flyer != '' ? flyer : null;
     // Flyer image is not required in a submissions so we need to check if it exists first
     if (imageUrl != null) { // Do not be afraid of the inequality operator (`!=`) — Stop always using strict inequality (`!==`) — learn the difference, learn what implicit coercion is in JS!
-      getImage(imageUrl, i, [title, loc, coName]);
+      getImage(imageUrl, i, [title, location, coName]);
     }
   })
 }

@@ -5,7 +5,7 @@ const API_PARAMS = {
 
 const SHEET_PARAMS = {
   spreadsheetId: '1KXofC8gI2vLEeBRRb7uFzA36wDfMDktipUETV8gkpZg',
-  range: 'submissions'
+  range: 'Post a job opening'
 }
 
 function fetchJobs() {
@@ -23,10 +23,7 @@ function fetchJobs() {
 }
 
 function createJobBoard() {
-  console.log(`JobBoard module loaded!`);
-
   gapi.load('client', fetchJobs);
-
 }
 
 export default createJobBoard;

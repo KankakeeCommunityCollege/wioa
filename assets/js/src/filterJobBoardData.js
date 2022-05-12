@@ -9,10 +9,10 @@
 function filterFunction(arr) {
   const now = new Date;
   const posted = new Date(arr[0]);
-  // `arr[17]` will be equal to 'Custom expiration date' if the job post has a custom expiration date
-  if (arr[17] == 'Custom expiration date') {
-    // `arr[18]` is the custom expiration date in MM-DD-YYYY format
-    const expire = new Date(arr[18]);
+  // `arr[11]` will be equal to 'Custom expiration date' if the job post has a custom expiration date
+  if (arr[11] == 'Custom expiration date') {
+    // `arr[12]` is the custom expiration date in MM-DD-YYYY format
+    const expire = new Date(arr[12]);
 
     return now.getTime() > expire.getTime() ? 0 : 1;
   } else {
@@ -22,6 +22,7 @@ function filterFunction(arr) {
     return now.getTime() > expired.getTime() ? 0 : 1;
   }
 }
+
 /**
  * 
  * @param {Object} response is the returned response object from a Google Sheets API v4 `spreadsheets.values.get()` call
@@ -29,7 +30,12 @@ function filterFunction(arr) {
  */
 function filterJobBoardData(response) {
   const DATA = response.result.values.slice(1);
-  const filteredData = DATA.filter(filterFunction);
+  const approvedData = DATA.filter(row => { // row[25] is the approval column
+    const jobHasBeenApproved = row[25] == 'TRUE'; // Approved job-postings will have a value of 'TRUE' and will not be filtered out
+
+    return jobHasBeenApproved ? true : false;
+  });
+  const filteredData = approvedData.filter(filterFunction);
 
   return filteredData;
 }

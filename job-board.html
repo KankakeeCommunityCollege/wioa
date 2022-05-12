@@ -9,13 +9,16 @@ sheet_key: true # Enables dataTables JS & styling
 {% include nav-job-board.html %}
 <main class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-12">
       <p>
         Welcome to our online job board! Below are job postings for the Kankakee County area. 
         The most recent posts are at the top. A job postings will remain on the online job board for 30 days.
         If you have questions regarding the job posting, please contact the employer directly.
         Employers may post a free job posting by using our 
-        <a href="/post-a-job-opening/">Post a Job Opening form</a>.
+        <!-- Button trigger for modal -->
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#postJobOpeningModal">
+        Post a Job Opening form
+      </button>.
       </p>
       <div id="JobBoard">
         <div class="text-center">
@@ -28,3 +31,37 @@ sheet_key: true # Enables dataTables JS & styling
     </div>
   </div>
 </main>
+
+<!-- Modal -->
+<div class="modal fade" id="postJobOpeningModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="postJobOpeningModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="postJobOpeningModalLabel">Post a Job Opening</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="formWrapper" data-form-src="https://form.jotform.com/220624168060044">
+          <div id="loaderWrapper" class="text-center my-5">
+            <img
+              src="{{ page.baseurl }}assets/img/loader.min.svg"
+              class="img-fluid loader loader--animate"
+              height="75"
+              width="75"
+              alt="Loading...">
+          </div>
+          <div class="mt-3">
+            <p class="mb-0">
+              Having issues with the form? Try going to the <a href="/post-a-job-opening/">Post a Job Opening page</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
