@@ -3,6 +3,9 @@ layout: default
 baseurl: ../../
 title: KCC Continuing Education
 description: ''
+video_modal:
+  title: "Continuing Education/One Stop/Perkins"
+  video_sources: 'https://cdn.kcc.edu/wioa/continuinged_one-stop_perkins.mp4,https://cdn.kcc.edu/wioa/continuinged_one-stop_perkins.webm' ## Use comma's to separate multiple sources if needed
 ---
 
 {% include nav-partners.html %}
@@ -22,6 +25,14 @@ description: ''
       <!-- Start CloudCannon .editable div -->
       <div class="editable">
         <h3 class="typography__h3">About Continuing Education and Career Services</h3>
+      </div><!-- End .editable div -->
+      <p>View the 
+        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#videoModal">
+          <em>Continuing Education/One Stop/Perkins</em> video
+        </button>.</p>
+      <!-- Start CloudCannon .editable div -->
+      {% include video-modal.html %}
+      <div class="editable">
         <p>
           The KCC Office of Continuing Education and Career Services responds to the specialized training and staff development
           needs of business, industry, public service and governmental agencies as well as providing personal enrichment courses
