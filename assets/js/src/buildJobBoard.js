@@ -1,4 +1,3 @@
-const PARENT = document.getElementById('JobBoard');
 const DATA_TABLES_CONFIG = {
   responsive: true, // Activate responsive powers GO!
   paging: false, // Don't paginate. Should all be on one page
@@ -25,9 +24,16 @@ function createRows(data) {
   return html;
 }
 
-function createTable(data) {
-  let html = `<div class="col-xl-10 offset-xl-1 mt-3 mb-4">
-  <table id="JobsTable" class="table table-sm table-striped table-hover">
+function createTable(PARENT, data) {
+  let html = '';
+  const parentIsWidget = PARENT.id == 'JobBoardWidget' ? true : false;
+
+  if (!parentIsWidget) { // Skip this HTML on the homepage
+    html += '<div class="col-xl-10 offset-xl-1 mt-3 mb-4">';
+  }
+
+  html += `<table id="JobsTable" class="table table-sm table-striped table-hover">
+    ${parentIsWidget ? '<caption>Visit the <a href="./job-board/">job board page</a> for full details</caption>' : ''}
     <thead>
       <tr>
         <th class="all">Job Title:</th>
@@ -40,22 +46,37 @@ function createTable(data) {
     <tbody>
       ${createRows(data)}
     </tbody>
-  </table>
-</div>`;
+  </table>`;
+  
+  if (!parentIsWidget) { // Skip this HTML on the homepage
+    html += '</div>';
+  }
+
   return html;
 }
-
-function buildJobBoard(data) {
+/**
+ * 
+ * @param {Element} PARENT -s PARENT is the parent-element selected via .getElementById() in the file all.js.
+ * The PARENT element will get the job-board's HTML injected into it after all the data has loaded.
+ * It is set to `<div id="JobBoardWidget">` on the homepage and `<div id="JobBoard">` on the job-board page.
+ * @param {Array} data - data is an array of arrays representing the data held in the Google Sheet.
+ * It has already been filtered for old job posts.
+ */
+function buildJobBoard(PARENT, data) {
   Promise.resolve()
     .then(() => {
       // Async step 1.) create a table that holds all job info:
-      const html = createTable(data);
+      const html = createTable(PARENT, data);
 
-      PARENT.innerHTML = '';
+      PARENT.innerHTML = ''; // Remove the spinning-loader placeholder before injecting the job-board (loader is present in HTML at pageload)
       return PARENT.innerHTML = `<div id="JobBoardRow" class="row">${html}</div>`;
     }).then(() => {
       // Async step 2.) build the flyer images into the page for employers who submitted a flier document:
       // Do not run `createFlyerImages.js` prior to "Async step 1.)"
+      // Skip loading the job post flyer-images on the homepage but run it on the job-board page
+      if (PARENT.id === 'JobBoardWidget')
+        return;
+
       return import('./createFlyerImages').then(({ default: createJobFlyers }) => createJobFlyers(data));
     }).then(() => {
       // Async step 3.) create modals with the full job details.

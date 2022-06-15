@@ -5,6 +5,7 @@ homepage: true
 title: Workforce Services
 outline_title: Kankakee Workforce Services
 description:
+sheet_key: true # Enables dataTables JS & styling
 wioa_locations:
   - name: Kankakee Workforce Services
     address: 'KCC North Extension Center<br>450 N Kinzie Ave<br>Bradley, IL 60915'
@@ -53,7 +54,7 @@ slides:
     url: /training-grant-application/
     new_tab: false
     white_background: true
-student_testimonials:
+#student_testimonials:
 #card_section: Services
 #cards:
 #  - name: Workshops&nbsp;&&nbsp;Events
@@ -152,16 +153,41 @@ student_testimonials:
 <section class="mt-4">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-6 d-flex flex-column my-auto">
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="uploads/tboone_square-crop.jpg" class="testimonials__img--round" alt="Tim Boone" />
+      <div class="col-lg-8 mb-4">
+        <div class="row">
+          <div class="col margins__col--top home__col--heading-underline">
+            <h3 class="typography__section--heading margins__heading--btm">Job Board</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="editable">
+              <p>To submit a job to our online job board please visit the <a href="./job-board/">job board page</a>.</p>
+            </div>
+          </div>
+        </div>
+        <div id="JobBoardWidget">
+          <div class="text-center my-5 py-5">
+            <img
+              src="{{ page.baseurl }}assets/img/loader.min.svg"
+              class="loader loader--animate"
+              height="75"
+              width="75"
+              alt="Loading...">
+          </div>
+        </div>
+        {%- comment -%}
+        <!-- Tim Boone quote removed in June update to website -->
+        <div class="d-flex align-items-center justify-content-center">
+          <img src="uploads/tboone_square-crop.jpg" class="testimonials__img--round" alt="Tim Boone" />
             <div class="testimonials__max-width ml-3">
               <h3 class="typography__testimonials--quote">After almost 16 years on the same job and at my age, I was really nervous when the plant announced they were closing, but the Trade Program helped me regain my confidence and find a new career path.</h3>
               <h3 class="testimonials__heading--overline testimonials__name--color typography__testimonials--name notranslate">&nbsp;-&nbsp;Tim Boone</h3>
             </div>
           </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mt-md-0 text-center">
+          {%- endcomment -%}
+        </div>
+      <div class="col-lg-4 mt-3 mt-md-0 text-center">
         {% include facebook-widget.html %}
       </div>
     </div>
