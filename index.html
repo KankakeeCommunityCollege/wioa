@@ -13,6 +13,8 @@ wioa_locations:
     fax: 815-935-9610
     email: wiaoffice@kcc.edu
     hours: 'Monday&nbsp;-&nbsp;Friday: 8 a.m. - 5 p.m.'
+    website: 'https://wioa.kcc.edu'
+    directions: 'https://www.google.com/maps/dir/?api=1&destination=Kankakee+Community+College+North+Campus&destination_place_id=ChIJST5oqnznDYgR7Uv0CtHiLt8'
   - name: Grundy Workforce Services
     address: '725 School St., Door 27<br>Morris, IL 60450'
     phone: 815-942-0566
@@ -168,6 +170,7 @@ slides:
         </div>
         <div id="JobBoardWidget">
           <div class="text-center my-5 py-5">
+            <p>Please wait while we fetch the latest job postings...</p>
             <img
               src="{{ page.baseurl }}assets/img/loader.min.svg"
               class="loader loader--animate"
@@ -210,10 +213,13 @@ slides:
           {{ location.address }}<br />
           <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
           {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
-          {% if location.email %}<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
+          {% if location.email %}<strong>Email:</strong>&nbsp;<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
           {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
           {% if location.website %}
             <strong>Website:</strong>&nbsp;<a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
+          {% endif %}
+          {% if location.directions %}
+          <br><a href="{{ location.directions }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
           {% endif %}
         </p>
       </div>
