@@ -3,6 +3,9 @@ layout: default
 baseurl: ../../
 title: Kankakee County Community Services Inc.
 description: ''
+video_modal:
+  title: KCCSI informational video
+  video_sources: "https://cdn.kcc.edu/wioa/kccsi-powerpoint_video.mp4,https://cdn.kcc.edu/wioa/kccsi-powerpoint_video.webm"
 ---
 
 {% include nav-partners.html %}
@@ -31,6 +34,11 @@ description: ''
           KCCSI currently employs nearly 25 people serving more than 5000 residents in Kankakee County annually with over 15
           programs designed to alleviate hunger and homelessness, prepare individuals for the workforce, improve health outcomes,
           lower energy costs, strengthen families and mitigate crisis.
+        </p>
+        <p>
+          View the <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#videoModal">
+            KCCSI informational video
+          </button>
         </p>
       </div>
     </div>
@@ -134,3 +142,4 @@ description: ''
     </div>
   </div>
 </main>
+{% include video-modal.html %}
