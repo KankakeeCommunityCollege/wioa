@@ -1,4 +1,7 @@
-function createOptionalJobInfo(phone, email, website, appUrl, fax, comments) {
+const urlRegExp = /(https?:\/\/\S+)/g;
+const urlReplacer = `<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>`;
+
+function createOptionalJobInfo(phone, email, website, appUrl, fax) {
   let html = '';
 
   if (phone != '') {
@@ -13,66 +16,74 @@ function createOptionalJobInfo(phone, email, website, appUrl, fax, comments) {
   if (fax != '') {
     html += `<strong>Fax resume to:</strong> ${fax}<br>`;
   }
-  if (comments != '') {
-    html += `<strong>Comments:</strong> ${comments}<br>`
-  }
   if (appUrl != '') {
     html += `<a href="${appUrl}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Apply</a><br>`;
   }
   return html;
 }
 
+function stringReplacerFunc(match) {
+  console.log(`Matched: \n${match}`);
+  let returnString = match.replace(/(https?:\/\/\S+)/g, `<a targe="_blank" rel="noopener noreferrer" href="$1">$1</a>`);
+  
+  return `<p class="mb-0">${returnString.replace(/^-\s(.+)$/gm, `<span class="pl-3">&bull;$1</span>`)}</p>`
+}
+
 function loopData(data) {
   let html = ''
   data.forEach((row, i) => {
     let [
-      ,
-      title,
-      website,
-      location,
-      coName,
-      applyHow,
-      appUrl,
-      email,
-      phone,
-      fax,
-      , ,
-      flyer,
-      description,
-      requirements,
-      jobType,
-      shift,
-      otherJobType,
-      pay,
-      , , , , ,
-      comments,
+      , title, website, location, coName, applyHow, appUrl, email, phone, fax, , ,
+      flyer, description, requirements, jobType, shift, otherJobType, pay, , , , , , ,
     ] = row;
-    const optionalJobInfo = createOptionalJobInfo(phone, email, website, appUrl, fax, comments);
+    const optionalJobInfo = createOptionalJobInfo(phone, email, website, appUrl, fax);
     const flyerPlaceholder = flyer != '' ? `<div class="text-center" data-flyer-src="${flyer}"></div>` : '';
+
+    console.log(otherJobType);
+    
 
     applyHow = applyHow.replace(/(Online|In Person \(with Resume\)|Email Resume|Fax Resume|Call)/g, `<br><span class="pl-3">&bull;</span>&nbsp;$1`);
     return html += `<div class="modal fade" id="jobModal${i}" tabindex="-1" aria-labelledby="jobModalLabel${i}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title typography__h3" id="jobModalLabel${i}">${title} details</h5>
+          <h5 class="modal-title typography__h3" id="jobModalLabel${i}">${title}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <h6 class="typography__h6">${title}</h6>
-          <p class="pl-3">
-            <strong>Company name/employer:</strong> ${coName}<br>
-            <strong>Location:</strong> ${location}<br>
-            <strong>Description:</strong> ${description.replace(/^-\s/gm, '<br><span class="pl-3">&bull;</span> ')}<br>
-            <strong>Requirements:</strong> ${requirements.replace(/^-\s/gm, '<br><span class="pl-3">&bull;</span> ')}<br>
-            <strong>Job Type:</strong> ${jobType}<br> ${otherJobType != '' ? '<span class="pl-3">&bull;</span> ' + otherJobType + '<br>' : ''}
-            <strong>Shift/schedule:</strong> ${shift}<br>
-            <strong>Pay & benefits:</strong> ${pay.replace(/^-\s/gm, '<br><span class="pl-3">&bull;</span> ')}<br>
+          <div class="card card-body">
+            <p class="mb-0"><strong>Company name/employer:</strong>&nbsp;${coName}</p>
+          </div>
+          <div class="card card-body">
+            <p class="mb-0"><strong>Location:</strong>&nbsp;${location}</p>
+          </div>
+          <div class="card card-body">
+            <p class="mb-2"><strong>Description:</strong></p>
+            ${description.replace(/^(.+)$/gm, stringReplacerFunc)}
+          </div>
+          <div class="card card-body">
+            <p class="mb-2"><strong>Requirements:</strong></p>
+            ${requirements.replace(/^(.+)$/gm, stringReplacerFunc)}</span>
+          </div>
+          <div class="card card-body">
+            <p class="mb-0"><strong>Job Type:</strong> ${jobType}</p>
+            ${otherJobType != '' ? '<p class="pl-3 mb-0">&bull;&nbsp;' + otherJobType + '</p>' : ''}
+          </div>
+          <div class="card card-body">
+            <p class="mb-0">
+              <strong>Shift/schedule:</strong>&nbsp;${shift.replace(urlRegExp, urlReplacer)}
+            </p>
+          </div>
+          <div class="card card-body">
+          <p class="mb-0"><strong>Pay & benefits:</strong></p>
+          ${pay.replace(/^(.+)$/gm, stringReplacerFunc)}
+          </div>
+          <div class="card card-body">
             <strong>How to apply:</strong> ${applyHow.replace(/,$/, '')}<br>
             ${optionalJobInfo}
-          </p>
+          </div>
           ${flyerPlaceholder}
         </div>
         <div class="modal-footer">

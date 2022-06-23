@@ -3,6 +3,9 @@ layout: default
 baseurl: ../../
 title: Illinois Department Of Employment Security
 description: ''
+video_modal:
+  title: "ES at a Glance video"
+  video_sources: 'https://cdn.kcc.edu/wioa/es-at-a-glance-2022.mp4,https://cdn.kcc.edu/wioa/es-at-a-glance-2022.webm,https://cdn.kcc.edu/wioa/es-at-a-glance-2022.ogv' ## Use comma's to separate multiple sources if needed
 ---
 
 {% include nav-partners.html %}
@@ -36,6 +39,11 @@ description: ''
         <p>IDES connects employers with tax credits as an incentive to hire an economically disadvantaged individual. A fidelity
           bond is also available to employers who hire job applicants considered to be at risk due to their past life
           experiences.</p>
+        <p>
+          View the <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#videoModal">
+            <em class="typography__emphasis">ES at a Glance</em> video
+            </button>.
+        </p>
         <p><strong>Organization</strong> - Illinois Department of Employment Security: Employment Services<br>
           <strong>Primary Location</strong> - 450 North Kinzie, Bradley 60915<br>
           <strong>Primary Phone</strong> - <a href="tel:+18158028972">815-802-8972</a> <br>
@@ -148,3 +156,4 @@ description: ''
     </div>
   </div>
 </main>
+{% include video-modal.html %}

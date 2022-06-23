@@ -3,6 +3,9 @@ layout: default
 baseurl: ../../
 title: Adult & Community Education
 description: ''
+video_modal:
+  title: "Adult and Community Education video"
+  video_sources: 'https://cdn.kcc.edu/wioa/adulted-onestop_video.mp4,https://cdn.kcc.edu/wioa/adulted-onestop_video.webm' ## Use comma's to separate multiple sources if needed
 ---
 
 {% include nav-partners.html %}
@@ -33,6 +36,11 @@ description: ''
           <li>English as a Second Language (ESL)</li>
           <li>Community Literacy Project</li>
         </ul>
+        <p>
+          View the <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#videoModal">
+          <em class="typography__emphasis">Adult & Community Education</em> video
+          </button>.
+        </p>
         <h3 class="typography__h3">High School Equivalency (GED / HiSET)</h3>
         <p>
           KCC has a comprehensive range of instruction and services to help students succeed on HSE tests. All HSE classes are
@@ -153,3 +161,4 @@ description: ''
     </div>
   </div>
 </main>
+{% include video-modal.html %}

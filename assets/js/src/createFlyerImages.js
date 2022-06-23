@@ -53,6 +53,9 @@ function getImage(url, i, jobInfoArr) {
 }
 
 function createFlyerImages(data) {
+  console.log(`createFlyerImages has been imported and run`);
+  console.log(data);
+  
   data.forEach((row, i) => {
     let [,title,,location,coName,,,,,,,,flyer,,,,,,,,,,,,,] = row;
     const imageUrl = flyer != '' ? flyer : null;
