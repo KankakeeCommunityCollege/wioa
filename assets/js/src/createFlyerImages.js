@@ -19,7 +19,7 @@ function responseHandler(e) {
 
     card.classList.add('card');
     header.classList.add('card-header', 'd-flex', 'justify-content-between', 'align-items-center');
-    body.classList.add('card-body');
+    body.classList.add('card-body', 'd-flex', 'flex-column', 'justify-content-center');
     header.innerHTML = `<h5 class="typography__h5">${title}<h5> <p class="mb-0 float-right"><strong>${coName}</strong> - ${loc}</p>`;
     a.href = `#jobModal${index}`;
     a.dataset.toggle = 'modal';
@@ -30,7 +30,7 @@ function responseHandler(e) {
     };
     img.src = window.URL.createObjectURL(blob);
     img.classList.add('img-fluid', 'img--drop-shadow');
-    div.classList.add('col-md-6', 'mb-4');
+    div.classList.add('col-md-6', 'mb-4', 'd-flex');
     
     a.appendChild(img);
     body.appendChild(a);
@@ -53,9 +53,7 @@ function getImage(url, i, jobInfoArr) {
 }
 
 function createFlyerImages(data) {
-  console.log(`createFlyerImages has been imported and run`);
-  console.log(data);
-  
+  // console.log(data);
   data.forEach((row, i) => {
     let [,title,,location,coName,,,,,,,,flyer,,,,,,,,,,,,,] = row;
     const imageUrl = flyer != '' ? flyer : null;

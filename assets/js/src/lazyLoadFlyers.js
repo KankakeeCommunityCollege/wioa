@@ -8,7 +8,10 @@ function lazyLoadFlyers() {
     img.classList.add('img-fluid', 'img--border-light');
     div.classList.add('mx-5', 'mb-3');
     img.src = src;
-    div.append(img);
+    img.onload = e => {
+      div.innerHTML = '';
+      div.append(img);
+    }
   });
 }
 

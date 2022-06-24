@@ -88,6 +88,8 @@ function buildJobBoard(PARENT, data) {
 
       return $(TABLE).DataTable(DATA_TABLES_CONFIG);
     }).then(() => {
+      return document.querySelector('input[aria-controls="JobsTable"]').placeholder = 'Filter jobs...';
+    }).then(() => {
       if (!document.querySelector('div[data-flyer-src]'))
         return;
       
