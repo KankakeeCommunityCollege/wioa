@@ -8,7 +8,10 @@ function createRows(data) {
   let html = '';
 
   data.forEach((row, i) => {
-    let [date,title,,location,coName,,,,,,,,,,,,,,,,,,,,,] = row;
+    let [
+      date, title, website, location, coName, applyHow, , , , , , ,
+      , description, requirements, jobType, shift, otherJobType, pay, , , , , , ,
+    ] = row;
 
     date = date.replace(/^(\d{4})-(\d{2})-(\d{2}).+$/, `$2/$3/$1`);
     html += `<tr>
@@ -19,6 +22,7 @@ function createRows(data) {
   <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#jobModal${i}">
       More&nbsp;details...</button>
   </td>
+  <td>${[website, applyHow, description, requirements, jobType, shift, otherJobType, pay].join(', ')}</td>
 </tr>`;
   });
   return html;
@@ -41,6 +45,7 @@ function createTable(PARENT, data) {
         <th>Location:</th>
         <th>Date Posted:</th>
         <th class="all">Details:</th>
+        <th class="never">Searchable column</th>
       </tr>
     </thead>
     <tbody>
