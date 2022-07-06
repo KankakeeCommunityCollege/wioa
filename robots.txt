@@ -5,6 +5,7 @@ layout: null
 
 # Allow crawling of all content
 User-agent: *
-Disallow:
+## The /partners/ folder and contents are not public ##
+Disallow: /partners/
 
 {% if site.url and site.url != 'URL is needed for robots.txt to work properly' %}Sitemap: {{ site.url }}/sitemap.xml{% endif %}
