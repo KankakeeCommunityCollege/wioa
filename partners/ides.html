@@ -1,0 +1,159 @@
+---
+layout: default
+baseurl: ../../
+title: Illinois Department Of Employment Security
+description: ''
+video_modal:
+  title: "ES at a Glance video"
+  video_sources: 'https://cdn.kcc.edu/wioa/es-at-a-glance-2022.mp4,https://cdn.kcc.edu/wioa/es-at-a-glance-2022.webm,https://cdn.kcc.edu/wioa/es-at-a-glance-2022.ogv' ## Use comma's to separate multiple sources if needed
+---
+
+{% include nav-partners.html %}
+<main class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="typography__h2">{{ page.title }}</h2>
+      <div class="text-center">
+        <a href="https://ides.illinois.gov/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Go to the Illinois Department of Employment Security (IDES) website">
+          <img
+          src="/partners/uploads/ides_logo.png"
+          class="img-fluid"
+          alt="Illinois Department of Employment Security logo">
+        </a>
+      </div>
+      <!-- Start CloudCannon .editable div -->
+      <div class="editable">
+        <h3 class="typography__h3">Employment Services</h3>
+        <p>IDES maintains Illinois Job Link, the free job exchange that connects job seekers to employers. Employment Service
+          personnel can help individuals create an effective profile on <a
+            href="https://illinoisjoblink.illinois.gov/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >https://illinoisjoblink.illinois.gov/</a>
+        <h3 class="typography__h3">Veterans Services</h3>
+        <p>Military veterans receive priority of service for all employment services.</p>
+        <h3 class="typography__h3">Hiring Incentives</h3>
+        <p>IDES connects employers with tax credits as an incentive to hire an economically disadvantaged individual. A fidelity
+          bond is also available to employers who hire job applicants considered to be at risk due to their past life
+          experiences.</p>
+        <p>
+          View the <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#videoModal">
+            <em class="typography__emphasis">ES at a Glance</em> video
+            </button>.
+        </p>
+        <p><strong>Organization</strong> - Illinois Department of Employment Security: Employment Services<br>
+          <strong>Primary Location</strong> - 450 North Kinzie, Bradley 60915<br>
+          <strong>Primary Phone</strong> - <a href="tel:+18158028972">815-802-8972</a> <br>
+          <strong>Website</strong> - <a href="https://ides.illinois.gov/">https://ides.illinois.gov/</a><br>
+          <strong>Referral Guide</strong> - Send referrals for the services above. Employment Service personnel cannot
+          answer questions regarding unemployment insurance. Do not use this referral form for unemployment questions.
+          Individuals can file online and view a list of frequently asked questions at <a
+            href="https://ides.illinois.gov/">https://ides.illinois.gov/</a>
+        </p>
+        <p><a href="https://ides.illinois.gov/about/contact-ides.html" target="_blank" rel="noopener noreferrer">See IDES contact guide for additional information.</a></p>
+      </div><!-- End CloudCannon .editable div -->
+    </div>
+    <div class="col-12 mb-3">
+      <iframe
+      id="JotFormIFrame-220684467200048"
+      title="One Stop Partner Referral Form"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/220684467200048?referringTo=IDES%20-%20Illinois%20Dept.%20of%20Employment%20Security"
+      frameborder="0"
+      style="
+      min-width: 100%;
+      height:539px;
+      border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script type="text/javascript">
+      var ifr = document.getElementById("JotFormIFrame-220684467200048");
+      if (ifr) {
+        var src = ifr.src;
+        var iframeParams = [];
+        if (window.location.href && window.location.href.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+        }
+        if (src && src.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+          src = src.substr(0, src.indexOf("?"))
+        }
+        iframeParams.push("isIframeEmbed=1");
+        ifr.src = src + "?" + iframeParams.join('&');
+      }
+      window.handleIFrameMessage = function(e) {
+        if (typeof e.data === 'object') { return; }
+        var args = e.data.split(":");
+        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+        if (!iframe) { return; }
+        switch (args[0]) {
+          case "scrollIntoView":
+            iframe.scrollIntoView();
+            break;
+          case "setHeight":
+            iframe.style.height = args[1] + "px";
+            break;
+          case "collapseErrorPage":
+            if (iframe.clientHeight > window.innerHeight) {
+              iframe.style.height = window.innerHeight + "px";
+            }
+            break;
+          case "reloadPage":
+            window.location.reload();
+            break;
+          case "loadScript":
+            if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+            var src = args[1];
+            if (args.length > 3) {
+                src = args[1] + ':' + args[2];
+            }
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+            break;
+          case "exitFullscreen":
+            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+            break;
+        }
+        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+        }
+      };
+      window.isPermitted = function(originUrl, whitelisted_domains) {
+        var url = document.createElement('a');
+        url.href = originUrl;
+        var hostname = url.hostname;
+        var result = false;
+        if( typeof hostname !== 'undefined' ) {
+          whitelisted_domains.forEach(function(element) {
+              if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+                  result = true;
+              }
+          });
+          return result;
+        }
+      };
+      if (window.addEventListener) {
+        window.addEventListener("message", handleIFrameMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleIFrameMessage);
+      }
+      </script>
+    </div>
+  </div>
+</main>
+{% include video-modal.html %}

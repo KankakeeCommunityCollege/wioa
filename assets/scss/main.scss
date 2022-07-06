@@ -6,7 +6,10 @@
 @import '1-base/typography';
 @import '1-base/links';
 @import '1-base/buttons';
+@import '1-base/img';
+@import '1-base/video';
 @import '1-base/svg';
+@import '1-base/iframe';
 
 // Modular components
 @import '2-modules/header';
@@ -16,7 +19,10 @@
 @import '2-modules/social-icons';
 @import '2-modules/error';
 @import '2-modules/testimonials';
+@import '2-modules/loader';
+@import '2-modules/partners';
 @import '2-modules/bg';
+@import '2-modules/link-launch';
 
 // Layout items
 // @import "3-layout/...";

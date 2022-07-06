@@ -1,0 +1,63 @@
+// Style rules for the partners pages
+
+.partners__wrapper {
+  max-height: 310px;
+  overflow-y: hidden;
+  border-color: rgba(0,0,0,.25);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 13px;
+}
+
+a.partners__a:hover,
+a.partners__a:focus-within,
+a.partners__a:focus {
+  text-decoration: none;
+  & .partners__info-wrapper {
+    transform: translateY(-130px);
+    opacity: 1;
+  }
+  & .partners__description-wrapper::before {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.partners__info-wrapper {
+  background-color: $primary-blue;
+  opacity: .75;
+  padding-top: 12px;
+  padding-bottom: 38px;
+  transition: transform ease-in-out .75s, opacity ease-in-out .75s;
+}
+
+.partners__h4-wrapper {
+  height: 54px;
+}
+
+.partners__description-wrapper {
+  &::before {
+    background-color: $orange-heading;
+    content: '';
+    display: block;
+    height: 4px;
+    width: 70%;
+    margin-left: 15%;
+    visibility: visible;
+    transform: translateY(1rem);
+    transition: transform ease-in-out .3s .75s, opacity ease-in-out .3s .75s;
+    opacity: 0;
+  }
+}
+
+.partners__description {
+  max-width: 275px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
+.partners__centered {
+  margin-left: auto;
+  margin-right: auto;
+}

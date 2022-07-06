@@ -1,0 +1,104 @@
+---
+layout: default
+baseurl: ../
+title: Partners
+description: ''
+partners:
+- name: Illinois Department Of Employment&nbsp;Security
+  description: Helps residents create an effective profile on Illinois Job Link to find employment.
+  logo: /partners/uploads/ides_logo.png
+  url: ../partners/ides/ 
+- name: IDHS - Rehabilitation Services
+  description: Helps residents with disabilities prepare for, find, and maintain employment.
+  logo: /partners/uploads/idhs_logo.png
+  url: ../partners/rehabilitation-services/
+- name: IDHS - TANF
+  description: Helps residents meet basic nutritional, medical, financial and child support needs.
+  logo: /partners/uploads/idhs_tanf.png
+  url: ../partners/tanf/
+- name: KCC Adult Education
+  description: >-
+    Programs include High School Equivalency (GED / HiSET),
+    English as a Second Language (ESL), and the Community Literacy Project
+  logo: /partners/uploads/kcc-adulted.png
+  url: ../partners/adult-education/
+- name: Kankakee County Community Services&nbsp;Inc.
+  description: >-
+    Includes programs for hunger, homelessness,
+    preparing for the workforce, improved health outcomes,
+    and crisis mitigation.
+  logo: /partners/uploads//kccsi_logo.png 
+  url: ../partners/kccsi/
+- name: Kankakee Workforce Services
+  description: >-
+    Kankakee Workforce Services, provides education and 
+    workforce training to the underemployed and unemployed.
+  logo: /partners/uploads/wioa_logo.png
+  url: ../partners/workforce-services/
+- name: Continuing Education/One Stop/Perkins
+  description: >-
+    Programs include employee development programs
+    and personal enrichment courses for&nbsp;the&nbsp;community.
+  logo: /partners/uploads/kcc-continuinged.jpg
+  url: ../partners/continuinged/
+video_modal:
+  title: One Stop Intro Video
+  video_sources: 'https://cdn.kcc.edu/wioa/one-stop_intro.mp4,https://cdn.kcc.edu/wioa/one-stop_intro.webm'
+---
+{%- comment -%}
+<!-- ===================================================== 
+  IMPORTANT!!!
+    THIS PARTNERS PAGE IS MEANT TO BE A PRIVATE URL 
+    IT IS NOT A NORMAL PUBLIC PAGE! DO NOT ADD IT TO ANY NAVIGATION OR SITEMAP FILES!
+===================================================== -->
+{%- endcomment -%}
+{% include nav-partners.html %}
+<main class="container">
+  <div class="row">
+    <div class="col">
+      <div class="editable">
+        <h3 class="typography__h3">Kankakee Workforce Services Partner Referrals</h3>
+        <p class="typography--line-height-1">
+          This page was created for staff members of the partner organizations 
+          that contribute to Kankakee Workforce Services. <br>
+          View the 
+        <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#videoModal">
+          One Stop intro video
+        </button> to learn more about WIOA, our partners; the career, training, and youth services we provide; 
+        and how to get started.
+        </p>
+      </div>
+      <p>
+        To make a referral, or to learn more about a partner, 
+        select the partner organization from the list below:
+      </p>
+      {% include video-modal.html %}
+      <div class="row my-3">
+        {% for item in page.partners %}
+        <div class="col-md-6 col-lg-4 mb-5 partners__centered">
+          <div class="partners__wrapper text-center">
+            <a class="partners__a" href="{{ item.url }}">
+              <img
+                src="{{ item.logo }}"
+                class="img-fluid"
+                height="225"
+                width="300"
+                alt="{{ item.name }} logo">
+              <div class="partners__info-wrapper">
+                <div class="text-center">
+                  <div class="partners__h4-wrapper d-flex flex-column justify-content-center mb-2">
+                    <h4 class="typography__h6 text-white mb-0">{{ item.name }}</h4>
+                  </div>
+                  <div class="partners__description-wrapper">
+                    <p class="partners__description text-white">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>

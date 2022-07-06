@@ -5,6 +5,7 @@ homepage: true
 title: Workforce Services
 outline_title: Kankakee Workforce Services
 description:
+sheet_key: true # Enables dataTables JS & styling
 wioa_locations:
   - name: Kankakee Workforce Services
     address: 'KCC North Extension Center<br>450 N Kinzie Ave<br>Bradley, IL 60915'
@@ -12,6 +13,8 @@ wioa_locations:
     fax: 815-935-9610
     email: wiaoffice@kcc.edu
     hours: 'Monday&nbsp;-&nbsp;Friday: 8 a.m. - 5 p.m.'
+    website: 'https://wioa.kcc.edu'
+    directions: 'https://www.google.com/maps/dir/?api=1&destination=Kankakee+Community+College+North+Campus&destination_place_id=ChIJST5oqnznDYgR7Uv0CtHiLt8'
   - name: Grundy Workforce Services
     address: '725 School St., Door 27<br>Morris, IL 60450'
     phone: 815-942-0566
@@ -38,22 +41,7 @@ slides:
     url: '#'
     new_tab: false
     white_background: true
-  - image: /uploads/covid-laid-off-web-banner-20_web-optimized.jpg
-    alt-text: >-
-      Were you temporarily or permanently laid off because of COVID-19? OR Are
-      you self-employed & became unemployed/significantly underemployed as a
-      result of COVID-19? Disaster Recovery & Employment Grants are available.
-      See if you qualify.
-    url: 'http://illinoisworknet.com/dwg'
-    new_tab: true
-  - image: uploads/wioa_up-to-10000.svg
-    alt-text: >-
-      You could be eligible for up to $10,000 for career training to help with
-      things like transportation, books, & supplies.
-    url: /training-grant-application/
-    new_tab: false
-    white_background: true
-student_testimonials:
+#student_testimonials:
 #card_section: Services
 #cards:
 #  - name: Workshops&nbsp;&&nbsp;Events
@@ -152,16 +140,42 @@ student_testimonials:
 <section class="mt-4">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-6 d-flex flex-column my-auto">
-          <div class="d-flex align-items-center justify-content-center">
-            <img src="uploads/tboone_square-crop.jpg" class="testimonials__img--round" alt="Tim Boone" />
+      <div class="col-lg-8 mb-4">
+        <div class="row">
+          <div class="col margins__col--top home__col--heading-underline">
+            <h3 class="typography__section--heading margins__heading--btm">Job Board</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="editable">
+              <p>To submit a job to our online job board please visit the <a href="./job-board/">job board page</a>.</p>
+            </div>
+          </div>
+        </div>
+        <div id="JobBoardWidget">
+          <div class="text-center my-5 py-5">
+            <p>Please wait while we fetch the latest job postings...</p>
+            <img
+              src="{{ page.baseurl }}assets/img/loader.min.svg"
+              class="loader loader--animate"
+              height="75"
+              width="75"
+              alt="Loading...">
+          </div>
+        </div>
+        {%- comment -%}
+        <!-- Tim Boone quote removed in June update to website -->
+        <div class="d-flex align-items-center justify-content-center">
+          <img src="uploads/tboone_square-crop.jpg" class="testimonials__img--round" alt="Tim Boone" />
             <div class="testimonials__max-width ml-3">
               <h3 class="typography__testimonials--quote">After almost 16 years on the same job and at my age, I was really nervous when the plant announced they were closing, but the Trade Program helped me regain my confidence and find a new career path.</h3>
               <h3 class="testimonials__heading--overline testimonials__name--color typography__testimonials--name notranslate">&nbsp;-&nbsp;Tim Boone</h3>
             </div>
           </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mt-md-0 text-center">
+          {%- endcomment -%}
+        </div>
+      <div class="col-lg-4 mt-3 mt-md-0 text-center">
         {% include facebook-widget.html %}
       </div>
     </div>
@@ -184,10 +198,13 @@ student_testimonials:
           {{ location.address }}<br />
           <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
           {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
-          {% if location.email %}<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
+          {% if location.email %}<strong>Email:</strong>&nbsp;<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
           {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
           {% if location.website %}
             <strong>Website:</strong>&nbsp;<a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
+          {% endif %}
+          {% if location.directions %}
+          <br><a href="{{ location.directions }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
           {% endif %}
         </p>
       </div>

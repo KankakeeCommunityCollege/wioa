@@ -1,0 +1,164 @@
+---
+layout: default
+baseurl: ../../
+title: Adult & Community Education
+description: ''
+video_modal:
+  title: "Adult and Community Education video"
+  video_sources: 'https://cdn.kcc.edu/wioa/adulted-onestop_video.mp4,https://cdn.kcc.edu/wioa/adulted-onestop_video.webm' ## Use comma's to separate multiple sources if needed
+---
+
+{% include nav-partners.html %}
+<main class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="typography__h2">{{ page.title }}</h2>
+      <div class="text-center">
+        <a href="https://adulted.kcc.edu"
+         aria-label="Go to the KCC Adult & Community Education website">
+          <img
+            src="/partners/uploads/kcc-adulted_wide.png"
+            class="img-fluid"
+            alt="Illinois Department of Human Services - Rehabilitation Services">  
+        </a>
+      </div>
+      <div class="editable">
+        <h3 class="typography__h3">Program Overview</h3>
+        <p>
+          Kankakee Community College is the largest provider of High School Equivalency (HSE) and English as a Second Language
+          (ESL) classes in the Kankakee and Iroquois County area.
+        </p>
+        <p class="mb-1">
+          Our programs and services at KCC include:
+        </p>
+        <ul>
+          <li>High School Equivalency (GED / HiSET)</li>
+          <li>English as a Second Language (ESL)</li>
+          <li>Community Literacy Project</li>
+        </ul>
+        <p>
+          View the <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#videoModal">
+          <em class="typography__emphasis">Adult & Community Education</em> video
+          </button>.
+        </p>
+        <h3 class="typography__h3">High School Equivalency (GED / HiSET)</h3>
+        <p>
+          KCC has a comprehensive range of instruction and services to help students succeed on HSE tests. All HSE classes are
+          offered at no cost to the public. New class sessions begin every eight weeks at several convenient locations. Program
+          orientations are offered regularly.
+        </p>
+        <h3 class="typography__h3">English as a Second Language (ESL)</h3>
+        <p>
+          The English as a Second Language (ESL) program teaches English to non-native English speakers. Classes help students
+          improve their English language skills in listening, speaking, reading, and writing. There are three levels of classes to
+          help students at every stage of learning.
+        </p>
+        <h3 class="typography__h3">Community Literacy Project</h3>
+        <p>
+          KCC's Adult Literacy Initiative Volunteers Expanded (ALIVE) program provides an opportunity for adults to become
+          competent enough in the area of reading, writing, math and English language skills to function effectively in their
+          everyday lives.
+        </p>
+      </div>
+    </div>
+    <div class="col-12 mb-3">  
+      <iframe
+      id="JotFormIFrame-220684467200048"
+      title="One Stop Partner Referral Form"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/220684467200048?referringTo=KCC%20Adult%20Education"
+      frameborder="0"
+      style="
+      min-width: 100%;
+      height:539px;
+      border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script type="text/javascript">
+      var ifr = document.getElementById("JotFormIFrame-220684467200048");
+      if (ifr) {
+        var src = ifr.src;
+        var iframeParams = [];
+        if (window.location.href && window.location.href.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+        }
+        if (src && src.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+          src = src.substr(0, src.indexOf("?"))
+        }
+        iframeParams.push("isIframeEmbed=1");
+        ifr.src = src + "?" + iframeParams.join('&');
+      }
+      window.handleIFrameMessage = function(e) {
+        if (typeof e.data === 'object') { return; }
+        var args = e.data.split(":");
+        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+        if (!iframe) { return; }
+        switch (args[0]) {
+          case "scrollIntoView":
+            iframe.scrollIntoView();
+            break;
+          case "setHeight":
+            iframe.style.height = args[1] + "px";
+            break;
+          case "collapseErrorPage":
+            if (iframe.clientHeight > window.innerHeight) {
+              iframe.style.height = window.innerHeight + "px";
+            }
+            break;
+          case "reloadPage":
+            window.location.reload();
+            break;
+          case "loadScript":
+            if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+            var src = args[1];
+            if (args.length > 3) {
+                src = args[1] + ':' + args[2];
+            }
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+            break;
+          case "exitFullscreen":
+            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+            break;
+        }
+        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+        }
+      };
+      window.isPermitted = function(originUrl, whitelisted_domains) {
+        var url = document.createElement('a');
+        url.href = originUrl;
+        var hostname = url.hostname;
+        var result = false;
+        if( typeof hostname !== 'undefined' ) {
+          whitelisted_domains.forEach(function(element) {
+              if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+                  result = true;
+              }
+          });
+          return result;
+        }
+      };
+      if (window.addEventListener) {
+        window.addEventListener("message", handleIFrameMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleIFrameMessage);
+      }
+      </script>
+    </div>
+  </div>
+</main>
+{% include video-modal.html %}

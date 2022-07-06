@@ -1,0 +1,184 @@
+---
+layout: default
+baseurl: ../../
+title: Illinois Department of Human Services - Vocational Rehabilitation
+description: ''
+video_modal:
+  title: IDHS DRS informational video
+  video_sources: "https://cdn.kcc.edu/wioa/impact.mp4,https://cdn.kcc.edu/wioa/impact.webm"
+---
+
+{% include nav-partners.html %}
+<main class="container">
+  <div class="row">
+    <div class="col">
+      <h2 class="typography__h2">{{ page.title }}</h2>
+      <div class="text-center">
+        <a href="https://www.dhs.state.il.us/"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Go to the Illinois Department of Human Services website (https://www.dhs.state.il.us/)">
+          <img
+            src="/partners/uploads/idhs_logo.png"
+            class="img-fluid"
+            alt="Illinois Department of Human Services - Rehabilitation Services logo">  
+        </a>
+      </div>
+      <div class="editable">
+        <h3 class="typography__h3">Program Overview</h3>
+        <p>
+          The Division of Rehabilitation Services (DRS) provides services for persons with disabilities in preparing 
+          for, finding, and maintaining quality employment that pays a living wage and offers opportunities for advancement.
+        </p>
+        <p>
+          View the <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#videoModal">
+            IDHS DRS informational video
+          </button>
+        </p>
+        <p>
+          DRS staff talk to people about their employment, as well as, education needs and help them find a job or receive skills
+          training to ensure individuals are job ready. They also make sure that people have the supports they need to stay on the
+          job.
+        </p>
+        <p class="mb-1">
+          DRS offers specialized vocational rehabilitation services for people who are:
+        </p>
+        <ul>
+          <li>Blind or Visually Impaired</li>
+          <li>Deaf or Hard of Hearing</li>
+          <li>Hispanic or Latino with disabilities</li>
+        </ul>
+        <p>
+          DRS helps high school students who have disabilities plan for their futures after high school graduation through our
+          Transition and STEP programs.
+        </p>
+        <p>
+          The Work Incentive Planning and Assistance Program helps people who receive SSDI/SSI benefits understand how working
+          will affect their benefits.
+        </p>
+        <p>
+          The Supported Employment Program (SEP) serves eligible people with significant disabilities who want to go to work and
+          need on-going support services to succeed on the job.
+        </p>
+        <p>
+          Additional program information can be found on the 
+          <a href="https://www.dhs.state.il.us/" target="_blank" rel="noopener noreferrer">DRS website</a>.
+        </p>
+        <h3 class="typography__h3">Services</h3>
+        <ul>
+          <li>Disability</li>
+          <li>Vocational Rehabilitation</li>
+          <li>Home Services (someone in household w/disability)</li>
+        </ul>
+        <h3 class="typography__h3">Contact Information</h3>
+        <p>
+          <strong>Organization</strong> - Kankakee Division of Rehabilitation Services<br>
+          <strong>Location</strong> - 285 N Schuyler Ave., Kankakee, IL 60901 <br>
+          <strong>Phone</strong> - <a href="tel:+18159394422">815-939-4422</a> <br>
+          <strong>Website</strong> - <a href="https://www.dhs.state.il.us/" target="_blank" rel="noopener noreferrer">https://www.dhs.state.il.us/</a> <br>
+          <strong>Fax</strong> - 815 939-2213<br>
+          <strong>Referral Guide</strong> - Send referrals for people with disabilities
+        </p>
+      </div>
+    </div>
+    <div class="col-12 mb-3">
+      <iframe
+      id="JotFormIFrame-220684467200048"
+      title="One Stop Partner Referral Form"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/220684467200048?referringTo=IDHS%20-%20Vocational%20Rehabilitation"
+      frameborder="0"
+      style="
+      min-width: 100%;
+      height:539px;
+      border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script type="text/javascript">
+      var ifr = document.getElementById("JotFormIFrame-220684467200048");
+      if (ifr) {
+        var src = ifr.src;
+        var iframeParams = [];
+        if (window.location.href && window.location.href.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
+        }
+        if (src && src.indexOf("?") > -1) {
+          iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
+          src = src.substr(0, src.indexOf("?"))
+        }
+        iframeParams.push("isIframeEmbed=1");
+        ifr.src = src + "?" + iframeParams.join('&');
+      }
+      window.handleIFrameMessage = function(e) {
+        if (typeof e.data === 'object') { return; }
+        var args = e.data.split(":");
+        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+        if (!iframe) { return; }
+        switch (args[0]) {
+          case "scrollIntoView":
+            iframe.scrollIntoView();
+            break;
+          case "setHeight":
+            iframe.style.height = args[1] + "px";
+            break;
+          case "collapseErrorPage":
+            if (iframe.clientHeight > window.innerHeight) {
+              iframe.style.height = window.innerHeight + "px";
+            }
+            break;
+          case "reloadPage":
+            window.location.reload();
+            break;
+          case "loadScript":
+            if( !window.isPermitted(e.origin, ['jotform.com', 'jotform.pro']) ) { break; }
+            var src = args[1];
+            if (args.length > 3) {
+                src = args[1] + ':' + args[2];
+            }
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+            break;
+          case "exitFullscreen":
+            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+            break;
+        }
+        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+        }
+      };
+      window.isPermitted = function(originUrl, whitelisted_domains) {
+        var url = document.createElement('a');
+        url.href = originUrl;
+        var hostname = url.hostname;
+        var result = false;
+        if( typeof hostname !== 'undefined' ) {
+          whitelisted_domains.forEach(function(element) {
+              if( hostname.slice((-1 * element.length - 1)) === '.'.concat(element) ||  hostname === element ) {
+                  result = true;
+              }
+          });
+          return result;
+        }
+      };
+      if (window.addEventListener) {
+        window.addEventListener("message", handleIFrameMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleIFrameMessage);
+      }
+      </script>
+    </div>
+  </div>
+</main>
+{% include video-modal.html %}
