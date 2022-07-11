@@ -4,7 +4,10 @@ const urlReplacer = `<a href="$1" target="_blank" rel="noopener noreferrer">$1</
 function stringReplacerFunc(match) {
   let returnString = match.replace(/(https?:\/\/\S+)/g, `<a targe="_blank" rel="noopener noreferrer" href="$1">$1</a>`);
 
-  return returnString.replace(/^(-\s(.+)|(.+))$/gm, (match, c1, c2) => {
+  returnString = returnString.replace(/[\*_]{2}(.+)[\*_]{2}/g, `<strong>$1</strong>`);
+  returnString = returnString.replace(/[\*_](.+)[\*_]/g, `<em>$1</em>`);
+
+  return returnString.replace(/^([-\*]\s(.+)|(.+))$/gm, (match, c1, c2) => {
     return c2 == undefined ? `<p class="mb-2 mt-1">${match}</p>`
       : `<p class="mb-0 ml-3 typography--text-indent"><span class="ml-3">&bull;&nbsp;${c2}</span></p>`;
   });
