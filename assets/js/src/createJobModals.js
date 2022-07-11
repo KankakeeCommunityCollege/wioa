@@ -1,11 +1,47 @@
-const urlRegExp = /(https?:\/\/\S+)/g;
-const urlReplacer = `<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>`;
+const captureIndividualLinesRegex = /^(.+)$/gm;
+// Some Regular Expressions used for formatting the modal content.
+const regObj = {
+  email: /(\S+@\S+\.\S+)/g,
+  strong: /[\*_]{2}(.+)[\*_]{2}/g,
+  em: /[\*_](.+)[\*_]/g,
+  phone: /(\d{3})(\d{3})(\d{4})/g,
+  url: /(https?:\/\/\S+)/g,
+  replacers: { // Replacers that utilize the backtick & dollar-sign variables of RegExp in JS (`$1`)
+    email: `<a href="mailto:$1">$1</a>`,
+    strong: `<strong>$1</strong>`,
+    em: `<em>$1</em>`,
+    url: `<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>`,
+    phone: `<a href="tel:+1$1$2$3">$1-$2-$3</a>`
+  }
+}
 
 function stringReplacerFunc(match) {
-  let returnString = match.replace(/(https?:\/\/\S+)/g, `<a targe="_blank" rel="noopener noreferrer" href="$1">$1</a>`);
+  let returnString = match;
+  // let returnString = match.replace(regObj.url, regObj.replacers.url);
 
-  returnString = returnString.replace(/[\*_]{2}(.+)[\*_]{2}/g, `<strong>$1</strong>`);
-  returnString = returnString.replace(/[\*_](.+)[\*_]/g, `<em>$1</em>`);
+  // returnString = returnString.replace(regObj.strong, regObj.replacers.strong);
+  // returnString = returnString.replace(regObj.em, regObj.replacers.em);
+  // returnString = returnString.replace(regObj.url, regObj.replacers.url);
+
+  for (const prop in regObj) {
+    if (Object.hasOwnProperty.call(regObj, prop)) {
+      const regexp = regObj[prop];
+      if (prop != 'replacers') {
+        const replacer = regObj.replacers[prop];
+        
+        returnString = returnString.replace(regexp, replacer);
+      }
+    }
+  }
+
+  // for (const regexp in regObj) {
+  //   if (regexp != 'replacers') {
+  //     let [thisRegExp, thisReplacer] = [regObj[regexp], regObj.replacers[regexp]];
+  //     console.log(`RegExp: ${regexp} \n Expression: ${regObj[regexp]}`);
+  //     returnString = returnString.replace(thisRegExp, thisReplacer);
+  //   }
+    
+  // }
 
   return returnString.replace(/^([-\*]\s(.+)|(.+))$/gm, (match, c1, c2) => {
     return c2 == undefined ? `<p class="mb-2 mt-1">${match}</p>`
@@ -31,7 +67,7 @@ function createOptionalJobInfo(phone, email, website, appUrl, fax) {
   let html = '';
 
   if (phone != '') {
-    html += '<strong>Phone:</strong> ' + phone.replace(/(\d{3})(\d{3})(\d{4})/, `<a href="tel:+1$1$2$3">$1-$2-$3</a>`) + '<br>';
+    html += '<strong>Phone:</strong> ' + phone.replace(regObj.phone, regObj.replacers.phone) + '<br>';
   }
   if (email != '') {
     html += `<strong>Email resume to:</strong> <a href="mailto:${email}">${email}</a><br>`;
@@ -79,13 +115,13 @@ function loopData(data) {
           <div class="card card-body">
             <p class="mb-2"><strong>Description:</strong></p>
             <div class="mx-3">
-              ${description.replace(/^(.+)$/gm, stringReplacerFunc)}
+              ${description.replace(captureIndividualLinesRegex, stringReplacerFunc)}
             </div>
           </div>
           <div class="card card-body">
             <p class="mb-2"><strong>Requirements:</strong></p>
             <div class="mx-3">
-              ${requirements.replace(/^(.+)$/gm, stringReplacerFunc)}</span>
+              ${requirements.replace(captureIndividualLinesRegex, stringReplacerFunc)}</span>
             </div>
           </div>
           <div class="card card-body">
@@ -94,7 +130,7 @@ function loopData(data) {
           </div>
           <div class="card card-body">
             <p class="mb-0">
-              <strong>Shift/schedule:</strong>&nbsp;${shift.replace(urlRegExp, urlReplacer)}
+              <strong>Shift/schedule:</strong>&nbsp;${shift.replace(regObj.url, regObj.replacers.url)}
             </p>
           </div>
           ${pay == '' ? '' : createPayHTML(pay)}
