@@ -30,14 +30,8 @@ function filterFunction(arr) {
  */
 function filterJobBoardData(response) {
   const DATA = response.result.values.slice(1);
-  const approvedData = DATA.filter(row => { // row[25] is the approval column
-    const jobHasBeenApproved = row[25] == 'TRUE'; // Approved job-postings will have a value of 'TRUE' and will not be filtered out
 
-    return jobHasBeenApproved ? true : false;
-  });
-  const filteredData = approvedData.filter(filterFunction);
-
-  return filteredData;
+  return DATA.filter(filterFunction);
 }
 
 export default filterJobBoardData;

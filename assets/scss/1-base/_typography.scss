@@ -1,6 +1,26 @@
 // Typography styles (site specific)
 // ===============================
 
+// Styles for <s>strikeout</s> accessibility
+// This rule is used in conjunction with JS on the job-board page.
+s::before,
+s::after { // Make sure the text is not visible:
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+s::before {
+  content: " [start of stricken text] ";
+}
+
+s::after {
+  content: " [end of stricken text] ";
+}
 
 .typography__testimonials--quote {
   color: $primary-blue;
@@ -48,4 +68,21 @@
 
 .typography--text-indent {
   text-indent: -1.5rem;
+}
+
+.typography--valign-bottom {
+  vertical-align: bottom;
+}
+
+.typography--inherit-color {
+  color: inherit;
+}
+
+.typography--warning-alert-text,
+.typography--warning-alert-text li {
+  color: #856404;
+}
+
+.typography__span--stricken {
+  text-decoration: line-through;
 }

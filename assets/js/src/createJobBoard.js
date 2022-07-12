@@ -5,7 +5,7 @@ const API_PARAMS = {
 
 const SHEET_PARAMS = {
   spreadsheetId: '1KXofC8gI2vLEeBRRb7uFzA36wDfMDktipUETV8gkpZg',
-  range: 'Post a job opening'
+  range: 'APPROVED JOB POSTS ONLY'
 }
 
 function fetchJobs() {
