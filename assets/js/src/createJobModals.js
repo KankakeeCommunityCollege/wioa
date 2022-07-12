@@ -2,46 +2,34 @@ const captureIndividualLinesRegex = /^(.+)$/gm;
 // Some Regular Expressions used for formatting the modal content.
 const regObj = {
   email: /(\S+@\S+\.\S+)/g,
-  strong: /[\*_]{2}(.+)[\*_]{2}/g,
-  em: /[\*_](.+)[\*_]/g,
+  strong: /(\*\*([^\*]+)\*\*|__([^_]+)__)/g,
+  em: /(\*([^\*]+)\*|_([^_]+)_)/g,
+  link: /\[([^\]]+)\]\(([^\)]+)\)/g,
   phone: /(\d{3})(\d{3})(\d{4})/g,
-  url: /(https?:\/\/\S+)/g,
+  strikeout: /~([^~]+)~/g,
+  url: /[^\("](https?:\/\/\S+)[^\)"]/g,
   replacers: { // Replacers that utilize the backtick & dollar-sign variables of RegExp in JS (`$1`)
     email: `<a href="mailto:$1">$1</a>`,
-    strong: `<strong>$1</strong>`,
-    em: `<em>$1</em>`,
+    strong: `<strong>$2</strong>`,
+    em: `<em>$2</em>`,
+    link: `<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>`,
+    phone: `<a href="tel:+1$1$2$3">$1-$2-$3</a>`,
+    strikeout: `<s>$1</s>`,
     url: `<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>`,
-    phone: `<a href="tel:+1$1$2$3">$1-$2-$3</a>`
   }
 }
 
 function stringReplacerFunc(match) {
   let returnString = match;
-  // let returnString = match.replace(regObj.url, regObj.replacers.url);
-
-  // returnString = returnString.replace(regObj.strong, regObj.replacers.strong);
-  // returnString = returnString.replace(regObj.em, regObj.replacers.em);
-  // returnString = returnString.replace(regObj.url, regObj.replacers.url);
 
   for (const prop in regObj) {
-    if (Object.hasOwnProperty.call(regObj, prop)) {
-      const regexp = regObj[prop];
-      if (prop != 'replacers') {
+    if (Object.hasOwnProperty.call(regObj, prop) && prop != 'replacers') { // We don't need to include replacers in the loop
+        const regexp = regObj[prop];
         const replacer = regObj.replacers[prop];
         
         returnString = returnString.replace(regexp, replacer);
-      }
     }
   }
-
-  // for (const regexp in regObj) {
-  //   if (regexp != 'replacers') {
-  //     let [thisRegExp, thisReplacer] = [regObj[regexp], regObj.replacers[regexp]];
-  //     console.log(`RegExp: ${regexp} \n Expression: ${regObj[regexp]}`);
-  //     returnString = returnString.replace(thisRegExp, thisReplacer);
-  //   }
-    
-  // }
 
   return returnString.replace(/^([-\*]\s(.+)|(.+))$/gm, (match, c1, c2) => {
     return c2 == undefined ? `<p class="mb-2 mt-1">${match}</p>`
@@ -158,6 +146,9 @@ function loopData(data) {
  *                           `PARENT` is passed to this module's default function from the module `./buildJobBoard.js`.
  */
 function createJobModals(data, PARENT) {
+  // NOTE: The only reason I can get away with not sanitizing the form responses and then building them into the page is because
+  // JotForm strips all HTML from any form response already.
+  // The submissions held within the google sheet are, therefore, already sanitized since they come from JotForm.
   const html = loopData(data);
 
   PARENT.insertAdjacentHTML('beforeend', html);
