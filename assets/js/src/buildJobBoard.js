@@ -1,6 +1,5 @@
 const DATA_TABLES_CONFIG = {
   responsive: true, // Activate responsive powers GO!
-  paging: false, // Don't paginate. Should all be on one page
   'order': []//, // Initial column ordering
 }
 
