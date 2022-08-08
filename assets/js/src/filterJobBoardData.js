@@ -31,7 +31,8 @@ function filterFunction(arr) {
 function filterJobBoardData(response) {
   const DATA = response.result.values.slice(1);
 
-  return DATA.filter(filterFunction);
+  // Reverse the order of the returned data so that the newest job posts appear first.
+  return DATA.filter(filterFunction).reverse();
 }
 
 export default filterJobBoardData;
