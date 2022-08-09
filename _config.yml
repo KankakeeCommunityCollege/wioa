@@ -14,8 +14,8 @@ nav_links:
   - link_text: Workshops & Events
     link_href: 'workshops-and-events'
     button: false
-  - link_text: Career Training
-    link_href: 'career-training'
+  - link_text: Job Board
+    link_href: 'job-board'
     button: false
   - link_text: Resources
     link_href: 'resources'
