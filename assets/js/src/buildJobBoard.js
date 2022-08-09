@@ -1,6 +1,7 @@
 const DATA_TABLES_CONFIG = {
   responsive: true, // Activate responsive powers GO!
-  'order': []//, // Initial column ordering
+  'order': [], // Initial column ordering
+  'pageLength': window.location.pathname == '/' ? 10 : 25, // Sets the # of rows displayed - i.e. homepage = show 10 and job-board = show 25
 }
 
 function createRows(data) {
