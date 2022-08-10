@@ -7,6 +7,8 @@ timezone: America/Chicago
 theme: "kcc-gem-theme"
 google-tag_key: 'GTM-T2CJ2CJ'
 translate: true
+nav_config:
+  smaller_brand: true
 nav_links:
   - link_text: About
     link_href: 'about'
@@ -14,8 +16,8 @@ nav_links:
   - link_text: Workshops & Events
     link_href: 'workshops-and-events'
     button: false
-  - link_text: Job Board
-    link_href: 'job-board'
+  - link_text: Success Stories
+    link_href: 'success-stories'
     button: false
   - link_text: Resources
     link_href: 'resources'
