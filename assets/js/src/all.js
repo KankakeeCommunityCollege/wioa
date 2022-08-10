@@ -14,4 +14,7 @@ window.addEventListener('load', () => {
   if (document.getElementById('iframeLink')) {
     import('./iframeLink').then(({ default: iframeLink }) => iframeLink());
   }
+  if (document.getElementById('widgetHeightForm')) {
+    import('./watchWidgetHeightForm').then(({default: watchWidgetHeightForm}) => watchWidgetHeightForm())
+  }
 });
