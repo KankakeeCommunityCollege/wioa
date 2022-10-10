@@ -3,83 +3,59 @@ layout: homepage-facebook
 baseurl:
 homepage: true
 title: Workforce Services
-outline_title: Kankakee Workforce Services
+outline_title: Kankakee Workforce Services.
 description:
-sheet_key: true # Enables dataTables JS & styling
+sheet_key: true
 wioa_locations:
   - name: Kankakee Workforce Services
-    address: 'KCC North Extension Center<br>450 N Kinzie Ave<br>Bradley, IL 60915'
+    address: KCC North Extension Center<br>450 N Kinzie Ave<br>Bradley, IL 60915
     phone: 815-802-8960
     fax: 815-935-9610
     email: wiaoffice@kcc.edu
     hours: 'Monday&nbsp;-&nbsp;Friday: 8 a.m. - 5 p.m.'
-    website: 'https://wioa.kcc.edu'
-    directions: 'https://www.google.com/maps/dir/?api=1&destination=Kankakee+Community+College+North+Campus&destination_place_id=ChIJST5oqnznDYgR7Uv0CtHiLt8'
+    website: https://wioa.kcc.edu
+    directions: >-
+      https://www.google.com/maps/dir/?api=1&destination=Kankakee+Community+College+North+Campus&destination_place_id=ChIJST5oqnznDYgR7Uv0CtHiLt8
   - name: Grundy Workforce Services
-    address: '725 School St., Door 27<br>Morris, IL 60450'
+    address: 725 School St., Door 27<br>Morris, IL 60450
     phone: 815-942-0566
     fax:
     email: grundyworkforce@jjc.edu
     hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;4:30&nbsp;p.m.'
-    website: https://www.jjc.edu/community/workforce-development/grundy-workforce-services
+    website: >-
+      https://www.jjc.edu/community/workforce-development/grundy-workforce-services
   - name: Livingston Workforce Services
-    address: '211 East Madison Street Room 222<br>Pontiac, IL 61764'
+    address: 211 East Madison Street Room 222<br>Pontiac, IL 61764
     phone: 309-268-8280
     fax: 815-842-1379
     hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m.&nbsp;-&nbsp;5&nbsp;p.m.'
     website: https://www.livingstonworkforceservices.com/
   - name: Grundy Livingston Kankakee Workforce Board
-    address: '200 E. Court St., Suite 506<br>Kankakee, IL 60901'
+    address: 200 E. Court St., Suite 506<br>Kankakee, IL 60901
     phone: 815-935-0074
     fax: 815-936-3766
     email: info@glkwb.com
 slides:
   - image: /assets/img/kankakee-workforce-services-logo.svg
     alt-text: >-
-      Kankakee Workforce Services, An Illinois workNet® Center,
-      a proud partner of the AmericanJobCenter® network
+      Kankakee Workforce Services, An Illinois workNet® Center, a proud partner
+      of the AmericanJobCenter® network
     url: '#'
     new_tab: false
     white_background: true
   - image: /uploads/wioa-fb-22.jpg
     alt-text: >-
-      Your ideal job is out there - We'll help you prepare for a career that is in-demand
+      Your ideal job is out there - We'll help you prepare for a career that is
+      in-demand
     url: '#'
     new_tab: false
   - image: /uploads/wioa-young-adult-program-fb-22.jpg
     alt-text: >-
-      WIOA Youth Program - offers help to prepare for your future - Young Adults 17-24
+      WIOA Youth Program - offers help to prepare for your future - Young Adults
+      17-24
     url: '#'
     new_tab: false
-#student_testimonials:
-#card_section: Services
-#cards:
-#  - name: Workshops&nbsp;&&nbsp;Events
-#    description: >-
-#      Kankakee Workforce Services offers a variety of resources and workshops.
-#      Check our calendar for upcoming events.
-#    button_text: View Calendar
-#    link: workshops-and-events
-#    thumb: uploads/event_available_outline-24px.svg
-#    thumb_alt_text: Workshops and events thumbnail
-#  - name: Eligibility Survey
-#    description: >-
-#      Complete our questionnaire so WIOA can offer the most appropriate services
-#      for your needs.
-#    button_text: Get Started
-#    link: training-grant-application
-#    thumb: uploads/survey-24px.svg
-#    thumb_alt_text:
-#  - name: Career Training
-#    description: >-
-#      Are you underemployed or unemployed? Have you exhausted your unemployment
-#      benefits? You could be eligible for up to $10,000 in career training.
-#      button_text: Learn More
-#    link: career-training
-#    thumb: uploads/certificate-24.svg
-#    thumb_alt_text:
 ---
-
 <!-- FTP test -->
 <main>
   <div class="container background__color--tan">
@@ -166,12 +142,7 @@ slides:
         <div id="JobBoardWidget">
           <div class="text-center my-5 py-5">
             <p>Please wait while we fetch the latest job postings...</p>
-            <img
-              src="{{ page.baseurl }}assets/img/loader.min.svg"
-              class="loader loader--animate"
-              height="75"
-              width="75"
-              alt="Loading...">
+            <img src="{{ page.baseurl }}assets/img/loader.min.svg" class="loader loader--animate" height="75" width="75" alt="Loading..." />
           </div>
         </div>
         {%- comment -%}
@@ -192,7 +163,7 @@ slides:
           <div class="clearfix">
             <p>
               <a href="https://www.instagram.com/kankakeeworkforce/" class="social-icons__links float-right" target="_blank" rel="noopener noreferrer" title="Instagram">
-                <img src="{{page.baseurl}}assets/img/instagram-white.svg" aria-hidden="true" class="social-icons__icons" alt="KCC Workforce Services Instagram page">
+                <img src="{{page.baseurl}}assets/img/instagram-white.svg" aria-hidden="true" class="social-icons__icons" alt="KCC Workforce Services Instagram page" />
               </a>
               Find us on Instagram: <a href="https://www.instagram.com/kankakeeworkforce/" target="_blank" rel="noopener noreferrer">kankakeeworkforce</a>
             </p>
@@ -225,7 +196,7 @@ slides:
             <strong>Website:</strong>&nbsp;<a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
           {% endif %}
           {% if location.directions %}
-          <br><a href="{{ location.directions }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
+          <br /><a href="{{ location.directions }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
           {% endif %}
         </p>
       </div>
