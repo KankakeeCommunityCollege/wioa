@@ -1,21 +1,18 @@
-<!-- preconnect to assets -->
-<!-- fonts -->
-<!-- preconnect to the Eurostile typekit font -->
-<link rel="preconnect" href="https://use.typekit.net">
-<!-- Google fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<!-- Google Cusom Search -->
-<link rel="preconnect" href="https://clients1.google.com">
-<link rel="preconnect" href="https://www.google.com">
-<!-- Google API -->
-<link rel="preload" as="script" href="https://apis.google.com/js/api.js">
-<!-- Custom theme JS -->
-<link rel="preload" as="script" href="{{page.baseurl}}assets/js/theme/dist/kcc-theme.bundle.js?version={% include hash/theme_hash.yml %}">
-{%- if site.theme_config != true -%}
-<link rel="preload" as="script" href="{{page.baseurl}}assets/js/dist/main{% if site.data.hash %}.{{ site.data.hash }}{% endif %}.bundle.js">
-{%- endif -%}
-{% if page.slides %}
-<!-- preload the first slide since it is visible on pageload -->
-<link rel="preload" as="image" href="{{ page.baseurl }}{{ page.slides[0].image }}">
-{% endif %}
-<!-- End of preconnects -->
+<!-- preconnect to Google assets -->
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- GCS -->
+    <link rel="preconnect" href="https://clients1.google.com">
+    <link rel="preconnect" href="https://www.google.com">
+    <!-- BS4 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js">
+    <!-- Custom-->
+    <link rel="preload" as="style" href="{{ page.baseurl }}assets/js/dist/theme.{% include hash/theme_hash.yml %}.css">
+    <link rel="preload" as="script" href="{{ page.baseurl }}assets/js/dist/theme.{% include hash/theme_hash.yml %}.bundle.js">
+    {%- if page.slides %}
+    <!-- preload the first slide since it is visible on pageload -->
+    <link rel="preload" as="image" href="{{ page.baseurl }}{{ page.slides[0].image }}">
+    {%- endif %}
+    <!-- End of preconnects -->
