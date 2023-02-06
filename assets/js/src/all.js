@@ -8,13 +8,20 @@ window.addEventListener('load', () => {
 
     import('./createJobBoard').then(({ default: createJobBoard }) => createJobBoard(PARENT));
   }
+  
   if (document.querySelector('button[data-target="#videoModal"]')) {
     import('./loadVideoOnModalOpen').then(({ default: loadVideoOnModalOpen }) => loadVideoOnModalOpen());
   }
+  
   if (document.getElementById('iframeLink')) {
     import('./iframeLink').then(({ default: iframeLink }) => iframeLink());
   }
+  
   if (document.getElementById('widgetHeightForm')) {
-    import('./watchWidgetHeightForm').then(({default: watchWidgetHeightForm}) => watchWidgetHeightForm())
+    import('./watchWidgetHeightForm').then(({ default: watchWidgetHeightForm }) => watchWidgetHeightForm());
+  }
+
+  if (document.getElementById('SearchTermForm')) {
+    import('./watchForWebsiteSearch').then(({ default: watchForWebsiteSearch }) => watchForWebsiteSearch());
   }
 });

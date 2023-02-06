@@ -1,6 +1,6 @@
 {% include document-head.html %}
-  {% include scripts/google-tag.html %}
   {% include styles/fonts.html %}
+  {% include scripts/google-tag.html %}
   {% include styles/vendor.html %}
   {% if page.sheet_key %}
   <!-- dataTables stylesheets -->
@@ -15,19 +15,19 @@
   {% if site.translate == true %}{% include translate.html %}{% endif %}
   {% include nav-global.html %}
   {% if page.no_local_nav != true %}{% include nav-local.html %}{% endif %}
-  {% include emergency-alerts.html %}
+  {% if page.no_alert != true %}{% include emergency-alerts.html %}{% endif %}
   {{ content }}
   {% include footer.html %}
   {% include scripts/vendor-cdn.html %}
-  {% include scripts/kcc-nav.html %}
   {% include scripts/kcc-theme.html %}
-  {% include scripts/emergency-alerts.html %}
   {% include scripts/google-api.html %}
   {% if page.sheet_key %}
   {% include scripts/table-cdn.html %}
   {% endif %}
   {% include scripts/custom.html %}
   {% include scripts/facebook-js-sdk.html %}
-  {% if site.translate == true %}<!-- Link to this site's custom google translate stylesheet -->
-  {% include scripts/translate.html %}{% endif %}
+  {%- if site.translate == true %}
+  <!-- Link to this site's custom google translate stylesheet -->
+  {% include scripts/translate.html %}
+  {%- endif %}
 {% include foot.html %}
