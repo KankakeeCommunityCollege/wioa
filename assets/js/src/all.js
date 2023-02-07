@@ -24,4 +24,8 @@ window.addEventListener('load', () => {
   if (document.getElementById('SearchTermForm')) {
     import('./watchForWebsiteSearch').then(({ default: watchForWebsiteSearch }) => watchForWebsiteSearch());
   }
+
+  if (document.getElementById('footnote')) {
+    import('./preventFootnoteJump').then(({ default: preventFootnoteJump }) => preventFootnoteJump());
+  }
 });
