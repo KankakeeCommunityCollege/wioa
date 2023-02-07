@@ -1,0 +1,19 @@
+
+.footnote {
+  transition: background-color ease-in-out .5s;
+}
+
+.footnote:target,
+.footnote__focused {
+  background-color: rgba(255,255,0,.5);
+}
+
+.footnote__sup {
+  pointer-events: none;
+}
+
+.footnote__a:focus,
+a.footnote__focused {
+  outline: thin dotted;
+  outline-offest: 2px;
+}
