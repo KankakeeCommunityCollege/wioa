@@ -15,22 +15,14 @@ function fetchJobs() {
     return import('./filterJobBoardData').then(({ default: filterJobBoardData }) => {
       return filterJobBoardData(response);
     }).then(data => {
-      const PARENT = fetchJobs.parentEl;
-
-      return import('./buildJobBoard').then(({default: buildJobBoard}) => buildJobBoard(PARENT, data))
+      return import('./buildJobBoard').then(({default: buildJobBoard}) => buildJobBoard(data))
     })
   }, err => {
     console.error(`Error in JobBoard: ${err}`, err);
   })
 }
-/**
- * 
- * @param {Element} PARENT - PARENT is the parent-element selected via .getElementById() in the file all.js.
- * The PARENT element will get the job-board's HTML injected into it after all the data has loaded.
- * It is set to `<div id="JobBoardWidget">` on the homepage and `<div id="JobBoard">` on the job-board page.
- */
-function createJobBoard(PARENT) {
-  fetchJobs.parentEl = PARENT;
+
+function createJobBoard() {
   gapi.load('client', fetchJobs);
 }
 

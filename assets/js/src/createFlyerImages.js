@@ -58,7 +58,7 @@ function createFlyerImages(data) {
     let [,title,,location,coName,,,,,,,,flyer,,,,,,,,,,,,,] = row;
     const imageUrl = flyer != '' ? flyer : null;
     // Flyer image is not required in a submissions so we need to check if it exists first
-    if (imageUrl != null) { // Do not be afraid of the inequality operator (`!=`) — Stop always using strict inequality (`!==`) — learn the difference, learn what implicit coercion is in JS!
+    if (imageUrl != null) {
       getImage(imageUrl, i, [title, location, coName]);
     }
   })
