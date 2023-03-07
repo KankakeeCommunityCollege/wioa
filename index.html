@@ -66,27 +66,45 @@ slides:
       </div>
     </div>
     <div class="row">
+      <!-- Column 1 of Services -->
       <div class="col-md-4 text-center action-cards__col--margin-btm">
         <div class="action-cards__svg--wrapper">
           <a href="{{ page.baseurl }}workshops-and-events" aria-label="link to Workshops and Events page">
-            <img src="{{ page.baseurl }}uploads/events-icon.svg" class="img-fluid w-40 mb-3" alt="calendar icon" />
+            <img
+              role="image"
+              src="{{ page.baseurl }}uploads/events-icon.svg"
+              class="img-fluid w-40 mb-3"
+              alt="calendar icon"
+            >
           </a>
         </div>
-        <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events"><h4 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h4></a>
+        <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events">
+          <h4 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h4>
+        </a>
         <div class="row action-cards__text-wrapper">
           <div class="col d-flex align-items-center position__col--min-height">
             <h5 class="typography__h5--description editable">
-              Kankakee Workforce Services offers a variety of resources and workshops. Check our calendar for upcoming events.
+              Kankakee Workforce Services offers a variety of resources and workshops.
+              Check our calendar for upcoming events.
             </h5>
           </div>
         </div>
-        <a href="{{ page.baseurl }}workshops-and-events" class="btn btn-primary">View Calendar</a>
+        <a href="{{ page.baseurl }}workshops-and-events" class="btn btn-primary">
+          View Calendar
+        </a>
       </div>
+      <!-- Column 2 of Services -->
       <div class="col-md-4 text-center margins__col--btm">
         <div class="impact__give">
           <div class="action-cards__svg--wrapper">
             <a href="{{ page.baseurl }}training-grant-application" aria-label="link to Eligibility Questionnaire page">
-              <img role="image" src="{{ page.baseurl }}uploads/survey-icon.svg" height="140" width="140" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon" />
+              <img
+                role="image"
+                src="{{ page.baseurl }}uploads/survey-icon.svg"
+                height="140" width="140"
+                class="img-fluid w-40 mb-3"
+                alt="clipboard with a checklist icon"
+              >
             </a>
           </div>
           <a href="{{ page.baseurl }}training-grant-application" class="links__no-underline">
@@ -100,25 +118,40 @@ slides:
               </h5>
             </div>
           </div>
-            <a href="{{ page.baseurl }}training-grant-application" class="btn btn-primary">Get Started</a>
+            <a href="{{ page.baseurl }}training-grant-application" class="btn btn-primary">
+              Get Started
+            </a>
         </div>
       </div>
+      <!-- Column 3 of Services -->
       <div class="col-md-4 text-center action-cards__col--margin-btm">
         <div class="action-cards__svg--wrapper">
-          <a href="{{ page.baseurl }}about/#fundable-wioa-programs" aria-label="link to community literacy page">
-            <img src="{{ page.baseurl }}uploads/training-icon.svg" class="img-fluid w-40 mb-3" alt="clipboard with a checklist icon" />
+          <a
+            href="{{ page.baseurl }}job-board/"
+            aria-label="link to community literacy page"
+          >
+            <img
+              role="image"
+              src="{{ page.baseurl }}assets/img/icon_job-board.svg"
+              class="img-fluid w-40 mb-3"
+              alt="clipboard with a checklist icon">
           </a>
         </div>
-        <a href="{{ page.baseurl }}about/#fundable-wioa-programs" class="links__no-underline"><h4 class="typography__orange-h4">Career Training</h4></a>
+        <a href="{{ page.baseurl }}job-board/" class="links__no-underline">
+          <h4 class="typography__orange-h4">Job Board</h4>
+        </a>
         <div class="row action-cards__text-wrapper">
-          <div class="col d-flex align-items-center position__col--min-height">
-            <h5 class="typography__h5--description editable">
-              Career training is open to qualified dislocated workers, low-income adults and youth.
+          <div class="col d-flex justify-content-center align-items-center position__col--min-height">
+            <h5 class="typography__h5--description text-center">
+              Local and regional job openings.
             </h5>
           </div>
         </div>
-        <a href="{{ page.baseurl }}about/#fundable-wioa-programs" class="btn btn-primary">Learn More</a>
+        <a href="{{ page.baseurl }}job-board/" class="btn btn-primary">
+          Learn More
+        </a>
       </div>
+      <!-- End of Services columns -->
     </div>
   </div>
 </main>
@@ -126,37 +159,34 @@ slides:
 <section class="mt-4">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 mb-4">
+      <div class="col-lg-8">
         <div class="row">
           <div class="col margins__col--top home__col--heading-underline">
-            <h3 id="job-board" class="typography__section--heading margins__heading--btm">Job Board</h3>
+            <h3 class="typography__section--heading margins__heading--btm">Locations & Hours</h3>
           </div>
         </div>
         <div class="row">
-          <div class="col">
-            <div class="editable">
-              <p>To submit a job to our online job board please visit the <a href="./job-board/">job board page</a>.</p>
-            </div>
+          {% for location in page.wioa_locations %}
+          <div class="col-sm-6 mb-3">
+            <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
+            <p class="notranslate">
+              {{ location.address }}<br />
+              <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
+              {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
+              {% if location.email %}<strong>Email:</strong>&nbsp;<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
+              {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
+              {% if location.website %}
+              <br><strong>Website:</strong> <a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
+              {% endif %}
+              {% if location.directions %}
+              <br /><a href="{{ location.directions }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
+              {% endif %}
+            </p>
           </div>
+          {% endfor %}
         </div>
-        <div id="JobBoardWidget">
-          <div class="text-center my-5 py-5">
-            <p>Please wait while we fetch the latest job postings...</p>
-            <img src="{{ page.baseurl }}assets/img/loader.min.svg" class="loader loader--animate" height="75" width="75" alt="Loading..." />
-          </div>
-        </div>
-        {%- comment -%}
-        <!-- Tim Boone quote removed in June update to website -->
-        <div class="d-flex align-items-center justify-content-center">
-          <img src="uploads/tboone_square-crop.jpg" class="testimonials__img--round" alt="Tim Boone" />
-            <div class="testimonials__max-width ml-3">
-              <h3 class="typography__testimonials--quote">After almost 16 years on the same job and at my age, I was really nervous when the plant announced they were closing, but the Trade Program helped me regain my confidence and find a new career path.</h3>
-              <h3 class="testimonials__heading--overline testimonials__name--color typography__testimonials--name notranslate">&nbsp;-&nbsp;Tim Boone</h3>
-            </div>
-          </div>
-          {%- endcomment -%}
-        </div>
-      <div class="col-lg-4 my-auto text-center">
+    </div>
+    <div class="col-lg-4 my-auto text-center">
         {% include facebook-widget.html %}
         <div class="mt-4 text-left positioning--max-width-400">
           <h5 class="typography__h5">We're on Instagram&nbsp;too!</h5>
@@ -171,38 +201,6 @@ slides:
           </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col margins__col--top home__col--heading-underline">
-        <h3 class="typography__section--heading margins__heading--btm">Locations & Hours</h3>
-      </div>
-    </div>
-    <div class="row">
-      {% for location in page.wioa_locations %}
-      <div class="col-sm-6 col-lg-4 mb-3">
-        <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
-        <p class="notranslate">
-          {{ location.address }}<br />
-          <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
-          {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
-          {% if location.email %}<strong>Email:</strong>&nbsp;<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
-          {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
-          {% if location.website %}
-            <strong>Website:</strong>&nbsp;<a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
-          {% endif %}
-          {% if location.directions %}
-          <br /><a href="{{ location.directions }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
-          {% endif %}
-        </p>
-      </div>
-      {% endfor %}
-    </div>
   </div>
 </section>
 {% include contacts-tan.html %}
