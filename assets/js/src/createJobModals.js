@@ -37,9 +37,11 @@ function stringReplacerFunc(match) {
   });
 }
 
-function createFlyerPlaceholder(string) {
-  return `<div class="text-center mt-4" data-flyer-src="${string}">
-    <img src="/assets/img/loader.min.svg" class="loader loader--animate" alt="Loading...">
+function createFlyerPlaceholder(flierURL) {
+  return `<div class="text-center mt-4" data-flyer-src="${flierURL}">
+    <a href="${flierURL}" title="Download flier">
+      <img src="/assets/img/loader.min.svg" class="loader loader--animate" alt="Loading...">
+    </a>
   </div>`;
 }
 
