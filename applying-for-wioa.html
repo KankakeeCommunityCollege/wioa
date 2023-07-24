@@ -1,0 +1,165 @@
+---
+layout: default
+baseurl: ../
+title: Applying for the WIOA Scholarship
+description: ''
+page_content_collection:
+  - heading: Apply to the School
+    icon: assets/img/school-icon.png
+    content: >-
+      <p>Contact the admissions office or academic advisor at the 
+      school you plan to attend to start the registration process 
+      and outline what classes you need to take for your chosen 
+      training program. If allowed without a payment plan, start
+      enrolling in classes to reserve your spot, or obtain a “letter 
+      of intent” from the school letting us know you have been&nbsp;accepted.</p>
+  - heading: Complete the FAFSA
+    icon: assets/img/fafsa-icon.png
+    content: >-
+      <p>Complete the FAFSA if pursuing a program that accepts financial 
+      aid (Pell/MAP), which will be applied prior to WIOA funding. 
+      Non college credit programs such as CDL and CNA are usually exempt.<br>
+      <a href="https://studentaid.gov/h/apply-for-aid/fafsa" target="_blank" rel="noopener noreferrer">https://studentaid.gov/h/apply-for-aid/fafsa</a></p>
+  - heading: Submit Application
+    icon: assets/img/app-icon.png
+    content: >-
+      <p>Complete the application in its entirety. Submit the completed 
+      application by email to <a href="mailto:wiaoffice@kcc.edu">wiaoffice@kcc.edu</a> 
+      or in person/by mail to our office at 450 N. Kinzie Ave Bradley IL 60915.</p>
+  - heading: Submit Required Documentation
+    icon: assets/img/id-icon.png
+    content: >-
+      <p>Submit the following documentation in person to our office 
+      450 N. Kinzie Ave Bradley IL 60915. (If you prefer to upload
+      a digital copy, call or email our office to request a secure 
+      link through&nbsp;ShareFile.)</p>
+      <ul>
+        <li>Driver's License</li>
+        <li>Social Security Card</li>
+        <li>FAFSA confirmation email or page</li>
+        <li>Most recent check stub (for every employer worked at the last 6 months)</li>
+        <li>Tuition Bill/Schedule of Classes or Letter of Intent</li>
+      </ul>
+      <p><em>To be accepted into the program, an individual must be found eligible 
+      (low-income, dislocated worker, under age 25 with a barrier to employment). 
+      A career planner may request additional documentation (i.e. written 
+      notification of layoff, high school transcript/drop out letter, family ID) 
+      as proof of your&nbsp;eligibility.</em></p>
+  - heading: Meet with Career Planner
+    icon: assets/img/planner-icon.png
+    content: >-
+      <p>A Career Planner will contact you to set up an appointment to 
+      discuss your application and develop an Individual Employment 
+      Plan, which is a plan of action to help you reach your employment 
+      goals. The career planner will review your documentation and will 
+      determine your eligibility to receive WIOA&nbsp;assistance.</p>
+  - heading: Basic Skills Testing
+    icon: assets/img/skills-test-icon.png
+    content: >-
+      <p>TABE testing is used to effectively assess skill and knowledge of 
+      individuals applying for the WIOA scholarship. The intent is to 
+      ensure individuals do not require remedial education prior to attending 
+      training. Individuals who have an associate degree, recently passed a 
+      placement test or college course (math and english) may be <em>exempt</em> 
+      from&nbsp;testing.</p>
+  - heading: Scholarship Awarded
+    icon: assets/img/award-icon.png
+    content: >-
+      <p>When all previous steps are completed, a Career Planner will 
+      discuss with you how payment will work for tuition, fees, books, 
+      supplies, and/or gas reimbursement. As long as you continue to 
+      meet WIOA grant requirements, you will remain eligible to receive 
+      scholarship funding each semester through the end of your&nbsp;program.</p>
+---
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2 class="typography__h2">{{ page.title }}</h2>
+        <div class="editable mb-5">
+          <p>
+            We recommend applying for the grant if your intent is to 
+            upgrade your skills and obtain employment in an in-demand
+            occupation. Below are program requirements you need to be 
+            aware of when applying for the scholarship program.
+          </p>
+          <ul>
+            <li>
+              You must be able to complete your program in 3 years; taking 
+              a minimum of 6 credit hours per (fall and spring) semester. 
+              Attending summer classes is encouraged, but not required.
+            </li>
+            <li>
+              You are required to apply for federal financial aid (FAFSA) 
+              each year you are on the program and submit a copy of your
+              confirmation email to your Career Planner.
+            </li>
+            <li>
+              It is important and to your benefit to contact your Career 
+              Planner regularly (monthly). Especially if your personal
+              information (address, phone number, email, etc.) should 
+              change while on the program.
+            </li>
+            <li>
+              Any classes taken outside of the scope of your program will 
+              need to be paid for by another funding source and cannot be 
+              covered by this grant.
+            </li>
+            <li>
+              At the end of each semester, please forward your grades, a 
+              copy of any certificates/licenses/diplomas earned (if any),
+              and your class schedule/tuition bill for the next semester 
+              to your Career Planner.
+            </li>
+            <li>
+              If at any time you need to change your program or drop/withdraw 
+              from a course, notify your Career Planner in advance to ensure 
+              no loss of your scholarship.
+            </li>
+            <li>
+              It is important to notify your Career Planner of any employment 
+              changes or if you need to apply for unemployment benefits while 
+              on the program.
+            </li>
+            <li>
+              At the end of the program, your Career Planner will remain 
+              in contact with you for up to a year to assist with finding
+              a job and ensure you are successfully employed.
+            </li>
+          </ul>
+          <p>
+            <strong>
+              If you accept these requirements, complete the steps below 
+              no more than 90 days prior to the first day of class. 
+              <em>All&nbsp;documentation must be received to determine 
+              eligibility for our&nbsp;scholarship.</em>
+            </strong>
+          </p>
+        </div>
+        {% for item in page.page_content_collection %}
+        <div class="row{% unless forloop.last %} mb-4{% endunless %}">
+          <div class="col-12 col-md-2 text-center mb-3">
+            {% comment %}
+              <!-- These icons do not add any meaning to the page content. Therefore,
+                   they have aria-hidden="true" and don't need an alt-text *value* -->
+            {% endcomment %}
+            <img
+              data-src="{{ page.baseurl }}{{ item.icon }}"
+              src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
+              class="img-fluid"
+              height="48"
+              width="48"
+              aria-hidden="true"
+              alt=""
+            >
+          </div>
+          <div class="col">
+            <h3 class="typography__h3">{{ item.heading }}</h3>
+            {{ item.content }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
