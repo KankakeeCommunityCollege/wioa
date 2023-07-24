@@ -5,7 +5,8 @@ layout: null
 
 # Allow crawling of all content
 User-agent: *
-## The /partners/ folder and contents are not public ##
+## The /partners/ and /applying-for-wioa/ folders and contents are not public ##
 Disallow: /partners/
+Disallow: /applying-for-wioa/
 
 {% if site.url and site.url != 'URL is needed for robots.txt to work properly' %}Sitemap: {{ site.url }}/sitemap.xml{% endif %}
