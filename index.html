@@ -12,7 +12,7 @@ wioa_locations:
     phone: 815-802-8960
     fax: 815-935-9610
     email: workforceservices@kcc.edu
-    hours: 'Monday&nbsp;-&nbsp;Friday: 8 a.m. - 4:30 p.m.'
+    hours: 'Monday&nbsp;-&nbsp;Friday: 8&nbsp;a.m. - 4:30&nbsp;p.m.'
     website: https://wioa.kcc.edu
     directions: >-
       https://www.google.com/maps/dir/?api=1&destination=Kankakee+Community+College+North+Campus&destination_place_id=ChIJST5oqnznDYgR7Uv0CtHiLt8
@@ -148,14 +148,14 @@ slides:
         </div>
         <div class="row">
           {% for location in page.wioa_locations %}
-          <div class="col-sm-6 mb-3">
+          <div class="col mb-3">
             <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
             <p class="notranslate">
               {{ location.address }}<br />
               <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
               {% if location.fax %}<strong>Fax:</strong>&nbsp;<a href="tel:1{{ location.fax | remove: '-' }}" class="links__darker-link">{{ location.fax }}</a><br />{% endif %}
               {% if location.email %}<strong>Email:</strong>&nbsp;<a class="links__darker-link" target="_blank" href="mailto:{{ location.email }}">{{ location.email }}</a><br />{% endif %}
-              {% if location.hours %}<strong>Hours:</strong>&nbsp;{{ location.hours }}{% endif %}
+              {% if location.hours %}<strong>Resource Room hours:</strong>&nbsp;{{ location.hours }}{% endif %}
               {% if location.website %}
               <br><strong>Website:</strong> <a href="{{ location.website }}" target="_blank" rel="noopener noreferrer" class="links--wrap">{{ location.website | remove: 'https://' }}</a>
               {% endif %}
@@ -169,18 +169,6 @@ slides:
     </div>
     <div class="col-lg-4 my-auto text-center">
         {% include facebook-widget.html %}
-        <div class="mt-4 text-left positioning--max-width-400">
-          <h5 class="typography__h5">We're on Instagram&nbsp;too!</h5>
-          <div class="clearfix">
-            <p>
-              <a href="https://www.instagram.com/kankakeeworkforce/" class="social-icons__links float-right" target="_blank" rel="noopener noreferrer" title="Instagram">
-                <img src="{{page.baseurl}}assets/img/instagram.svg" aria-hidden="true" class="social-icons__icons" alt="Instagram">
-                <span class="sr-only">KCC Workforce Services Instagram</span>
-              </a>
-              Find us on Instagram: <a href="https://www.instagram.com/kankakeeworkforce/" target="_blank" rel="noopener noreferrer">kankakeeworkforce</a>
-            </p>
-          </div>
-        </div>
       </div>
   </div>
 </section>
