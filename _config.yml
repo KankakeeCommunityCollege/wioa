@@ -35,8 +35,6 @@ sub-nav_links:
   - link_text: Young Adult Program Services
     link_href: 'career-training/yaps'
 collections:
-  contacts:
-    output: false
   testimonials:
     output: false
 permalink: pretty
