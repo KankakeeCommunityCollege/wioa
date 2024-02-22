@@ -23,9 +23,6 @@ nav_links:
   - link_text: Resources
     link_href: 'resources'
     button: false
-  - link_text: Contact
-    link_href: '#contact'
-    button: false
   - link_text: Get Started
     link_href: 'scholarship-request-form'
     button: true
