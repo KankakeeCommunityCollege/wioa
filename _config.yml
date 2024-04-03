@@ -2,6 +2,7 @@ title: "Kankakee Community College"
 url: 'https://wioa.kcc.edu'
 site_name: Workforce Services
 public-url: "https://wioa.kcc.edu"
+canonical_baseurl: "https://wioa.kcc.edu"
 port: 3000
 # BUILD
 timezone: America/Chicago
