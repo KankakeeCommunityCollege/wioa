@@ -1,16 +1,16 @@
-const API_PARAMS = {
+const apiParams = {
   'apiKey': 'AIzaSyCEBsbXfFcdbkASlg-PodD1rT_Fe3Nw62A',
   'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/sheets/v4/rest']
 };
 
-const SHEET_PARAMS = {
+const sheetParams = {
   spreadsheetId: '1KXofC8gI2vLEeBRRb7uFzA36wDfMDktipUETV8gkpZg',
   range: 'APPROVED JOB POSTS ONLY'
 }
 
 function fetchJobs() {
-  gapi.client.init(API_PARAMS).then(() => {
-    return gapi.client.sheets.spreadsheets.values.get(SHEET_PARAMS);
+  gapi.client.init(apiParams).then(() => {
+    return gapi.client.sheets.spreadsheets.values.get(sheetParams);
   }).then(response => {
     return import('./filterJobBoardData').then(({ default: filterJobBoardData }) => {
       return filterJobBoardData(response);

@@ -1,7 +1,7 @@
 function lazyLoadFlyers() {
-  const FLYER_LIST = document.querySelectorAll('div[data-flyer-src]');
+  const flyerImageList = document.querySelectorAll('div[data-flyer-src]');
 
-  [...FLYER_LIST].forEach(div => {
+  [...flyerImageList].forEach(div => {
     const src = div.dataset.flyerSrc;
     const img = document.createElement('img');
     const a = div.querySelector('a'); // div's child is an <a> and the <a>'s child is the image to lazy load

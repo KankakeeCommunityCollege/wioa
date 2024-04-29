@@ -1,10 +1,10 @@
-const MODAL_BUTTON = document.querySelector('button[data-target="#videoModal"]');
+const modalButton = document.querySelector('button[data-bs-target="#videoModal"]');
 
 function startVideoPlayback(video, parent) {
-  const MODAL_CLOSE_BUTTONS = document.querySelectorAll('button[data-dismiss="modal"]');
+  const modalCloseButtonList = document.querySelectorAll('button[data-bs-dismiss="modal"]');
 
-  MODAL_CLOSE_BUTTONS.forEach(btn => {
-    btn.onclick = (e) => video.pause();
+  modalCloseButtonList.forEach(btn => {
+    btn.onclick = _e => video.pause();
   });
 
   window.setTimeout(() => {
@@ -15,7 +15,7 @@ function startVideoPlayback(video, parent) {
 function createVideoSources(video, src) {
   const sourceArray = src.split(',');
 
-  sourceArray.map(src => {
+  sourceArray.forEach(src => {
     const source = document.createElement('source');
     
     source.src = src;
@@ -27,26 +27,25 @@ function createVideoSources(video, src) {
 function createVideoElements(src, parent) {
   const video = document.createElement('video');
 
-
   createVideoSources(video, src);
   video.controls = true;
   video.classList.add('video__one-stop-intro');
   parent.innerHTML = '';
   parent.append(video);
   startVideoPlayback(video, parent);
-  MODAL_BUTTON.removeEventListener('click', loadVideo);
+  modalButton.removeEventListener('click', loadVideo);
 }
 
 function loadVideo(e) {
-  const MODAL = document.querySelector(e.target.dataset.target);
-  const VIDEO_WRAPPER = MODAL.querySelector('#videoWrapper');
-  const VIDEO_SOURCE = VIDEO_WRAPPER.dataset.videoSrc;
+  const modal = document.querySelector(e.target.dataset.bsTarget);
+  const videoWrapper = modal.querySelector('#videoWrapper');
+  const videoSource = videoWrapper.dataset.videoSrc;
 
-  createVideoElements(VIDEO_SOURCE, VIDEO_WRAPPER);
+  createVideoElements(videoSource, videoWrapper);
 }
 
 function loadVideoOnModalOpen() {
-  MODAL_BUTTON.addEventListener('click', loadVideo);
+  modalButton.addEventListener('click', loadVideo);
 }
 
 export default loadVideoOnModalOpen;

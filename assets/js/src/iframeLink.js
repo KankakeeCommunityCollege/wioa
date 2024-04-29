@@ -6,9 +6,9 @@
  *  Module only loads on the training-grant-application page
  * 
  */
-const BUTTON = document.getElementById('iframeLink');
+const iframeButton = document.getElementById('iframeLink');
 // iframe ID has changed before so this seems to be a safer way to target the Jotform iframe
-const IFRAME = document.querySelector('iframe[src^="https://form.jotform.com"]');
+const iframe = document.querySelector('iframe[src^="https://form.jotform.com"]');
 /**
  * 
  * @returns {number} the calculated height of the two navigation bars (needed because they are position: fixed;)
@@ -36,14 +36,14 @@ function getScrollOptions(element) {
 }
 
 function iframeLink() {
-  BUTTON.addEventListener('click', e => {
+  iframeButton.addEventListener('click', e => {
     e.preventDefault();
 
-    window.scrollTo(getScrollOptions(IFRAME));
+    window.scrollTo(getScrollOptions(iframe));
   });
 
   if (window.location.hash === '#62244641777966') {
-    window.scrollTo(getScrollOptions(IFRAME));
+    window.scrollTo(getScrollOptions(iframe));
   }
 }
 
