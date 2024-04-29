@@ -1,7 +1,7 @@
 // Custom JS to prevent footnote links (on the Partners page)
 // from being obscured by our fixed navigation bar.
-const FOOTNOTE_LINK = document.getElementById('footnote-ref');
-const BACK_LINK = document.querySelector('a[href="#footnote-ref"]');
+const footnoteLink = document.getElementById('footnote-ref');
+const backLink = document.querySelector('a[href="#footnote-ref"]');
 
 function clickHandler(e) {
   e.preventDefault(); // Prevent scrolling and prevent hash-link from altering page history
@@ -24,8 +24,8 @@ function clickHandler(e) {
 }
 
 function preventFootnoteJump() {
-  FOOTNOTE_LINK.addEventListener('click', clickHandler);
-  BACK_LINK.addEventListener('click', clickHandler);
+  footnoteLink.addEventListener('click', clickHandler);
+  backLink.addEventListener('click', clickHandler);
 }
 
 export default preventFootnoteJump;

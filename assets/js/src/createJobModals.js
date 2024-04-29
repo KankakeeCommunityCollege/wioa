@@ -91,9 +91,7 @@ function loopData(data) {
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title typography__h3" id="jobModalLabel${i}">${title}</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body mx-lg-3">
           <div class="card card-body">
@@ -133,7 +131,7 @@ function loopData(data) {
           ${flyerPlaceholder}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -144,16 +142,16 @@ function loopData(data) {
 /**
  * 
  * @param {Array} data - Array of arrays containing the job board data from Google Sheets API response
- * @param {Element} PARENT - This second argument is the element in which the modal HTML markup gets injected.
- *                           `PARENT` is passed to this module's default function from the module `./buildJobBoard.js`.
+ * @param {Element} parent - This second argument is the element in which the modal HTML markup gets injected.
+ *                           `parent` is passed to this module's default function from the module `./buildJobBoard.js`.
  */
-function createJobModals(data, PARENT) {
+function createJobModals(data, parent) {
   // NOTE: The only reason I can get away with not sanitizing the form responses and then building them into the page is because
   // JotForm strips all HTML from any form response already.
   // The submissions held within the google sheet are, therefore, already sanitized since they come from JotForm.
   const html = loopData(data);
 
-  PARENT.insertAdjacentHTML('beforeend', html);
+  parent.insertAdjacentHTML('beforeend', html);
 }
 
 export default createJobModals;
