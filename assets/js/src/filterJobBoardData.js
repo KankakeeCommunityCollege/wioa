@@ -29,10 +29,10 @@ function filterFunction(arr) {
  * @returns Returns an array that holds an array for each row in the Google Sheet that receives the request to post a job.
  */
 function filterJobBoardData(response) {
-  const DATA = response.result.values.slice(1);
+  const data = response.result.values.slice(1);
 
   // Reverse the order of the returned data so that the newest job posts appear first.
-  return DATA.filter(filterFunction).reverse();
+  return data.filter(filterFunction).reverse();
 }
 
 export default filterJobBoardData;

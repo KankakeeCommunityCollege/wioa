@@ -1,8 +1,8 @@
 // This Bootstrap 4 row div-element is built into the page in the `buildJobBoard.js` module,
 // which also means, this module must happen asynchronously — after `buildJobBoard.js` has built that row into the page!
-const PARENT = document.getElementById('JobBoardRow');
+const parent = document.getElementById('JobBoardRow');
 // Prefix for compatibility
-window.URL = window.URL || window.webkitURL;
+const windowURL = window.URL || window.webkitURL;
 
 function responseHandler(e) {
   if (this.status == 200) {
@@ -20,16 +20,17 @@ function responseHandler(e) {
     card.classList.add('card');
     header.classList.add('card-header', 'd-flex', 'justify-content-between', 'align-items-center');
     body.classList.add('card-body', 'd-flex', 'flex-column', 'justify-content-center');
-    header.innerHTML = `<h5 class="typography__h5">${title}<h5> <p class="mb-0 float-right"><strong>${coName}</strong> - ${loc}</p>`;
+    header.innerHTML = `<h5 class="typography__h5">${title}<h5> <p class="mb-0 ms-2 float-end"><strong>${coName}</strong> - ${loc}</p>`;
     a.href = `#jobModal${index}`;
-    a.dataset.toggle = 'modal';
+    a.dataset.bsToggle = 'modal';
     a.type = 'button';
+    a.classList.add('d-flex');
 
     img.onload = (e) => {
-      window.URL.revokeObjectURL(img.src); // Clean up after yourself.
+      windowURL.revokeObjectURL(img.src); // Clean up after yourself.
     };
-    img.src = window.URL.createObjectURL(blob);
-    img.classList.add('img-fluid', 'img--drop-shadow');
+    img.src = windowURL.createObjectURL(blob);
+    img.classList.add('img-fluid', 'img--drop-shadow', 'mx-auto');
     div.classList.add('col-md-6', 'mb-4', 'd-flex');
     
     a.appendChild(img);
@@ -37,7 +38,7 @@ function responseHandler(e) {
     card.appendChild(header);
     card.appendChild(body);
     div.appendChild(card);
-    PARENT.appendChild(div);
+    parent.appendChild(div);
   }
 }
   
@@ -58,7 +59,7 @@ function createFlyerImages(data) {
     let [,title,,location,coName,,,,,,,,flyer,,,,,,,,,,,,,] = row;
     const imageUrl = flyer != '' ? flyer : null;
     // Flyer image is not required in a submissions so we need to check if it exists first
-    if (imageUrl != null) {
+    if (imageUrl !== null) {
       getImage(imageUrl, i, [title, location, coName]);
     }
   })
