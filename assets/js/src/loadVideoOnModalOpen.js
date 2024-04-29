@@ -1,6 +1,6 @@
 const modalButton = document.querySelector('button[data-bs-target="#videoModal"]');
 
-function startVideoPlayback(video, parent) {
+function startVideoPlayback(video) {
   const modalCloseButtonList = document.querySelectorAll('button[data-bs-dismiss="modal"]');
 
   modalCloseButtonList.forEach(btn => {
@@ -32,7 +32,7 @@ function createVideoElements(src, parent) {
   video.classList.add('video__one-stop-intro');
   parent.innerHTML = '';
   parent.append(video);
-  startVideoPlayback(video, parent);
+  startVideoPlayback(video);
   modalButton.removeEventListener('click', loadVideo);
 }
 
