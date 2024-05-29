@@ -17,7 +17,7 @@ function filterFunction(arr) {
     return now.getTime() > expire.getTime() ? 0 : 1;
   } else {
     // Job posts with no expiration date default to 30 days
-    const expired = new Date(posted.setDate(posted.getDate() + 30));
+    const expired = new Date(posted.setDate(posted.getDate() + 60));
 
     return now.getTime() > expired.getTime() ? 0 : 1;
   }
