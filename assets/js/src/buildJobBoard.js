@@ -81,6 +81,8 @@ function buildJobBoard(data) {
     }).then(() => {
       return document.querySelector('input[aria-controls="JobsTable"]').placeholder = 'Filter jobs...';
     }).then(() => {
+      return document.getElementById('JobsTable_wrapper').classList.add('mb-3');
+    }).then(() => {
       if (!document.querySelector('div[data-flyer-src]'))
         return;
       
