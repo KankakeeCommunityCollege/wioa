@@ -1,8 +1,10 @@
 ---
 layout: default
 baseurl: ../
-title: 'Scholarship Request Form'
-description: ''
+title: 'WIOA Scholarship'
+description: >-
+  The WIOA grant is set up to aid qualifying individuals with assistance for
+  education/training which leads to a high growth, in demand occupation.
 ---
 
 <main>
@@ -12,11 +14,12 @@ description: ''
         <div class="col">
          <div class="row">
            <div class="col-md-8 offset-md-2 text-center">
-             <h3 class="typography__call-to-action">WIOA Scholarship Request Form</h3>
+             <h3 class="typography__call-to-action">WIOA Scholarship</h3>
             <p><strong>
-              The WIOA grant is set up to aid qualifying individuals with assistance for education/training which leads to a high
-              growth, in demand occupation.
-            </strong><a id="iframeLink" href="#62244641777966">Go to application</a>.</p>
+              The WIOA grant is set up to aid qualifying individuals with assistance for education/training
+              which leads to a high growth, in demand occupation.
+              </strong><br><a class="btn btn-outline-primary" href="#info-video">Go to application</a>
+            </p>
            </div>
            <div class="col-md-4 text-center mb-5 action-cards__col--margin-btm action-cards__col--mortarboard">
             <div class="action-cards__svg--wrapper">
@@ -67,6 +70,27 @@ description: ''
     <section class="mt-4">
       <div class="row">
         <div class="col text-center">
+          <div class="links__offset" id="info-video">
+            <div class="text-start">
+              <p>
+                This informational video is meant for all individuals interested in learning more about
+                and/or applying for the WIOA Scholarship. Please watch this video before filling out the
+                WIOA Scholarship Request Form below. This video is also helpful to view before and while
+                filling out the WIOA Scholarship. The video link will also be sent with the
+                application&nbsp;email.
+              </p>
+            </div>
+            <video controls class="img-fluid">
+              <source src="https://cdn.kcc.edu/wioa/wioa-informational-video_720.mp4" type="video/mp4" />
+              <p>
+                Your browser doesn't support HTML video. Here is a
+                <a
+                  href="https://cdn.kcc.edu/wioa/wioa-informational-video_720.mp4"
+                  download="wioa-informational-video_720.mp4"
+                >link to the video</a> instead.
+              </p>
+            </video>
+          </div>
           {% include jotform-embed-training-grant-app.html %}
         </div>
       </div>

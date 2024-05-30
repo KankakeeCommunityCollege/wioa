@@ -1,0 +1,126 @@
+---
+layout: default
+baseurl: ../
+title: 'WIOA Scholarship'
+description: >-
+  The WIOA grant is set up to aid qualifying individuals with assistance for
+  education/training which leads to a high growth, in demand occupation.
+---
+
+<main>
+  <div class="container-fluid bg--blue mt-4 mb-5 pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+         <div class="row">
+           <div class="col-md-8 offset-md-2 text-center">
+             <h3 class="typography__call-to-action">WIOA Scholarship</h3>
+            <p><strong>
+              The WIOA grant is set up to aid qualifying individuals with assistance for education/training
+              which leads to a high growth, in demand occupation.
+              </strong><br><!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-lg btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#scholarshipFormModal"
+              >Go to application</button>
+            </p>
+           </div>
+           <div class="col-md-4 text-center mb-5 action-cards__col--margin-btm action-cards__col--mortarboard">
+            <div class="action-cards__svg--wrapper">
+              {% include mortarboard.html %}
+            </div>
+            <h4 class="typography__orange-h4 typography__sm-sup">Tuition</h4>
+          </div>
+          <div class="col-md-4 text-center mb-5 action-cards__col--margin-btm action-cards__col--mortarboard">
+            <div class="action-cards__svg--wrapper">
+              {% include books.html %}
+            </div>
+            <h4 class="typography__orange-h4 typography__sm-sup">Books & Supplies</h4>
+          </div>
+          <div class="col-md-4 text-center mb-5 action-cards__col--margin-btm action-cards__col--mortarboard">
+            <div class="action-cards__svg--wrapper">
+              {% include svg/gas-pump-icon.html %}
+            </div>
+            <h4 class="typography__orange-h4 typography__sm-sup">Gas Reimbursement</h4>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <section class="py-4">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h3 class="typography__h3">Explore High Growth/High Demand Occupations</h3>
+        </div>
+      </div>
+      {% include job-grid-links-to-WIOA-app.html %}
+    </section>
+  </div>
+  <div class="container-fluid bg--blue">
+    <div class="container py-5">
+      <section class="py-4">
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2 text-center mb-5">
+            <h3 class="typography__h3">Additional Information for WIOA Scholarship Applicants</h3>
+          </div>
+          {% include additional-training-grant-app-info-links.html %}
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="container">
+    <section class="mt-4">
+      <div class="row">
+        <div class="col text-center">
+          <div class="my-3">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" data-bs-target="#scholarshipFormModal">
+              Go to application
+            </button>
+          </div>
+          <!-- Modal -->
+          <div class="modal fade" id="scholarshipFormModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="scholarshipFormModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="scholarshipFormModalLabel">WIOA Scholarship Form</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="text-start">
+                    <p>
+                      This informational video is meant for all individuals interested in learning more about
+                      and/or applying for the WIOA Scholarship. Please watch this video before filling out the
+                      WIOA Scholarship Request Form below. This video is also helpful to view before and while
+                      filling out the WIOA Scholarship. The video link will also be sent with the
+                      application&nbsp;email.
+                    </p>
+                  </div>
+                  <video controls class="img-fluid">
+                    <source src="https://cdn.kcc.edu/wioa/wioa-informational-video_720.mp4" type="video/mp4" />
+                    <p>
+                      Your browser doesn't support HTML video. Here is a
+                      <a
+                        href="https://cdn.kcc.edu/wioa/wioa-informational-video_720.mp4"
+                        download="wioa-informational-video_720.mp4"
+                      >link to the video</a> instead.
+                    </p>
+                  </video>
+                  {% include jotform-embed-training-grant-app.html %}
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary me-auto" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+{% include footer-disclaimer.html %}
