@@ -18,10 +18,6 @@ window.addEventListener('load', async () => {
     import('./loadVideoOnModalOpen').then(({ default: loadVideoOnModalOpen }) => loadVideoOnModalOpen());
   }
   
-  if (document.getElementById('iframeLink')) {
-    import('./iframeLink').then(({ default: iframeLink }) => iframeLink());
-  }
-  
   if (document.getElementById('widgetHeightForm')) {
     import('./watchWidgetHeightForm').then(({ default: watchWidgetHeightForm }) => watchWidgetHeightForm());
   }
