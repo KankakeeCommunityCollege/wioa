@@ -25,7 +25,7 @@ nav_links:
     link_href: 'resources'
     button: false
   - link_text: Get Started
-    link_href: 'scholarship-request-form'
+    link_href: 'wioa-scholarship'
     button: true
 sub-nav_links:
   - link_text: One Stop
