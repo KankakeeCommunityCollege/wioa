@@ -35,6 +35,3 @@ node_modules/
 
 # Jekyll 4's chaching dir
 .jekyll-cache/
-
-# Ignore `.ruby-version` file. ## WILL BREAK CLOUDCANNON's BUILD.
-.ruby-version
