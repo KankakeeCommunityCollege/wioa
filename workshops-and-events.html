@@ -22,10 +22,10 @@ sub-nav_section: workshops-and-events
 
         <h3 class="typography__h3">Computer Basics Workshop</h3>
         <p>
-          This workshop provides basic instruction on how to use Windows 10, Microsoft
-          Office Word, Excel, PowerPoint, the Internet and personal email.
+          Get familiarized with the basic fundamentals of using Windows operating systems, internet,
+          and personal email. The workshop will also cover the basics fundamentals of saving, transferring,
+          and downloading&nbsp;files.
         </p>
-        {% comment %}  
         <p class="mb-5">
           <!-- Computer basics modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#computerBasicsModal">
@@ -47,97 +47,15 @@ sub-nav_section: workshops-and-events
                   title="Computer Basics"
                   onload="window.parent.scrollTo(0,0)"
                   allowtransparency="true"
-                  allowfullscreen="true"
-                  allow="geolocation; microphone; camera"
+                  allow="geolocation; microphone; camera; fullscreen"
                   src="https://form.jotform.com/232546236751053"
                   frameborder="0"
                   style="min-width:100%;max-width:100%;height:539px;border:none;"
                   scrolling="no"
                 >
                 </iframe>
-                <script type="text/javascript">
-                  var ifr = document.getElementById("JotFormIFrame-232546236751053");
-                  if (ifr) {
-                    var src = ifr.src;
-                    var iframeParams = [];
-                    if (window.location.href && window.location.href.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-                    }
-                    if (src && src.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                      src = src.substr(0, src.indexOf("?"))
-                    }
-                    iframeParams.push("isIframeEmbed=1");
-                    ifr.src = src + "?" + iframeParams.join('&');
-                  }
-                  window.handleIFrameMessage = function (e) {
-                    if (typeof e.data === 'object') { return; }
-                    var args = e.data.split(":");
-                    if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-                    if (!iframe) { return; }
-                    switch (args[0]) {
-                      case "scrollIntoView":
-                        iframe.scrollIntoView();
-                        break;
-                      case "setHeight":
-                        iframe.style.height = args[1] + "px";
-                        if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-                          iframe.style.minHeight = args[1] + "px";
-                        }
-                        break;
-                      case "collapseErrorPage":
-                        if (iframe.clientHeight > window.innerHeight) {
-                          iframe.style.height = window.innerHeight + "px";
-                        }
-                        break;
-                      case "reloadPage":
-                        window.location.reload();
-                        break;
-                      case "loadScript":
-                        if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) { break; }
-                        var src = args[1];
-                        if (args.length > 3) {
-                          src = args[1] + ':' + args[2];
-                        }
-                        var script = document.createElement('script');
-                        script.src = src;
-                        script.type = 'text/javascript';
-                        document.body.appendChild(script);
-                        break;
-                      case "exitFullscreen":
-                        if (window.document.exitFullscreen) window.document.exitFullscreen();
-                        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                        break;
-                    }
-                    var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                    if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                      var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
-                      iframe.contentWindow.postMessage(JSON.stringify({ "type": "urls", "value": urls }), "*");
-                    }
-                  };
-                  window.isPermitted = function (originUrl, whitelisted_domains) {
-                    var url = document.createElement('a');
-                    url.href = originUrl;
-                    var hostname = url.hostname;
-                    var result = false;
-                    if (typeof hostname !== 'undefined') {
-                      whitelisted_domains.forEach(function (element) {
-                        if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                          result = true;
-                        }
-                      });
-                      return result;
-                    }
-                  };
-                  if (window.addEventListener) {
-                    window.addEventListener("message", handleIFrameMessage, false);
-                  } else if (window.attachEvent) {
-                    window.attachEvent("onmessage", handleIFrameMessage);
-                  }
-                </script>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232546236751053']", "https://form.jotform.com/")</script>
                 <p class="mt-4">
                   Open form in new tab or window: <a
                     href="https://form.jotform.com/232546236751053"
@@ -153,14 +71,12 @@ sub-nav_section: workshops-and-events
             </div>
           </div>
         </div>
-        {% endcomment %}
-        <h3 class="typography__h3">I Have an Interview ... Now What? Workshop</h3>
+        <h3 class="typography__h3">Basics of Excel and Microsoft Word</h3>
         <p>
-          This workshop helps you prepare for a successful interview. Learn what to
-          expect, how to successfully answer interview questions, proper attire, what
-          information to bring and the questions you should ask your interviewer.
+          Microsoft Word and Excel are two of the most frequently used multipurpose tools within today's
+          office setting. This familiarization workshop will introduce you the basic functions of
+          these&nbsp;platforms.
         </p>
-        {% comment %}
         <p class="mb-5">
           <!-- Interviewing for Success modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#interviewingForSuccessModal">
@@ -172,107 +88,25 @@ sub-nav_section: workshops-and-events
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="interviewingForSuccessModalLabel">Register for Interviewing for Success</h5>
+                <h5 class="modal-title" id="interviewingForSuccessModalLabel">Register for Basics of Excel and Microsoft Word</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <!-- Modal content -->
                 <iframe
-                  id="JotFormIFrame-232573820531957"
-                  title="Interviewing for Success"
+                  id="JotFormIFrame-242264109431954"
+                  title="Basics of Excel and Microsoft Word"
                   onload="window.parent.scrollTo(0,0)"
                   allowtransparency="true"
-                  allowfullscreen="true"
-                  allow="geolocation; microphone; camera"
-                  src="https://form.jotform.com/232573820531957"
+                  allow="geolocation; microphone; camera; fullscreen"
+                  src="https://form.jotform.com/242264109431954"
                   frameborder="0"
                   style="min-width:100%;max-width:100%;height:539px;border:none;"
                   scrolling="no"
                 >
                 </iframe>
-                <script type="text/javascript">
-                  var ifr = document.getElementById("JotFormIFrame-232573820531957");
-                  if (ifr) {
-                    var src = ifr.src;
-                    var iframeParams = [];
-                    if (window.location.href && window.location.href.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-                    }
-                    if (src && src.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                      src = src.substr(0, src.indexOf("?"))
-                    }
-                    iframeParams.push("isIframeEmbed=1");
-                    ifr.src = src + "?" + iframeParams.join('&');
-                  }
-                  window.handleIFrameMessage = function (e) {
-                    if (typeof e.data === 'object') { return; }
-                    var args = e.data.split(":");
-                    if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-                    if (!iframe) { return; }
-                    switch (args[0]) {
-                      case "scrollIntoView":
-                        iframe.scrollIntoView();
-                        break;
-                      case "setHeight":
-                        iframe.style.height = args[1] + "px";
-                        if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-                          iframe.style.minHeight = args[1] + "px";
-                        }
-                        break;
-                      case "collapseErrorPage":
-                        if (iframe.clientHeight > window.innerHeight) {
-                          iframe.style.height = window.innerHeight + "px";
-                        }
-                        break;
-                      case "reloadPage":
-                        window.location.reload();
-                        break;
-                      case "loadScript":
-                        if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) { break; }
-                        var src = args[1];
-                        if (args.length > 3) {
-                          src = args[1] + ':' + args[2];
-                        }
-                        var script = document.createElement('script');
-                        script.src = src;
-                        script.type = 'text/javascript';
-                        document.body.appendChild(script);
-                        break;
-                      case "exitFullscreen":
-                        if (window.document.exitFullscreen) window.document.exitFullscreen();
-                        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                        break;
-                    }
-                    var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                    if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                      var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
-                      iframe.contentWindow.postMessage(JSON.stringify({ "type": "urls", "value": urls }), "*");
-                    }
-                  };
-                  window.isPermitted = function (originUrl, whitelisted_domains) {
-                    var url = document.createElement('a');
-                    url.href = originUrl;
-                    var hostname = url.hostname;
-                    var result = false;
-                    if (typeof hostname !== 'undefined') {
-                      whitelisted_domains.forEach(function (element) {
-                        if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                          result = true;
-                        }
-                      });
-                      return result;
-                    }
-                  };
-                  if (window.addEventListener) {
-                    window.addEventListener("message", handleIFrameMessage, false);
-                  } else if (window.attachEvent) {
-                    window.attachEvent("onmessage", handleIFrameMessage);
-                  }
-                </script>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-242264109431954']", "https://form.jotform.com/")</script>
                 <p class="mt-4">
                   Open form in new tab or window: <a
                     href="https://form.jotform.com/232573820531957"
@@ -288,14 +122,12 @@ sub-nav_section: workshops-and-events
             </div>
           </div>
         </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Job Hunting in a Digital World</h3>
+        <h3 class="typography__h3">Digital Job Search Strategy</h3>
         <p>
-          This workshop teaches you how to compete for employment in a digital job market.
-          You will learn how to create your professional profile, utilize LinkedIn, use
-          social media to promote your skills, retool your resume and reveal job resources.
+          Long gone are the days of the paper job-application and our local newspaper being the primary
+          place to search for jobs. In this workshop you will learn to prepare your digital footprint
+          using LinkedIn and Social Media to cast your net into today's pool of&nbsp;employers.
         </p>
-        {% comment %}
         <p class="mb-5">
           <!-- Job hunting modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jobHuntingModal">
@@ -307,107 +139,25 @@ sub-nav_section: workshops-and-events
           <div class="modal-dialog modal-xl">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="jobHuntingModalLabel">Register for Job Hunting in a Digital World</h5>
+                <h5 class="modal-title" id="jobHuntingModalLabel">Register for Digital Job Search Strategy</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <!-- Modal content -->
                 <iframe
                   id="JotFormIFrame-232574151496965"
-                  title="Job Hunting in a Digital World Workshop Registration"
+                  title="Digital Job Search Strategy Workshop Registration"
                   onload="window.parent.scrollTo(0,0)"
                   allowtransparency="true"
-                  allowfullscreen="true"
-                  allow="geolocation; microphone; camera"
+                  allow="geolocation; microphone; camera; fullscreen"
                   src="https://form.jotform.com/232574151496965"
                   frameborder="0"
                   style="min-width:100%;max-width:100%;height:539px;border:none;"
                   scrolling="no"
                 >
                 </iframe>
-                <script type="text/javascript">
-                  var ifr = document.getElementById("JotFormIFrame-232574151496965");
-                  if (ifr) {
-                    var src = ifr.src;
-                    var iframeParams = [];
-                    if (window.location.href && window.location.href.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-                    }
-                    if (src && src.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                      src = src.substr(0, src.indexOf("?"))
-                    }
-                    iframeParams.push("isIframeEmbed=1");
-                    ifr.src = src + "?" + iframeParams.join('&');
-                  }
-                  window.handleIFrameMessage = function (e) {
-                    if (typeof e.data === 'object') { return; }
-                    var args = e.data.split(":");
-                    if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-                    if (!iframe) { return; }
-                    switch (args[0]) {
-                      case "scrollIntoView":
-                        iframe.scrollIntoView();
-                        break;
-                      case "setHeight":
-                        iframe.style.height = args[1] + "px";
-                        if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-                          iframe.style.minHeight = args[1] + "px";
-                        }
-                        break;
-                      case "collapseErrorPage":
-                        if (iframe.clientHeight > window.innerHeight) {
-                          iframe.style.height = window.innerHeight + "px";
-                        }
-                        break;
-                      case "reloadPage":
-                        window.location.reload();
-                        break;
-                      case "loadScript":
-                        if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) { break; }
-                        var src = args[1];
-                        if (args.length > 3) {
-                          src = args[1] + ':' + args[2];
-                        }
-                        var script = document.createElement('script');
-                        script.src = src;
-                        script.type = 'text/javascript';
-                        document.body.appendChild(script);
-                        break;
-                      case "exitFullscreen":
-                        if (window.document.exitFullscreen) window.document.exitFullscreen();
-                        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                        break;
-                    }
-                    var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                    if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                      var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
-                      iframe.contentWindow.postMessage(JSON.stringify({ "type": "urls", "value": urls }), "*");
-                    }
-                  };
-                  window.isPermitted = function (originUrl, whitelisted_domains) {
-                    var url = document.createElement('a');
-                    url.href = originUrl;
-                    var hostname = url.hostname;
-                    var result = false;
-                    if (typeof hostname !== 'undefined') {
-                      whitelisted_domains.forEach(function (element) {
-                        if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                          result = true;
-                        }
-                      });
-                      return result;
-                    }
-                  };
-                  if (window.addEventListener) {
-                    window.addEventListener("message", handleIFrameMessage, false);
-                  } else if (window.attachEvent) {
-                    window.attachEvent("onmessage", handleIFrameMessage);
-                  }
-                </script>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232574151496965']", "https://form.jotform.com/")</script>
                 <p class="mt-4">
                   Open form in new tab or window: <a
                     href="https://form.jotform.com/232574151496965"
@@ -423,16 +173,14 @@ sub-nav_section: workshops-and-events
             </div>
           </div>
         </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Resume Development Class</h3>
+        <h3 class="typography__h3">Resume Development</h3>
         <p>
-          This class teaches you the purpose of a resume and its basic parts.
-          Individual instruction on resume creation will be offered and samples
-          will be distributed. Computer basics is recommended (students will
-          use Microsoft Office Word to create their resume). Students should
-          bring resume materials such as employment and education history.
+          This workshop teaches you the purpose of a Resume and it's basic parts. Learn how to craft
+          your Resume to stand out in the stack. Upon completion of the workshop, feel free to utilize
+          the Resource room to begin or improve your Resume draft. It is recommended to possess
+          computer basic skills, as you will be utilizing Microsoft Work to create and edit
+          your&nbsp;draft.
         </p>
-        {% comment %}
         <p class="mb-5">
           <!-- Resume development modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resumeDevelopment">
@@ -454,97 +202,15 @@ sub-nav_section: workshops-and-events
                   title="Resume Development"
                   onload="window.parent.scrollTo(0,0)"
                   allowtransparency="true"
-                  allowfullscreen="true"
-                  allow="geolocation; microphone; camera"
+                  allow="geolocation; microphone; camera; fullscreen"
                   src="https://form.jotform.com/232574624722962"
                   frameborder="0"
                   style="min-width:100%;max-width:100%;height:539px;border:none;"
                   scrolling="no"
                 >
                 </iframe>
-                <script type="text/javascript">
-                  var ifr = document.getElementById("JotFormIFrame-232574624722962");
-                  if (ifr) {
-                    var src = ifr.src;
-                    var iframeParams = [];
-                    if (window.location.href && window.location.href.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(window.location.href.substr(window.location.href.indexOf("?") + 1).split('&'));
-                    }
-                    if (src && src.indexOf("?") > -1) {
-                      iframeParams = iframeParams.concat(src.substr(src.indexOf("?") + 1).split("&"));
-                      src = src.substr(0, src.indexOf("?"))
-                    }
-                    iframeParams.push("isIframeEmbed=1");
-                    ifr.src = src + "?" + iframeParams.join('&');
-                  }
-                  window.handleIFrameMessage = function (e) {
-                    if (typeof e.data === 'object') { return; }
-                    var args = e.data.split(":");
-                    if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
-                    if (!iframe) { return; }
-                    switch (args[0]) {
-                      case "scrollIntoView":
-                        iframe.scrollIntoView();
-                        break;
-                      case "setHeight":
-                        iframe.style.height = args[1] + "px";
-                        if (!isNaN(args[1]) && parseInt(iframe.style.minHeight) > parseInt(args[1])) {
-                          iframe.style.minHeight = args[1] + "px";
-                        }
-                        break;
-                      case "collapseErrorPage":
-                        if (iframe.clientHeight > window.innerHeight) {
-                          iframe.style.height = window.innerHeight + "px";
-                        }
-                        break;
-                      case "reloadPage":
-                        window.location.reload();
-                        break;
-                      case "loadScript":
-                        if (!window.isPermitted(e.origin, ['jotform.com', 'jotform.pro'])) { break; }
-                        var src = args[1];
-                        if (args.length > 3) {
-                          src = args[1] + ':' + args[2];
-                        }
-                        var script = document.createElement('script');
-                        script.src = src;
-                        script.type = 'text/javascript';
-                        document.body.appendChild(script);
-                        break;
-                      case "exitFullscreen":
-                        if (window.document.exitFullscreen) window.document.exitFullscreen();
-                        else if (window.document.mozCancelFullScreen) window.document.mozCancelFullScreen();
-                        else if (window.document.mozCancelFullscreen) window.document.mozCancelFullScreen();
-                        else if (window.document.webkitExitFullscreen) window.document.webkitExitFullscreen();
-                        else if (window.document.msExitFullscreen) window.document.msExitFullscreen();
-                        break;
-                    }
-                    var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
-                    if (isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
-                      var urls = { "docurl": encodeURIComponent(document.URL), "referrer": encodeURIComponent(document.referrer) };
-                      iframe.contentWindow.postMessage(JSON.stringify({ "type": "urls", "value": urls }), "*");
-                    }
-                  };
-                  window.isPermitted = function (originUrl, whitelisted_domains) {
-                    var url = document.createElement('a');
-                    url.href = originUrl;
-                    var hostname = url.hostname;
-                    var result = false;
-                    if (typeof hostname !== 'undefined') {
-                      whitelisted_domains.forEach(function (element) {
-                        if (hostname.slice((-1 * element.length - 1)) === '.'.concat(element) || hostname === element) {
-                          result = true;
-                        }
-                      });
-                      return result;
-                    }
-                  };
-                  if (window.addEventListener) {
-                    window.addEventListener("message", handleIFrameMessage, false);
-                  } else if (window.attachEvent) {
-                    window.attachEvent("onmessage", handleIFrameMessage);
-                  }
-                </script>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232574624722962']", "https://form.jotform.com/")</script>
                 <p class="mt-4">
                   Open form in new tab or window: <a
                     href="https://form.jotform.com/232574624722962"
@@ -560,7 +226,6 @@ sub-nav_section: workshops-and-events
             </div>
           </div>
         </div>
-        {% endcomment %}
         <h3 class="typography__h3">Resume Software & Resume Review</h3>
         <p>
           WinWay Resume software is available in the computer lab at the Kankakee
