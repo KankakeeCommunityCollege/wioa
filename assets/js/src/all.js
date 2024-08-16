@@ -25,4 +25,8 @@ window.addEventListener('load', async () => {
   if (document.getElementById('footnote')) {
     import('./preventFootnoteJump').then(({ default: preventFootnoteJump }) => preventFootnoteJump());
   }
+
+  if (document.getElementById('openModalOnLocationHash')) {
+    import('./openModalOnLocationHash').then(({ default: openModalOnLocationHash }) => openModalOnLocationHash());
+  }
 });
