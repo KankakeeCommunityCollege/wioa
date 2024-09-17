@@ -16,25 +16,23 @@ nav_config:
   smaller_brand: true
 nav_links:
   - link_text: About
-    link_href: 'about'
+    link_href: 'about/'
     button: false
   - link_text: Workshops & Events
-    link_href: 'workshops-and-events'
+    link_href: 'workshops-and-events/'
     button: false
   - link_text: Success Stories
-    link_href: 'success-stories'
+    link_href: 'success-stories/'
     button: false
   - link_text: Resources
-    link_href: 'resources'
+    link_href: 'resources/'
     button: false
   - link_text: Get Started
-    link_href: 'wioa-scholarship'
+    link_href: 'wioa-scholarship/'
     button: true
 sub-nav_links:
   - link_text: One Stop
-    link_href: 'resources/one-stop'
-  - link_text: Young Adult Program Services
-    link_href: 'career-training/yaps'
+    link_href: 'resources/one-stop/'
 collections:
   testimonials:
     output: false
