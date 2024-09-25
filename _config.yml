@@ -1,8 +1,8 @@
 title: "Kankakee Community College"
-url: 'https://www.kcc.edu/wioa'
+url: 'https://www.kcc.edu/workforceservices'
 site_name: Workforce Services
 public-url: "https://www.kcc.edu"
-canonical_baseurl: "https://www.kcc.edu/wioa"
+canonical_baseurl: "https://www.kcc.edu/workforceservices"
 subsection_title: "Kankakee Workforce Services"
 port: 3000
 # BUILD
