@@ -1,37 +1,38 @@
 title: "Kankakee Community College"
-url: 'https://wioa.kcc.edu'
+url: 'https://www.kcc.edu/workforceservices'
 site_name: Workforce Services
-public-url: "https://wioa.kcc.edu"
-canonical_baseurl: "https://wioa.kcc.edu"
+public-url: "https://www.kcc.edu"
+canonical_baseurl: "https://www.kcc.edu/workforceservices"
+subsection_title: "Kankakee Workforce Services"
 port: 3000
 # BUILD
+theme_config: false
+core_site: false
 timezone: America/Chicago
-theme: "kcc-gem-theme-original"
+theme: "kcc-gem-theme"
 google-tag_key: 'GTM-T2CJ2CJ'
 translate: true
 nav_config:
   smaller_brand: true
 nav_links:
   - link_text: About
-    link_href: 'about'
+    link_href: 'about/'
     button: false
   - link_text: Workshops & Events
-    link_href: 'workshops-and-events'
+    link_href: 'workshops-and-events/'
     button: false
   - link_text: Success Stories
-    link_href: 'success-stories'
+    link_href: 'success-stories/'
     button: false
   - link_text: Resources
-    link_href: 'resources'
+    link_href: 'resources/'
     button: false
   - link_text: Get Started
-    link_href: 'wioa-scholarship'
+    link_href: 'wioa-scholarship/'
     button: true
 sub-nav_links:
   - link_text: One Stop
-    link_href: 'resources/one-stop'
-  - link_text: Young Adult Program Services
-    link_href: 'career-training/yaps'
+    link_href: 'resources/one-stop/'
 collections:
   testimonials:
     output: false

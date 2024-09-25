@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: default-core
 include_facebook_sdk: true
-baseurl:
+baseurl: ./
 homepage: true
-title: Workforce Services
-outline_title: Kankakee Workforce Services.
+title: Home
+outline_title: Kankakee Workforce Services
 description:
 wioa_locations:
   - name: Kankakee Workforce Services
@@ -50,16 +50,16 @@ slides:
       <!-- Column 1 of Services -->
       <div class="col-md-4 text-center action-cards__col--margin-btm">
         <div class="action-cards__svg--wrapper">
-          <a href="{{ page.baseurl }}workshops-and-events" aria-label="link to Workshops and Events page">
+          <a href="{{ page.baseurl }}workshops-and-events/" aria-label="Workshops & Events">
             <img
               role="image"
-              src="{{ page.baseurl }}uploads/events-icon.svg"
+              src="{{ page.baseurl }}assets/img/events-icon.svg"
               class="img-fluid w-40 mb-3"
               alt="calendar icon"
             >
           </a>
         </div>
-        <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events">
+        <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events/">
           <h4 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h4>
         </a>
         <div class="row action-cards__text-wrapper">
@@ -70,7 +70,7 @@ slides:
             </h5>
           </div>
         </div>
-        <a href="{{ page.baseurl }}workshops-and-events" class="btn btn-primary">
+        <a href="{{ page.baseurl }}workshops-and-events/" class="btn btn-primary">
           View Calendar
         </a>
       </div>
@@ -78,17 +78,20 @@ slides:
       <div class="col-md-4 text-center margins__col--btm">
         <div class="impact__give">
           <div class="action-cards__svg--wrapper">
-            <a href="{{ page.baseurl }}wioa-scholarship" aria-label="link to Eligibility Questionnaire page">
+            <a
+              href="{{ page.baseurl }}wioa-scholarship/"
+              aria-label="WIOA Scholarship"
+            >
               <img
                 role="image"
-                src="{{ page.baseurl }}uploads/survey-icon.svg"
+                src="{{ page.baseurl }}assets/img/survey-icon.svg"
                 height="140" width="140"
                 class="img-fluid w-40 mb-3"
                 alt="clipboard with a checklist icon"
               >
             </a>
           </div>
-          <a href="{{ page.baseurl }}wioa-scholarship" class="links__no-underline">
+          <a href="{{ page.baseurl }}wioa-scholarship/" class="links__no-underline">
             <h4 class="typography__orange-h4">WIOA Scholarship</h4>
           </a>
           <div class="row action-cards__text-wrapper">
@@ -99,7 +102,7 @@ slides:
               </h5>
             </div>
           </div>
-            <a href="{{ page.baseurl }}wioa-scholarship" class="btn btn-primary">
+            <a href="{{ page.baseurl }}wioa-scholarship/" class="btn btn-primary">
               Get Started
             </a>
         </div>
@@ -109,7 +112,7 @@ slides:
         <div class="action-cards__svg--wrapper">
           <a
             href="{{ page.baseurl }}job-board/"
-            aria-label="link to community literacy page"
+            aria-label="Job Board"
           >
             <img
               role="image"

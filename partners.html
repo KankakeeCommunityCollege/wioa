@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-core
 baseurl: ../
 title: Partners
 description: ''
@@ -39,7 +39,7 @@ partners:
   description: >-
     Programs include employee development programs
     and personal enrichment courses for&nbsp;the&nbsp;community.
-  logo: /partners/uploads/kcc-continuinged.jpg
+  logo: /partners/uploads/con-ed-and-business-partnerships_logo_4x3.jpg
   url: ../partners/continuinged/
 video_modal:
   title: One Stop Intro Video
@@ -78,8 +78,14 @@ video_modal:
         <div class="col-md-6 col-lg-4 mb-5 partners__centered">
           <div class="partners__wrapper text-center">
             <a class="partners__a" href="{{ item.url }}">
+              {% assign first_char = item.logo | slice: 0 %}
+              {% if first_char == '/' %}
+                {% assign logo = item.logo | remove_first: '/' %}
+              {% else %}
+                {% assign logo = item.logo %}
+              {% endif %}
               <img
-                src="{{ item.logo }}"
+                src="{{ page.baseurl }}{{ item.logo }}"
                 class="img-fluid"
                 height="225"
                 width="300"
