@@ -5,7 +5,6 @@ public-url: "https://www.kcc.edu"
 canonical_baseurl: "https://www.kcc.edu/workforceservices"
 subsection_title: "Kankakee Workforce Services"
 port: 3000
-# BUILD
 theme_config: false
 core_site: false
 timezone: America/Chicago
