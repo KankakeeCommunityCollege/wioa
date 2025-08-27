@@ -3,6 +3,7 @@ url: 'https://www.kcc.edu/workforceservices'
 site_name: Workforce Services
 public-url: "https://www.kcc.edu"
 canonical_baseurl: "https://www.kcc.edu/workforceservices"
+sitemap_baseurl: https://www.kcc.edu/workforceservices # Used to prefix the page URLs in sitemap.xml
 subsection_title: "Kankakee Workforce Services"
 port: 3000
 theme_config: false
