@@ -52,7 +52,7 @@ slides:
         <div class="action-cards__svg--wrapper">
           <a href="{{ page.baseurl }}workshops-and-events/" aria-label="Workshops & Events">
             <img
-              role="image"
+              role="img"
               src="{{ page.baseurl }}assets/img/events-icon.svg"
               class="img-fluid w-40 mb-3"
               alt="calendar icon"
@@ -60,14 +60,14 @@ slides:
           </a>
         </div>
         <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events/">
-          <h4 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h4>
+          <h3 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h3>
         </a>
         <div class="row action-cards__text-wrapper">
           <div class="col d-flex align-items-center position__col--min-height">
-            <h5 class="typography__h5--description editable">
+            <h4 class="typography__h5--description editable">
               Kankakee Workforce Services offers a variety of resources and workshops.
               Check our calendar for upcoming events.
-            </h5>
+            </h4>
           </div>
         </div>
         <a href="{{ page.baseurl }}workshops-and-events/" class="btn btn-primary">
@@ -83,7 +83,7 @@ slides:
               aria-label="WIOA Scholarship"
             >
               <img
-                role="image"
+                role="img"
                 src="{{ page.baseurl }}assets/img/survey-icon.svg"
                 height="140" width="140"
                 class="img-fluid w-40 mb-3"
@@ -92,14 +92,14 @@ slides:
             </a>
           </div>
           <a href="{{ page.baseurl }}wioa-scholarship/" class="links__no-underline">
-            <h4 class="typography__orange-h4">WIOA Scholarship</h4>
+            <h3 class="typography__orange-h4">WIOA Scholarship</h3>
           </a>
           <div class="row action-cards__text-wrapper">
             <div class="col d-flex align-items-center position__col--min-height">
-              <h5 class="typography__h5--description editable">
+              <h4 class="typography__h5--description editable">
                 You may be eligible for up to $12,000 in career training. 
                 Get started here so WIOA can offer you the most appropriate services.
-              </h5>
+              </h4>
             </div>
           </div>
             <a href="{{ page.baseurl }}wioa-scholarship/" class="btn btn-primary">
@@ -115,20 +115,20 @@ slides:
             aria-label="Job Board"
           >
             <img
-              role="image"
+              role="img"
               src="{{ page.baseurl }}assets/img/icon_job-board.svg"
               class="img-fluid w-40 mb-3"
               alt="clipboard with a checklist icon">
           </a>
         </div>
         <a href="{{ page.baseurl }}job-board/" class="links__no-underline">
-          <h4 class="typography__orange-h4">Job Board</h4>
+          <h3 class="typography__orange-h4">Job Board</h3>
         </a>
         <div class="row action-cards__text-wrapper">
           <div class="col d-flex justify-content-center align-items-center position__col--min-height">
-            <h5 class="typography__h5--description text-center">
+            <h4 class="typography__h5--description text-center">
               Local and regional job openings.
-            </h5>
+            </h4>
           </div>
         </div>
         <a href="{{ page.baseurl }}job-board/" class="btn btn-primary">
@@ -146,13 +146,13 @@ slides:
       <div class="col-lg-8">
         <div class="row">
           <div class="col margins__col--top home__col--heading-underline">
-            <h3 class="typography__section--heading margins__heading--btm">Location & Hours</h3>
+            <h2 class="typography__section--heading margins__heading--btm">Location & Hours</h2>
           </div>
         </div>
         <div class="row">
           {% for location in page.wioa_locations %}
           <div class="col mb-3">
-            <h5 class="typography__contacts--name notranslate">{{ location.name }}</h5>
+            <h3 class="typography__contacts--name notranslate">{{ location.name }}</h3>
             <p class="notranslate">
               {{ location.address }}<br />
               <strong>Phone:&nbsp;</strong><a href="tel:1{{ location.phone | remove: '-' }}" class="links__darker-link">{{ location.phone }}</a><br />
