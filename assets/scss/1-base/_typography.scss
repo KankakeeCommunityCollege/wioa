@@ -89,3 +89,16 @@ s::after {
 .typography__span--stricken {
   text-decoration: line-through;
 }
+
+// Make orange heading darker when against the light-blue background color.
+// .typography__orange-h4 is considered large text and a 3:1 ratio is sufficient.
+.bg--blue .typography__orange-h4 {
+  color: #B26B06;
+}
+
+.bg--blue a {
+  color: #0257D4;
+  &:hover {
+    color: #0243A1;
+  }
+}
