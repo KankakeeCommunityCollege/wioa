@@ -20,7 +20,7 @@ function responseHandler(e) {
     card.classList.add('card');
     header.classList.add('card-header', 'd-flex', 'justify-content-between', 'align-items-center');
     body.classList.add('card-body', 'd-flex', 'flex-column', 'justify-content-center');
-    header.innerHTML = `<h5 class="typography__h5">${title}<h5> <p class="mb-0 ms-2 float-end"><strong>${coName}</strong> - ${loc}</p>`;
+    header.innerHTML = `<h3 class="typography__h5">${title}<h3> <p class="mb-0 ms-2 float-end"><strong>${coName}</strong> - ${loc}</p>`;
     a.href = `#jobModal${index}`;
     a.dataset.bsToggle = 'modal';
     a.type = 'button';
@@ -30,6 +30,7 @@ function responseHandler(e) {
       windowURL.revokeObjectURL(img.src); // Clean up after yourself.
     };
     img.src = windowURL.createObjectURL(blob);
+    img.alt = `Job posting flier for ${title} at ${coName}`;
     img.classList.add('img-fluid', 'img--drop-shadow', 'mx-auto');
     div.classList.add('col-md-6', 'mb-4', 'd-flex');
     

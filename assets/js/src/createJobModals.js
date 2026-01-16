@@ -37,8 +37,9 @@ function stringReplacerFunc(match) {
   });
 }
 
-function createFlyerPlaceholder(flierURL) {
-  return `<div class="text-center mt-4" data-flyer-src="${flierURL}">
+function createFlyerPlaceholder(flierURL, title, coName) {
+  // Create data-flyer-* attributes for lazyloading images in `lazyLoadFlyers.js`
+  return `<div class="text-center mt-4" data-flyer-src="${flierURL}" data-flyer-alt="Job posting flier for ${title} at ${coName}">
     <a href="${flierURL}" title="Download flier">
       <img src="/assets/img/loader.min.svg" class="loader loader--animate" alt="Loading...">
     </a>
@@ -84,13 +85,13 @@ function loopData(data) {
       flyer, description, requirements, jobType, shift, otherJobType, pay, , , , , , ,
     ] = row;
     const optionalJobInfo = createOptionalJobInfo(phone, email, website, appUrl, fax);
-    const flyerPlaceholder = flyer != '' ? createFlyerPlaceholder(flyer) : '';
+    const flyerPlaceholder = flyer != '' ? createFlyerPlaceholder(flyer, title, coName) : '';
 
     return html += `<div class="modal fade" id="jobModal${i}" tabindex="-1" aria-labelledby="jobModalLabel${i}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title typography__h3" id="jobModalLabel${i}">${title}</h5>
+          <h1 class="modal-title typography__h3" id="jobModalLabel${i}">${title}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body mx-lg-3">
