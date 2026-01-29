@@ -9,28 +9,165 @@ description: ''
 <main id="openModalOnLocationHash">
   <div class="container" id="content">
     <div class="row">
-      <div class="col sub-nav__content--wrapper mt-2 editable">
-        <!-- Content here -->
-        <p>
-          Consult the calendar for dates and times of Kankakee Workforce Services workshops.<br>
-          <strong>To register:</strong> Use the <strong><em>Register Now</em></strong> buttons below, phone <a href="tel:+18158028960">815-802-8960</a>, or 
-          visit the Kankakee Workforce Services Office, 450 N. Kinzie Ave. (Route 50), Bradley, IL 60915.
-        </p>
-        <!-- Did somebody say tacos? -->
+      <div class="col sub-nav__content--wrapper mt-2">
+        <div class="mb-5 editable">
+          <h3 class="typography__h3">Career & Digital Skills Workshops</h3>
+          <p>
+            Enhance your job readiness and digital confidence by joining our upcoming workshops. These sessions are designed to
+            support beginners and job seekers with practical, hands-on guidance.
+          </p>
+          <p>
+            <strong>Registration / Contact Information:</strong> register below, call <a href="tel:+18158028960">(815) 802-8960</a> or email <a href="mailto:workforceservices@kcc.edu">workforceservices@kcc.edu</a>
+          </p>
+          <p>
+            <strong>Location:</strong> Kankakee Workforce Services, 450 N. Bradley Blvd, Bradley (across from Wendy’s Restaurant)
+          </p>
+        </div>
+
+        {% comment %}  
         <div data-tockify-component="calendar" data-tockify-search="WIOA" data-tockify-calendar="kankakeecc"></div>
         <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
+        {% endcomment %}
 
-        <h3 class="typography__h3">Computer Basics Workshop</h3>
-        <p>
-          Get familiarized with the basic fundamentals of using Windows operating systems, internet,
-          and personal email. The workshop will also cover the basics fundamentals of saving, transferring,
-          and downloading&nbsp;files.
+
+        <div class="editable">
+          <h4 class="typography__h4">Writing an Impressive Cover Letter</h4>
+          <p>
+            <strong>Date:</strong> Tuesday, February 3, 2026<br>
+            <strong>Time:</strong> 11 a.m.-1 p.m.<br>
+            <strong>Location:</strong> Kankakee Workforce Services, 450 N. Bradley Blvd, Bradley (across from Wendy’s Restaurant)
+          </p>
+          <p>
+            Learn how to effectively introduce yourself to employers and bridge the gap between your resume and the job description.
+            This workshop provides a simple, step-by-step framework for writing a personalized cover letter that highlights your
+            unique value. By the end of the session, you will have the tools to tell your professional story with confidence
+            and&nbsp;clarity.
+          </p>
+        </div>
+        <p class="mb-5">
+          <!-- Job hunting modal button -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cover-letter">
+            Register for Writing an Impressive Cover Letter
+          </button>
         </p>
-        {% comment %}
+        <!-- Job hunting modal dialogue/window-->
+        <div class="modal fade" id="cover-letter" tabindex="-1" aria-labelledby="cover-letter-label" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="cover-letter-label">Register for Writing an Impressive Cover Letter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Modal content -->
+                <iframe
+                  id="JotFormIFrame-260285591199973"
+                  title="Writing an Impressive Cover Letter"
+                  onload="window.parent.scrollTo(0,0)"
+                  allowtransparency="true"
+                  allow="geolocation; microphone; camera; fullscreen; payment"
+                  src="https://form.jotform.com/260285591199973"
+                  frameborder="0"
+                  style="min-width:100%;max-width:100%;height:539px;border:none;"
+                  scrolling="no"
+                >
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260285591199973']", "https://form.jotform.com/")</script>
+                <p class="mt-4">
+                  Open form in new tab or window: <a
+                    href="https://form.jotform.com/260285591199973"
+                    class="links__launch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >https://form.jotform.com/260285591199973</a>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="editable">
+          <h4 class="typography__h4">How to Identify and Avoid Job Scams</h4>
+          <p>
+            <strong>Date:</strong> Tuesday, February 10, 2026<br>
+            <strong>Time:</strong> 11 a.m.-1 p.m.<br>
+            <strong>Location:</strong> Kankakee Workforce Services, 450 N. Bradley Blvd, Bradley (across from Wendy’s Restaurant)
+          </p>
+          <p>
+            Protect your personal information and your professional future by learning how to spot red flags in the modern job
+            market. This session covers common tactics used in employment scams, from fraudulent job postings to suspicious
+            onboarding requests. You will leave with a clear understanding of "stay safe" practices and the confidence to verify
+            legitimate opportunities before you&nbsp;apply.
+          </p>
+        </div>
+        <p class="mb-5">
+          <!-- Job hunting modal button -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#job-scams">
+            Register for How to Identify and Avoid Job Scams
+          </button>
+        </p>
+        <!-- Job hunting modal dialogue/window-->
+        <div class="modal fade" id="job-scams" tabindex="-1" aria-labelledby="job-scams-label" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="job-scams-label">Register for How to Identify and Avoid Job Scams</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Modal content -->
+                <iframe
+                  id="JotFormIFrame-260284946487976"
+                  title="How to Identify and Avoid Job Scams"
+                  onload="window.parent.scrollTo(0,0)"
+                  allowtransparency="true"
+                  allow="geolocation; microphone; camera; fullscreen; payment"
+                  src="https://form.jotform.com/260284946487976"
+                  frameborder="0"
+                  style="min-width:100%;max-width:100%;height:539px;border:none;"
+                  scrolling="no"
+                >
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-260284946487976']", "https://form.jotform.com/")</script>
+                <p class="mt-4">
+                  Open form in new tab or window: <a
+                    href="https://form.jotform.com/260284946487976"
+                    class="links__launch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >https://form.jotform.com/260284946487976</a>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="editable">
+          <h4 class="typography__h4">Computer Basics</h4>
+          <p>
+            <strong>Date:</strong> Tuesday, February 17, 2026<br>
+            <strong>Time:</strong> 11 a.m.-1 p.m.<br>
+            <strong>Location:</strong> Kankakee Workforce Services, 450 N. Bradley Blvd, Bradley (across from Wendy’s Restaurant)
+          </p>
+          <p>
+            Build confidence using a computer by learning essential skills such as using a keyboard and mouse, navigating the
+            desktop, managing files, and understanding basic computer&nbsp;functions.
+          </p>
+        </div>
         <p class="mb-5">
           <!-- Computer basics modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#computer-basics">
-            Register Now
+            Register for Computer Basics
           </button>
         </p>
         <!-- Computer basics modal dialogue/window-->
@@ -72,14 +209,138 @@ description: ''
             </div>
           </div>
         </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Basics of Microsoft Word</h3>
-        <p>
-          Microsoft Word and Excel are two of the most frequently used multipurpose tools within today's
-          office setting. This familiarization workshop will introduce you the basic functions of
-          these&nbsp;platforms.
+
+
+        <div class="editable">
+          <h4 class="typography__h4">Resume Development</h4>
+          <p>
+            <strong>Date:</strong> Tuesday, February 24, 2026<br>
+            <strong>Time:</strong> 11 a.m.-1 p.m.<br>
+            <strong>Location:</strong> Kankakee Workforce Services, 450 N. Bradley Blvd, Bradley (across from Wendy’s Restaurant)
+          </p>
+          <p>
+            Learn how to create a clear, professional resume that highlights your skills, experience, and strengths. Participants
+            will receive tips on formatting, wording, and tailoring resumes for different job&nbsp;opportunities.
+          </p>
+        </div>
+        <p class="mb-5">
+          <!-- Resume development modal button -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resume-development">
+            Register for Resume Development
+          </button>
         </p>
+        <!-- Resume development modal dialogue/window-->
+        <div class="modal fade" id="resume-development" tabindex="-1" aria-labelledby="resume-development-label" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="resume-development-label">Register for Resume Development</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Modal content -->
+                <iframe
+                  id="JotFormIFrame-232574624722962"
+                  title="Resume Development"
+                  onload="window.parent.scrollTo(0,0)"
+                  allowtransparency="true"
+                  allow="geolocation; microphone; camera; fullscreen"
+                  src="https://form.jotform.com/232574624722962"
+                  frameborder="0"
+                  style="min-width:100%;max-width:100%;height:539px;border:none;"
+                  scrolling="no"
+                >
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232574624722962']", "https://form.jotform.com/")</script>
+                <p class="mt-4">
+                  Open form in new tab or window: <a
+                    href="https://form.jotform.com/232574624722962"
+                    class="links__launch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >https://form.jotform.com/232574624722962</a>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
         {% comment %}
+        <div class="editable">
+          <h4 class="typography__h4">Online Job Search Strategies</h4>
+          <p>
+            <strong>Date:</strong> TBA<br>
+            <strong>Time:</strong> TBA
+          </p>
+          <p>
+            Discover effective ways to search and apply for jobs online. This workshop covers job boards, company websites,
+            application tips, and how to protect yourself from online job&nbsp;scams.
+          </p>
+        </div>
+        <p class="mb-5">
+          <!-- Job hunting modal button -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#digital-job-search">
+            Register for Online Job Search Strategies
+          </button>
+        </p>
+        <!-- Job hunting modal dialogue/window-->
+        <div class="modal fade" id="digital-job-search" tabindex="-1" aria-labelledby="digital-job-search-label" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="digital-job-search-label">Register for Digital Job Search Strategy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Modal content -->
+                <iframe
+                  id="JotFormIFrame-232574151496965"
+                  title="Digital Job Search Strategy Workshop Registration"
+                  onload="window.parent.scrollTo(0,0)"
+                  allowtransparency="true"
+                  allow="geolocation; microphone; camera; fullscreen"
+                  src="https://form.jotform.com/232574151496965"
+                  frameborder="0"
+                  style="min-width:100%;max-width:100%;height:539px;border:none;"
+                  scrolling="no"
+                >
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232574151496965']", "https://form.jotform.com/")</script>
+                <p class="mt-4">
+                  Open form in new tab or window: <a
+                    href="https://form.jotform.com/232574151496965"
+                    class="links__launch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >https://form.jotform.com/232574151496965</a>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endcomment %}
+
+
+          {% comment %}
+        <div class="editable">
+          <h4 class="typography__h4">Basics of Microsoft Word</h4>
+          <p>
+            Microsoft Word and Excel are two of the most frequently used multipurpose tools within today's
+            office setting. This familiarization workshop will introduce you the basic functions of
+            these&nbsp;platforms.
+          </p>
+        </div>
         <p class="mb-5">
           <!-- Interviewing for Success modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#word-workshop">
@@ -125,14 +386,15 @@ description: ''
             </div>
           </div>
         </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Basics of Microsoft Excel</h3>
-        <p>
-          Microsoft Word and Excel are two of the most frequently used multipurpose tools within today's
-          office setting. This familiarization workshop will introduce you the basic functions of
-          these&nbsp;platforms.
-        </p>
-        {% comment %}
+          
+        <div class="editable">
+          <h4 class="typography__h4">Basics of Microsoft Excel</h4>
+          <p>
+            Microsoft Word and Excel are two of the most frequently used multipurpose tools within today's
+            office setting. This familiarization workshop will introduce you the basic functions of
+            these&nbsp;platforms.
+          </p>
+        </div>
         <p class="mb-5">
           <!-- Interviewing for Success modal button -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#excel-workshop">
@@ -178,124 +440,21 @@ description: ''
             </div>
           </div>
         </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Digital Job Search Strategy</h3>
-        <p>
-          Long gone are the days of the paper job-application and our local newspaper being the primary
-          place to search for jobs. In this workshop you will learn to prepare your digital footprint
-          using LinkedIn and Social Media to cast your net into today's pool of&nbsp;employers.
-        </p>
-        {% comment %}
-        <p class="mb-5">
-          <!-- Job hunting modal button -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#digital-job-search">
-            Register Now
-          </button>
-        </p>
-        <!-- Job hunting modal dialogue/window-->
-        <div class="modal fade" id="digital-job-search" tabindex="-1" aria-labelledby="digital-job-search-label" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="digital-job-search-label">Register for Digital Job Search Strategy</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <!-- Modal content -->
-                <iframe
-                  id="JotFormIFrame-232574151496965"
-                  title="Digital Job Search Strategy Workshop Registration"
-                  onload="window.parent.scrollTo(0,0)"
-                  allowtransparency="true"
-                  allow="geolocation; microphone; camera; fullscreen"
-                  src="https://form.jotform.com/232574151496965"
-                  frameborder="0"
-                  style="min-width:100%;max-width:100%;height:539px;border:none;"
-                  scrolling="no"
-                >
-                </iframe>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232574151496965']", "https://form.jotform.com/")</script>
-                <p class="mt-4">
-                  Open form in new tab or window: <a
-                    href="https://form.jotform.com/232574151496965"
-                    class="links__launch"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >https://form.jotform.com/232574151496965</a>
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Resume Development</h3>
-        <p>
-          This workshop teaches you the purpose of a Resume and it's basic parts. Learn how to craft
-          your Resume to stand out in the stack. Upon completion of the workshop, feel free to utilize
-          the Resource room to begin or improve your Resume draft. It is recommended to possess
-          computer basic skills, as you will be utilizing Microsoft Work to create and edit
-          your&nbsp;draft.
-        </p>
-        {% comment %}
-        <p class="mb-5">
-          <!-- Resume development modal button -->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resume-development">
-            Register Now
-          </button>
-        </p>
-        <!-- Resume development modal dialogue/window-->
-        <div class="modal fade" id="resume-development" tabindex="-1" aria-labelledby="resume-development-label" aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="resume-development-label">Register for Resume Development</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <!-- Modal content -->
-                <iframe
-                  id="JotFormIFrame-232574624722962"
-                  title="Resume Development"
-                  onload="window.parent.scrollTo(0,0)"
-                  allowtransparency="true"
-                  allow="geolocation; microphone; camera; fullscreen"
-                  src="https://form.jotform.com/232574624722962"
-                  frameborder="0"
-                  style="min-width:100%;max-width:100%;height:539px;border:none;"
-                  scrolling="no"
-                >
-                </iframe>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-232574624722962']", "https://form.jotform.com/")</script>
-                <p class="mt-4">
-                  Open form in new tab or window: <a
-                    href="https://form.jotform.com/232574624722962"
-                    class="links__launch"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >https://form.jotform.com/232574624722962</a>
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endcomment %}
-        <h3 class="typography__h3">Resume Software & Resume Review</h3>
-        <p>
-          Students and community members may obtain a free resume review by emailing their draft
-          to <a href="mailto:careerservices@kcc.edu">careerservices@kcc.edu</a> to receive courtesy
-          feedback on how to improve their draft. Please note, we do not develop a resume for you,
-          you must submit a draft with all your information to be reviewed. If you need assistance
-          in developing your resume, you are welcome to use the resource room located at Kankakee
-          Workforce Services and use the available&nbsp;software.
-        ​</p>
+          
+          {% endcomment %}
+
+            
+          <h4 class="typography__h4">Resume Software & Resume Review</h4>
+          <p>
+            Students and community members may obtain a free resume review by emailing their draft
+            to <a href="mailto:careerservices@kcc.edu">careerservices@kcc.edu</a> to receive courtesy
+            feedback on how to improve their draft. Please note, we do not develop a resume for you,
+            you must submit a draft with all your information to be reviewed. If you need assistance
+            in developing your resume, you are welcome to use the resource room located at Kankakee
+            Workforce Services and use the available&nbsp;software.
+          ​</p>
+
+
       </div>
     </div>
   </div>
