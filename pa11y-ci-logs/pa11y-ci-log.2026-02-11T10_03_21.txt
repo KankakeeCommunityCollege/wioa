@@ -1,0 +1,22 @@
+##############################
+##     Pa11y CI results     ##
+##############################
+
+##     Running Pa11y CI:
+##         DATETIME: 2026-02-11T10_03_21
+##         SITEMAP:  https://www.kcc.edu/workforceservices/pa11y-ci-sitemap.xml
+
+
+Running Pa11y on 10 URLs:
+ > https://www.kcc.edu/workforceservices/404.html#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/about/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/job-board/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/resources/one-stop/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/post-a-job-opening/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/resources/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/success-stories/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/wioa-scholarship/#please-open-all-accordions - 0 errors
+ > https://www.kcc.edu/workforceservices/workshops-and-events/#please-open-all-accordions - 0 errors
+
+✔ 10/10 URLs passed
