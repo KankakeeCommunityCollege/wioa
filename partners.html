@@ -59,11 +59,11 @@ video_modal:
 ===================================================== -->
 {%- endcomment -%}
 {% include nav-partners.html %}
-<main class="container" id="content">
+<div class="container">
   <div class="row">
     <div class="col">
       <div class="editable">
-        <h3 class="typography__h3">Kankakee Workforce Services Partner Referrals</h3>
+        <h1 class="typography__h1">Kankakee Workforce Services Partner Referrals</h1>
         <p class="typography--line-height-1">
           This page was created for staff members of the partner organizations 
           that contribute to Kankakee Workforce Services. <br>
@@ -99,7 +99,7 @@ video_modal:
               <div class="partners__info-wrapper">
                 <div class="text-center">
                   <div class="partners__h4-wrapper d-flex flex-column justify-content-center mb-2">
-                    <h4 class="typography__h6 text-white mb-0">{{ item.name }}</h4>
+                    <h2 class="typography__h6 text-white mb-0">{{ item.name }}</h2>
                   </div>
                   <div class="partners__description-wrapper">
                     <p class="partners__description text-white">{{ item.description }}</p>
@@ -113,4 +113,4 @@ video_modal:
       </div>
     </div>
   </div>
-</main>
+</div>

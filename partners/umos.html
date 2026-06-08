@@ -10,10 +10,10 @@ video_modal:
 ---
 
 {% include nav-partners.html %}
-<main class="container" id="content">
+<div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="typography__h2">{{ page.title }}</h2>
+      <h1 class="typography__h1">{{ page.title }}</h1>
       <div class="text-center">
         <a href="https://www.umos.org/"
          target="_blank"
@@ -26,7 +26,7 @@ video_modal:
         </a>
       </div>
       <div class="editable">
-        <h3 class="typography__h3">Program Overview</h3>
+        <h2 class="typography__h2">Program Overview</h2>
         <p>
           UMOS offers the National Farmworker Jobs Program (NFJP), which provides career services, training, youth services,
           housing, and financial assistance to eligible migrant and seasonal farmworkers (MSFW) and their dependents. This program
@@ -143,7 +143,7 @@ video_modal:
       </script>
     </div>
   </div>
-</main>
+</div>
 {% if video_modal.include_video_modal %}
 {% include video-modal.html %}
 {% endif %}
