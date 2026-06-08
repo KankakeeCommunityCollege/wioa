@@ -9,10 +9,10 @@ video_modal:
 ---
 
 {% include nav-partners.html %}
-<main class="container" id="content">
+<div class="container">
   <div class="row">
     <div class="col">
-      <h2 class="typography__h2">{{ page.title }}</h2>
+      <h1 class="typography__h1">{{ page.title }}</h1>
       <div class="text-center">
         <a href="https://www.kcc.edu/workforceservices/"
          aria-label="Go to the Kankakee Workforce Services website">
@@ -23,7 +23,7 @@ video_modal:
         </a>
       </div>
       <div class="editable">
-        <h3 class="typography__h3">Program Overview</h3>
+        <h2 class="typography__h2">Program Overview</h2>
         <p>View the 
           <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#videoModal">
             American Job Center video
@@ -146,6 +146,5 @@ video_modal:
       </script>
     </div>
   </div>
-</main>
-
+</div>
 {% include video-modal.html %}

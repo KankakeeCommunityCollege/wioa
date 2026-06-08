@@ -37,108 +37,106 @@ slides:
     url: '#'
     new_tab: false
 ---
-<!-- FTP test -->
-<main id="content">
-  <div class="container background__color--tan">
-    {% include hero-slider.html %}
-    <div class="row">
-      <div class="col text-center">
-        <h2 class="typography__call-to-action editable">Services</h2>
-      </div>
+<div class="container background__color--tan">
+  <h1 class="visually-hidden">KCC Workforce Services Homepage</h1>
+  {% include hero-slider.html %}
+  <div class="row">
+    <div class="col text-center">
+      <h2 class="typography__call-to-action editable">Services</h2>
     </div>
-    <div class="row">
-      <!-- Column 1 of Services -->
-      <div class="col-md-4 text-center action-cards__col--margin-btm">
+  </div>
+  <div class="row">
+    <!-- Column 1 of Services -->
+    <div class="col-md-4 text-center action-cards__col--margin-btm">
+      <div class="action-cards__svg--wrapper">
+        <a href="{{ page.baseurl }}workshops-and-events/" aria-label="Workshops & Events">
+          <img
+            role="img"
+            src="{{ page.baseurl }}assets/img/events-icon.svg"
+            class="img-fluid w-40 mb-3"
+            alt="calendar icon"
+          >
+        </a>
+      </div>
+      <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events/">
+        <h3 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h3>
+      </a>
+      <div class="row action-cards__text-wrapper">
+        <div class="col d-flex align-items-center position__col--min-height">
+          <h4 class="typography__h5--description editable">
+            Kankakee Workforce Services offers a variety of resources and workshops.
+            Check our calendar for upcoming events.
+          </h4>
+        </div>
+      </div>
+      <a href="{{ page.baseurl }}workshops-and-events/" class="btn btn-primary">
+        View Calendar
+      </a>
+    </div>
+    <!-- Column 2 of Services -->
+    <div class="col-md-4 text-center margins__col--btm">
+      <div class="impact__give">
         <div class="action-cards__svg--wrapper">
-          <a href="{{ page.baseurl }}workshops-and-events/" aria-label="Workshops & Events">
+          <a
+            href="{{ page.baseurl }}wioa-scholarship/"
+            aria-label="WIOA Scholarship"
+          >
             <img
               role="img"
-              src="{{ page.baseurl }}assets/img/events-icon.svg"
+              src="{{ page.baseurl }}assets/img/survey-icon.svg"
+              height="140" width="140"
               class="img-fluid w-40 mb-3"
-              alt="calendar icon"
+              alt="clipboard with a checklist icon"
             >
           </a>
         </div>
-        <a class="links__no-underline" href="{{ page.baseurl }}workshops-and-events/">
-          <h3 class="typography__orange-h4 typography__sm-sup">Workshops & Events</h3>
+        <a href="{{ page.baseurl }}wioa-scholarship/" class="links__no-underline">
+          <h3 class="typography__orange-h4">WIOA Scholarship</h3>
         </a>
         <div class="row action-cards__text-wrapper">
           <div class="col d-flex align-items-center position__col--min-height">
             <h4 class="typography__h5--description editable">
-              Kankakee Workforce Services offers a variety of resources and workshops.
-              Check our calendar for upcoming events.
+              You may be eligible for up to $12,000 in career training. 
+              Get started here so WIOA can offer you the most appropriate services.
             </h4>
           </div>
         </div>
-        <a href="{{ page.baseurl }}workshops-and-events/" class="btn btn-primary">
-          View Calendar
-        </a>
-      </div>
-      <!-- Column 2 of Services -->
-      <div class="col-md-4 text-center margins__col--btm">
-        <div class="impact__give">
-          <div class="action-cards__svg--wrapper">
-            <a
-              href="{{ page.baseurl }}wioa-scholarship/"
-              aria-label="WIOA Scholarship"
-            >
-              <img
-                role="img"
-                src="{{ page.baseurl }}assets/img/survey-icon.svg"
-                height="140" width="140"
-                class="img-fluid w-40 mb-3"
-                alt="clipboard with a checklist icon"
-              >
-            </a>
-          </div>
-          <a href="{{ page.baseurl }}wioa-scholarship/" class="links__no-underline">
-            <h3 class="typography__orange-h4">WIOA Scholarship</h3>
+          <a href="{{ page.baseurl }}wioa-scholarship/" class="btn btn-primary">
+            Get Started
           </a>
-          <div class="row action-cards__text-wrapper">
-            <div class="col d-flex align-items-center position__col--min-height">
-              <h4 class="typography__h5--description editable">
-                You may be eligible for up to $12,000 in career training. 
-                Get started here so WIOA can offer you the most appropriate services.
-              </h4>
-            </div>
-          </div>
-            <a href="{{ page.baseurl }}wioa-scholarship/" class="btn btn-primary">
-              Get Started
-            </a>
-        </div>
       </div>
-      <!-- Column 3 of Services -->
-      <div class="col-md-4 text-center action-cards__col--margin-btm">
-        <div class="action-cards__svg--wrapper">
-          <a
-            href="{{ page.baseurl }}job-board/"
-            aria-label="Job Board"
-          >
-            <img
-              role="img"
-              src="{{ page.baseurl }}assets/img/icon_job-board.svg"
-              class="img-fluid w-40 mb-3"
-              alt="clipboard with a checklist icon">
-          </a>
-        </div>
-        <a href="{{ page.baseurl }}job-board/" class="links__no-underline">
-          <h3 class="typography__orange-h4">Job Board</h3>
-        </a>
-        <div class="row action-cards__text-wrapper">
-          <div class="col d-flex justify-content-center align-items-center position__col--min-height">
-            <h4 class="typography__h5--description text-center">
-              Local and regional job openings.
-            </h4>
-          </div>
-        </div>
-        <a href="{{ page.baseurl }}job-board/" class="btn btn-primary">
-          Learn More
-        </a>
-      </div>
-      <!-- End of Services columns -->
     </div>
+    <!-- Column 3 of Services -->
+    <div class="col-md-4 text-center action-cards__col--margin-btm">
+      <div class="action-cards__svg--wrapper">
+        <a
+          href="{{ page.baseurl }}job-board/"
+          aria-label="Job Board"
+        >
+          <img
+            role="img"
+            src="{{ page.baseurl }}assets/img/icon_job-board.svg"
+            class="img-fluid w-40 mb-3"
+            alt="clipboard with a checklist icon">
+        </a>
+      </div>
+      <a href="{{ page.baseurl }}job-board/" class="links__no-underline">
+        <h3 class="typography__orange-h4">Job Board</h3>
+      </a>
+      <div class="row action-cards__text-wrapper">
+        <div class="col d-flex justify-content-center align-items-center position__col--min-height">
+          <h4 class="typography__h5--description text-center">
+            Local and regional job openings.
+          </h4>
+        </div>
+      </div>
+      <a href="{{ page.baseurl }}job-board/" class="btn btn-primary">
+        Learn More
+      </a>
+    </div>
+    <!-- End of Services columns -->
   </div>
-</main>
+</div>
 
 <section class="mt-4">
   <div class="container">

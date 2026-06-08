@@ -71,95 +71,93 @@ page_content_collection:
       meet WIOA grant requirements, you will remain eligible to receive 
       scholarship funding each semester through the end of your&nbsp;program.</p>
 ---
-
-<main id="content">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h2 class="typography__h2">{{ page.title }}</h2>
-        <div class="editable mb-5">
-          <p>
-            We recommend applying for the grant if your intent is to 
-            upgrade your skills and obtain employment in an in-demand
-            occupation. Below are program requirements you need to be 
-            aware of when applying for the scholarship program.
-          </p>
-          <ul>
-            <li>
-              You must be able to complete your program in 3 years; taking 
-              a minimum of 6 credit hours per (fall and spring) semester. 
-              Attending summer classes is encouraged, but not required.
-            </li>
-            <li>
-              You are required to apply for federal financial aid (FAFSA) 
-              each year you are on the program and submit a copy of your
-              confirmation email to your Career Planner.
-            </li>
-            <li>
-              It is important and to your benefit to contact your Career 
-              Planner regularly (monthly). Especially if your personal
-              information (address, phone number, email, etc.) should 
-              change while on the program.
-            </li>
-            <li>
-              Any classes taken outside of the scope of your program will 
-              need to be paid for by another funding source and cannot be 
-              covered by this grant.
-            </li>
-            <li>
-              At the end of each semester, please forward your grades, a 
-              copy of any certificates/licenses/diplomas earned (if any),
-              and your class schedule/tuition bill for the next semester 
-              to your Career Planner.
-            </li>
-            <li>
-              If at any time you need to change your program or drop/withdraw 
-              from a course, notify your Career Planner in advance to ensure 
-              no loss of your scholarship.
-            </li>
-            <li>
-              It is important to notify your Career Planner of any employment 
-              changes or if you need to apply for unemployment benefits while 
-              on the program.
-            </li>
-            <li>
-              At the end of the program, your Career Planner will remain 
-              in contact with you for up to a year to assist with finding
-              a job and ensure you are successfully employed.
-            </li>
-          </ul>
-          <p>
-            <strong>
-              If you accept these requirements, complete the steps below 
-              no more than 90 days prior to the first day of class. 
-              <em>All&nbsp;documentation must be received to determine 
-              eligibility for our&nbsp;scholarship.</em>
-            </strong>
-          </p>
-        </div>
-        {% for item in page.page_content_collection %}
-        <div class="row{% unless forloop.last %} mb-4{% endunless %}">
-          <div class="col-12 col-md-2 text-center mb-3">
-            {% comment %}
-              <!-- These icons do not add any meaning to the page content. Therefore,
-                   they have aria-hidden="true" and don't need an alt-text *value* -->
-            {% endcomment %}
-            <img
-              data-src="{{ page.baseurl }}{{ item.icon }}"
-              src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
-              class="img-fluid"
-              height="48"
-              width="48"
-              aria-hidden="true"
-              alt=""
-            >
-          </div>
-          <div class="col">
-            <h3 class="typography__h3">{{ item.heading }}</h3>
-            {{ item.content }}
-          </div>
-        </div>
-        {% endfor %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="typography__h1">{{ page.title }}</h1>
+      <div class="editable mb-5">
+        <p>
+          We recommend applying for the grant if your intent is to 
+          upgrade your skills and obtain employment in an in-demand
+          occupation. Below are program requirements you need to be 
+          aware of when applying for the scholarship program.
+        </p>
+        <ul>
+          <li>
+            You must be able to complete your program in 3 years; taking 
+            a minimum of 6 credit hours per (fall and spring) semester. 
+            Attending summer classes is encouraged, but not required.
+          </li>
+          <li>
+            You are required to apply for federal financial aid (FAFSA) 
+            each year you are on the program and submit a copy of your
+            confirmation email to your Career Planner.
+          </li>
+          <li>
+            It is important and to your benefit to contact your Career 
+            Planner regularly (monthly). Especially if your personal
+            information (address, phone number, email, etc.) should 
+            change while on the program.
+          </li>
+          <li>
+            Any classes taken outside of the scope of your program will 
+            need to be paid for by another funding source and cannot be 
+            covered by this grant.
+          </li>
+          <li>
+            At the end of each semester, please forward your grades, a 
+            copy of any certificates/licenses/diplomas earned (if any),
+            and your class schedule/tuition bill for the next semester 
+            to your Career Planner.
+          </li>
+          <li>
+            If at any time you need to change your program or drop/withdraw 
+            from a course, notify your Career Planner in advance to ensure 
+            no loss of your scholarship.
+          </li>
+          <li>
+            It is important to notify your Career Planner of any employment 
+            changes or if you need to apply for unemployment benefits while 
+            on the program.
+          </li>
+          <li>
+            At the end of the program, your Career Planner will remain 
+            in contact with you for up to a year to assist with finding
+            a job and ensure you are successfully employed.
+          </li>
+        </ul>
+        <p>
+          <strong>
+            If you accept these requirements, complete the steps below 
+            no more than 90 days prior to the first day of class. 
+            <em>All&nbsp;documentation must be received to determine 
+            eligibility for our&nbsp;scholarship.</em>
+          </strong>
+        </p>
       </div>
+      {% for item in page.page_content_collection %}
+      <div class="row{% unless forloop.last %} mb-4{% endunless %}">
+        <div class="col-12 col-md-2 text-center mb-3">
+          {% comment %}
+            <!-- These icons do not add any meaning to the page content. Therefore,
+                  they have aria-hidden="true" and don't need an alt-text *value* -->
+          {% endcomment %}
+          <img
+            data-src="{{ page.baseurl }}{{ item.icon }}"
+            src="{{ page.baseurl }}assets/img/placeholder_16to9.jpg"
+            class="img-fluid"
+            height="48"
+            width="48"
+            aria-hidden="true"
+            alt=""
+          >
+        </div>
+        <div class="col">
+          <h2 class="typography__h2">{{ item.heading }}</h2>
+          {{ item.content }}
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </div>
+</div>
