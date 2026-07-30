@@ -11,6 +11,7 @@ core_site: false
 timezone: America/Chicago
 theme: "kcc-gem-theme"
 google-tag_key: GTM-TNVWT2L
+# BUILD
 translate: true
 nav_config:
   smaller_brand: true
