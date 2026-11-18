@@ -66,10 +66,6 @@ function buildJobBoard(data) {
       parent.innerHTML = ''; // Remove the spinning-loader placeholder before injecting the job-board (loader is present in HTML at pageload)
       return parent.innerHTML = `<div id="JobBoardRow" class="row">${html}</div>`;
     }).then(() => {
-      // Async step 2.) build the flyer images into the page for employers who submitted a flier document:
-      // Do not run `createFlyerImages.js` prior to "Async step 1.)"
-      return import('./createFlyerImages').then(({ default: createFlyerImages }) => createFlyerImages(data));
-    }).then(() => {
       // Async step 3.) create modals with the full job details.
       return import('./createJobModals').then(({ default: createJobModals }) => createJobModals(data, parent));
     }).then(() => {
@@ -82,11 +78,6 @@ function buildJobBoard(data) {
       return document.querySelector('input[aria-controls="JobsTable"]').placeholder = 'Filter jobs...';
     }).then(() => {
       return document.getElementById('JobsTable_wrapper').classList.add('mb-3');
-    }).then(() => {
-      if (!document.querySelector('div[data-flyer-src]'))
-        return;
-      
-      return import('./lazyLoadFlyers').then(({default: lazyLoadFlyers}) => lazyLoadFlyers())
     })
 }
 
