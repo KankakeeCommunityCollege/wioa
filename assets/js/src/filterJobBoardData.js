@@ -1,5 +1,5 @@
 /**
-*  @function filterFunction filters out job posts that are older than 30 days old.
+*  @function filterFunction filters out job posts that are older than 60 days old.
  * @param {Array} arr Is an array that happens represents 1 row from the Google Sheet.
  *                    Since we are using the `Array.prototype.filter()` method,
  *                    we do not need to do any iteration — each row will be processed.
@@ -9,18 +9,10 @@
 function filterFunction(arr) {
   const now = new Date;
   const posted = new Date(arr[0]);
-  // `arr[11]` will be equal to 'Custom expiration date' if the job post has a custom expiration date
-  if (arr[11] == 'Custom expiration date') {
-    // `arr[12]` is the custom expiration date in MM-DD-YYYY format
-    const expire = new Date(arr[12]);
+  // Job posts default to 60 days
+  const expired = new Date(posted.setDate(posted.getDate() + 60));
 
-    return now.getTime() > expire.getTime() ? 0 : 1;
-  } else {
-    // Job posts with no expiration date default to 30 days
-    const expired = new Date(posted.setDate(posted.getDate() + 60));
-
-    return now.getTime() > expired.getTime() ? 0 : 1;
-  }
+  return now.getTime() > expired.getTime() ? 0 : 1;
 }
 
 /**

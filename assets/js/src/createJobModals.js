@@ -33,7 +33,7 @@ function stringReplacerFunc(match) {
 
   return returnString.replace(/^([-\*]\s(.+)|(.+))$/gm, (match, c1, c2) => {
     return c2 == undefined ? `<p class="mb-2 mt-1">${match}</p>`
-      : `<p class="mb-0 ml-3 typography--text-indent"><span class="ml-3">&bull;&nbsp;${c2}</span></p>`;
+      : `<p class="mb-0 ms-3 typography--text-indent"><span class="ms-3">&bull;&nbsp;${c2}</span></p>`;
   });
 }
 
@@ -82,10 +82,9 @@ function loopData(data) {
 
     let [
       , title, website, location, coName, applyHow, appUrl, email, phone, fax, , ,
-      flyer, description, requirements, jobType, shift, otherJobType, pay, , , , , , ,
+      , description, requirements, jobType, shift, otherJobType, pay, , , , , , ,
     ] = row;
     const optionalJobInfo = createOptionalJobInfo(phone, email, website, appUrl, fax);
-    const flyerPlaceholder = flyer != '' ? createFlyerPlaceholder(flyer, title, coName) : '';
 
     return html += `<div class="modal fade" id="jobModal${i}" tabindex="-1" aria-labelledby="jobModalLabel${i}" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -115,7 +114,7 @@ function loopData(data) {
           </div>
           <div class="card card-body">
             <p class="mb-0"><strong>Job Type:</strong> ${jobType}</p>
-            ${otherJobType != '' ? '<p class="pl-3 mb-0">&bull;&nbsp;' + otherJobType + '</p>' : ''}
+            ${otherJobType != '' ? '<p class="ps-3 mb-0">&bull;&nbsp;' + otherJobType + '</p>' : ''}
           </div>
           <div class="card card-body">
             <p class="mb-0">
@@ -129,7 +128,6 @@ function loopData(data) {
               ${optionalJobInfo}
             </p>
           </div>
-          ${flyerPlaceholder}
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
